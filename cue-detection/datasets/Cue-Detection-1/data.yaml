@@ -1,0 +1,18 @@
+flip_idx:
+- 0
+- 1
+kpt_shape:
+- 2
+- 3
+names:
+- cue
+nc: 1
+roboflow:
+  license: CC BY 4.0
+  project: cue-detection-ciazj
+  url: https://universe.roboflow.com/thesis-digkz/cue-detection-ciazj/dataset/1
+  version: 1
+  workspace: thesis-digkz
+test: ../test/images
+train: ../train/images
+val: ../valid/images

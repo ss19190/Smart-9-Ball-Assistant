@@ -1,0 +1,12 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['cue ball', 'other']
+
+roboflow:
+  workspace: thesis-digkz
+test: ../test/images
+train: ../train/images
+val: ../valid/images
