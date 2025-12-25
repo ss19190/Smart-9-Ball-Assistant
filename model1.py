@@ -8,12 +8,11 @@ load_dotenv()
 
 # --- KONFIGURACJA ---
 API_KEY = os.getenv("API_KEY")
-MODEL_DETEKCJI = "8-pool-anrdr/2"
+DETECTION_MODEL = "ball-detection-bzirz/3"
 
 def main():
     # Pobieramy model
-    model_obj = get_model(model_id=MODEL_DETEKCJI, api_key=API_KEY)
-
+    model_obj = get_model(model_id=DETECTION_MODEL, api_key=API_KEY)
     # Kamera (zostawiłem indeks 1, jak w twoim kodzie)
     cap = cv2.VideoCapture(0)
 

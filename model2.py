@@ -7,12 +7,11 @@ load_dotenv()
 
 # --- KONFIGURACJA ---
 API_KEY = os.getenv("API_KEY")
-MODEL_KEYPOINTS = "cue-detection/1"
+KEYPOINTS_MODEL = "cue-detection-ciazj/3"
 
 def main():
     # Pobieramy model
-    model_kp = get_model(model_id=MODEL_KEYPOINTS, api_key=API_KEY)
-
+    model_kp = get_model(model_id=KEYPOINTS_MODEL, api_key=API_KEY)
     cap = cv2.VideoCapture(0)
 
     print("Model: Cue detection (Only keypoints). Press 'q' to exit.")
