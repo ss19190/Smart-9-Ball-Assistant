@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['cue ball', 'other']
+
+roboflow:
+  workspace: thesis-digkz
+  project: ball-detection-bzirz
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/thesis-digkz/ball-detection-bzirz/dataset/3
