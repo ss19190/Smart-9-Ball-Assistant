@@ -1,0 +1,219 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{bib:ghost-ball}{online}{}
+    \name{author}{1}{}{%
+      {{hash=AD}{%
+         family={Alciatore},
+         familyi={A\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AD1}
+    \strng{fullhash}{AD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Ghost-ball Aiming}
+    \verb{url}
+    \verb https://drdavepoolinfo.com/resource_files/ghost_ball_aiming.pdf
+    \endverb
+    \field{year}{2025}
+    \field{urlday}{14}
+    \field{urlmonth}{02}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{bib:english}{online}{}
+    \name{author}{1}{}{%
+      {{hash=AD}{%
+         family={Alciatore},
+         familyi={A\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AD1}
+    \strng{fullhash}{AD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Sidespin and English Terminology and Uses}
+    \verb{url}
+    \verb https://drdavepoolinfo.com/faq/sidespin/terminology-and-uses/
+    \endverb
+    \field{year}{2012}
+    \field{urlday}{14}
+    \field{urlmonth}{02}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{bib:pool-live}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=AR}{%
+         family={Alves},
+         familyi={A\bibinitperiod},
+         given={Ricardo},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=SL}{%
+         family={Sousa},
+         familyi={S\bibinitperiod},
+         given={Luís},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=RJ}{%
+         family={Rodrigues},
+         familyi={R\bibinitperiod},
+         given={Joao},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ARSLRJ1}
+    \strng{fullhash}{ARSLRJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{21st International Conference on Computer Graphics,
+  Visualization and Computer Vision}
+    \field{pages}{184 \bibrangedash  193}
+    \field{title}{PoolLiveAid: Augmented reality pool table to assist
+  inexperienced players}
+    \field{year}{2013}
+  \endentry
+
+  \entry{bib:hawk-eye}{article}{}
+    \name{author}{1}{}{%
+      {{hash=DM}{%
+         family={Duggal},
+         familyi={D\bibinitperiod},
+         given={Manish},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DM1}
+    \strng{fullhash}{DM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{number}{2}
+    \field{pages}{1 \bibrangedash  7}
+    \field{title}{Hawk Eye Technology}
+    \field{volume}{1}
+    \field{journaltitle}{Journal of Global Research Computer Science \&
+  Technology}
+    \field{year}{2024}
+  \endentry
+
+  \entry{bib:sensors}{article}{}
+    \name{author}{4}{}{%
+      {{hash=HB}{%
+         family={Hollaus},
+         familyi={H\bibinitperiod},
+         given={Bernhard},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Stabinger},
+         familyi={S\bibinitperiod},
+         given={Sebastian},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MA}{%
+         family={Mehrle},
+         familyi={M\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RC}{%
+         family={Raschner},
+         familyi={R\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HB+1}
+    \strng{fullhash}{HBSSMARC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{23}
+    \field{pages}{6722}
+    \field{title}{Using Wearable Sensors and a Convolutional Neural Network for
+  Catch Detection in American Football}
+    \field{volume}{20}
+    \field{journaltitle}{Sensors}
+    \field{year}{2020}
+  \endentry
+
+  \entry{bib:moore}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=MAD}{%
+         family={Moore},
+         familyi={M\bibinitperiod},
+         given={A.\bibnamedelima D.},
+         giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MAD1}
+    \strng{fullhash}{MAD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Mechanics of Billiards, and Analysis of Willie Hoppe's
+  Stroke}
+    \list{location}{1}{%
+      {University of Michigan, College of Engineering}%
+    }
+    \field{year}{1947}
+  \endentry
+
+  \entry{bib:blast}{online}{}
+    \name{author}{1}{}{%
+      {{hash=OS}{%
+         family={Ogle},
+         familyi={O\bibinitperiod},
+         given={Sean},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{OS1}
+    \strng{fullhash}{OS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{title}{Breaking Eighty}
+    \verb{url}
+    \verb https://breakingeighty.com/blast-motion-golf-review
+    \endverb
+    \field{year}{2022}
+    \field{urlday}{13}
+    \field{urlmonth}{10}
+    \field{urlyear}{2022}
+  \endentry
+\enddatalist
+\endinput

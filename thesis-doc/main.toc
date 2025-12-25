@@ -1,0 +1,53 @@
+\babel@toc {british}{}\relax 
+\babel@toc {polish}{}\relax 
+\babel@toc {british}{}\relax 
+\babel@toc {polish}{}\relax 
+\babel@toc {british}{}\relax 
+\babel@toc {polish}{}\relax 
+\babel@toc {british}{}\relax 
+\thispagestyle {empty}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introduction into the problem domain}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Settling of the problem in the domain}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Objective of the thesis}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Scope of the thesis}{2}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Short description of chapters}{3}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Problem analysis}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Problem analysis}{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}The Visual Paradox (Ghost Ball)}{5}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Biomechanical Inconsistency}{5}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}State of the art}{6}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Existing Solutions}{6}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3}Mathematical Models}{6}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Ghost Ball Vector Math}{6}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Physics of the Stroke (Sensor Fusion)}{7}{subsection.2.3.2}%
+\contentsline {subsubsection}{Linear Acceleration}{7}{section*.8}%
+\contentsline {subsubsection}{Force Estimation}{7}{section*.9}%
+\contentsline {section}{\numberline {2.4}Algorithms}{8}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Computer Vision Algorithms}{8}{subsection.2.4.1}%
+\contentsline {subsubsection}{Object Detection (Balls)}{8}{section*.10}%
+\contentsline {subsubsection}{Pose Estimation (Cue Stick)}{8}{section*.11}%
+\contentsline {subsection}{\numberline {2.4.2}Peak Detection Algorithm}{8}{subsection.2.4.2}%
+\contentsline {chapter}{\numberline {3}Requirements and tools}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Functional and non-functional requirements}{11}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Functional Requirements}{11}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Non-functional Requirements}{12}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Use cases}{12}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Description of tools}{13}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Hardware Tools}{13}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Software Tools}{13}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Methodology of design and implementation}{14}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Phase 1: Data Collection and Model Training}{14}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Phase 2: Vision Logic Implementation}{14}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Phase 3: Sensor Module Development}{14}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Phase 4: Integration and Testing}{15}{subsection.3.4.4}%
+\contentsline {chapter}{\numberline {4}External specification}{17}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Internal specification}{19}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Verification and validation}{21}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusions}{23}{chapter.7}%
+\contentsline {chapter}{Bibliography}{25}{section*.16}%
+\contentsline {chapter}{Index of abbreviations and symbols}{29}{appendix*.18}%
+\contentsline {chapter}{Listings}{31}{appendix*.19}%
+\contentsline {chapter}{List of additional files in~electronic submission (if applicable)}{33}{appendix*.20}%
+\contentsline {chapter}{List of figures}{35}{appendix*.21}%
+\contentsline {chapter}{List of tables}{37}{appendix*.22}%

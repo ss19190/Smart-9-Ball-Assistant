@@ -1,0 +1,51 @@
+\chapter{Introduction}
+
+Billiards, specifically the 9-ball variation, is a sport that demands a high degree of precision, spatial awareness, and consistent motor control. Unlike many other sports where physical athleticism is paramount, billiards is effectively a game of applied geometry and physics executed through fine muscle memory.
+
+\section{Introduction into the problem domain}
+
+The mastery of billiards relies on two distinct skill sets: the ability to visualize the correct trajectory of the balls and the physical ability to execute the stroke required to send the cue ball along that trajectory. Novice players often struggle with the concept of the "Ghost Ball" \cite{bib:ghost_ball}—the imaginary position where the cue ball must strike the object ball to pocket it.  % Find a source describing the "Ghost Ball" aiming method.
+
+Furthermore, the mechanics of the stroke itself involving stance, bridge stability, and wrist action significantly impact the outcome of a shot. Even a correct aim can result in a miss if the player introduces unwanted lateral acceleration or English \cite{bib:english} (spin) due to wrist instability during the cue delivery. With the advent of accessible Computer Vision (CV), it is now possible to digitize these physical interactions to provide real-time feedback. \cite{bib:cv_in_sports} % Find a paper on CV used in sports (e.g., Hawk-Eye, VAR, or table tennis tracking).
+
+\section{Settling of the problem in the domain}
+
+Current training methods in billiards are predominantly manual, relying on the subjective observation of coaches or the player's own intuition. While professional tracking systems exist (such as Hawk-Eye used in tennis or snooker) \cite{bib:hawk_eye}, they are often prohibitively expensive and require fixed, industrial-grade hardware setups. On the consumer end, mobile applications often rely solely on 2D video analysis, which lacks the depth perception required for accurate table mapping or the high-frequency sampling needed for detailed stroke analysis.
+
+\section{Objective of the thesis}
+
+The primary objective of this thesis is to design, implement, and test a comprehensive "Smart Pool Assistant and Stroke Analyzer". The system aims to assist players in real-time by visualizing shot outcomes and analyzing the mechanics of their cue stroke.
+
+The specific objectives are defined as follows:
+\begin{itemize}
+    \item To develop a Computer Vision module capable of detecting billiard balls and the cue stick in a live video feed.
+    \item To implement a physics engine that calculates and visualizes the predicted trajectory of the cue ball (Tangent and Normal lines) based on the "Ghost Ball" principle.
+    \item To create a mobile telemetry system that captures high-frequency accelerometer and gyroscope data from the player's arm.
+    \item To derive meaningful biomechanical metrics, such as impact force ($F=ma$) and wrist stability, to provide objective feedback on the player's technique.
+\end{itemize}
+
+\section{Scope of the thesis}
+
+The scope of this project encompasses the software and hardware integration required to build a functional prototype for the game of 9-ball.
+
+\begin{itemize}
+    \item \textbf{Vision System:} The visual analysis is restricted to a top-down camera view. The software utilizes Python and OpenCV libraries, integrating machine learning models (Roboflow) for object detection. The trajectory prediction assumes an ideal collision model (elastic collision) and focuses on the immediate path of the cue ball and the target ball.
+    \item \textbf{Sensor System:} The biomechanical analysis is limited to the data provided by standard Android smartphone sensors (Linear Acceleration and Gyroscope). The scope includes the development of a TCP/IP communication protocol to transfer telemetry data to the central computer for processing.
+    \item \textbf{Hardware:} The system is designed to run on a standard consumer PC connected to a webcam and an Android device via USB (ADB forwarding).
+\end{itemize}
+
+\section{Short description of chapters}
+
+The thesis is organized as follows:
+
+\textbf{Chapter 2} (Problem analysis) provides the theoretical background of the project. It scrutinizes the physics of billiard collisions, the geometry of "Ghost Ball" aiming, and the mechanics of inertial sensors. It also reviews existing solutions in sports technology to establish the context for the proposed system.
+
+\textbf{Chapter 3} (Requirements and tools) defines the functional and non-functional requirements of the system. It also presents the technological stack selected for the project, justifying the choice of Python, OpenCV, and the Android platform for their respective modules.
+
+\textbf{Chapter 4} (External specification) describes the system from the user's perspective. It details the user interface (UI) of the Android application and the Augmented Reality (AR) visualization displayed on the desktop, explaining the flow of interaction between the player and the assistant.
+
+\textbf{Chapter 5} (Internal specification) delves into the technical architecture and backend logic. It explains the algorithms used for object detection and trajectory prediction, the TCP/IP communication protocol, and the signal processing techniques (e.g., gravity removal) applied to the sensor data.
+
+\textbf{Chapter 6} (Verification and validation) presents the testing process. It evaluates the accuracy of the computer vision model, the latency of real-time data transmission, and the reliability of the stroke analysis metrics through unit tests and practical scenarios.
+
+\textbf{Chapter 7} concludes the thesis, summarizing the achieved objectives and proposing potential directions for future development.
