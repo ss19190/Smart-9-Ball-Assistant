@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1766679299.13004 "c:/Users/saras/Desktop/thesis/Smart-9-Ball-Assistant/thesis-doc/config/settings.tex" "settings.pdf" "settings" 1766679300.59783 2
+["pdflatex"] 1766679721.09537 "c:/Users/saras/Desktop/thesis/Smart-9-Ball-Assistant/thesis-doc/config/settings.tex" "settings.pdf" "settings" 1766679722.47853 2
   "C:/Users/saras/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1761383809 24225088 39613408f8ac69add2e0f3970f87d40e ""
   "C:/Users/saras/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecrm1200.tfm" 993062126 3152 4850ff0163852b7fab34bd55e1197f28 ""
   "C:/Users/saras/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmr12.tfm" 1136765053 1288 655e228510b4c2a1abe905c368440826 ""
@@ -210,7 +210,7 @@
   "C:/Users/saras/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693735632 123 a302f2c651a95033260db60e51527ae8 ""
   "C:/Users/saras/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
   "c:/Users/saras/Desktop/thesis/Smart-9-Ball-Assistant/thesis-doc/config/settings.tex" 1766658638 4819 68ae750148603041100915795d0b3008 ""
-  "settings.aux" 1766679291 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "settings.aux" 1766679713 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
   "settings.tex" 1766658638 4819 68ae750148603041100915795d0b3008 ""
   (generated)
   "settings.aux"

@@ -79,12 +79,13 @@ The installation process is twofold, involving the desktop server and the mobile
     
     
 
-    \item \textbf{Install the App:} Locate the \texttt{sensorApp.apk} file in the project directory. You can install it manually by copying it to the phone, or simpler, by running this command in your PC terminal (while the phone is connected):
+    \item \textbf{Install the App:} Locate the \texttt{SensorApp.apk} file in the project directory. You can install it manually by copying it to the phone, or simpler, by running this command in your PC terminal (while the phone is connected):
     \begin{lstlisting}[language=bash]
-    adb install sensorApp.apk
+    adb install SensorApp.apk
     \end{lstlisting}
     Ensure you allow installation from unknown sources if prompted on the device.
 \end{enumerate}
+
 \section{Activation procedure}
 
 To start a training session, the user must follow a specific sequence of steps to establish the client-server connection.
@@ -141,13 +142,13 @@ The mobile app interface is minimal to avoid distraction.
 Since this is a standalone prototype, system administration tasks are limited to:
 \begin{itemize}
     \item \textbf{Log Management:} The system generates CSV files (\texttt{hit\_history.csv}) and image snapshots in the \texttt{saved\_graphs/} folder. The user should periodically archive or delete old files to save disk space.
-    \item \textbf{Calibration:} If the "Ghost Ball" accuracy drifts, the user may need to verify the \texttt{SREDNICA\_BILI\_PX} constant in \texttt{bilard.py} to match the current camera height.
+    \item \textbf{Calibration:} If the "Ghost Ball" accuracy drifts, the user may need to verify the \texttt{BALL\_DIAMETER\_PX} constant in \texttt{bilard.py} to match the current camera height.
 \end{itemize}
 
 \section{Security issues}
 
 \begin{itemize}
-    \item \textbf{Network Security:} The communication uses unencrypted TCP sockets. This is acceptable for a local USB connection (ADB forwarding), but if used over public Wi-Fi, the data stream could be intercepted.
+    \item \textbf{Network Security:} The communication uses unencrypted TCP sockets. This is acceptable for a local USB connection (ADB forwarding), but if ever was implemented and used over public Wi-Fi, the data stream could be intercepted.
     \item \textbf{API Keys:} The Roboflow API key is stored in a \texttt{.env} file. This file should not be shared or committed to public version control repositories.
 \end{itemize}
 
