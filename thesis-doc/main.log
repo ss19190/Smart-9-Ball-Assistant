@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.12.25)  25 DEC 2025 15:51
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.12.25)  25 DEC 2025 17:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1344,6 +1344,14 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 (C:\Users\saras\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+)
+(C:\Users\saras\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count496
+\float@exts=\toks58
+\float@box=\box74
+\@float@everytoks=\toks59
+\@floatcapt=\box75
 ))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
@@ -1495,6 +1503,7 @@ your preamble.
  on input line 117.
 
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package biblatex Info: Trying to load language 'british'...
@@ -1531,7 +1540,7 @@ Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
 Package biblatex Info: Reference section=0 on input line 117.
 Package biblatex Info: Reference segment=0 on input line 117.
-\c@lstlisting=\count496
+\c@lstlisting=\count497
  (config/titlepage.tex
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: xetex
@@ -1713,6 +1722,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 ]
 Chapter 3.
 [11]
+File: ./graf/usecase.png Graphic file (type bmp)
+<./graf/usecase.png>
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1721,6 +1733,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [12]
+Underfull \vbox (badness 1360) has occurred while \output is active []
+
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1728,7 +1743,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[13])
+[13]
+Overfull \hbox (6.97832pt too wide) in paragraph at lines 72--73
+[]\TU/lmr/bx/n/12 OpenCV (open source computer vision library): \TU/lmr/m/n/12 
+Used for image pre-processing,
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1736,7 +1756,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[14] (chapters/04.tex
+[14]) (chapters/04.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1756,7 +1776,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 ]
 Chapter 4.
-) (chapters/05.tex [17]
+[17]
+(C:\Users\saras\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+(C:\Users\saras\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1764,11 +1790,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[18
+[18]
 
-]
-Chapter 5.
-[19]) (chapters/06.tex
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[19]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1777,11 +1807,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [20]
-Chapter 6.
-) (chapters/07.tex [21
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (chapters/05.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[21]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1790,8 +1830,33 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [22]
+Chapter 5.
+[23
+
+]) (chapters/06.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[24]
+Chapter 6.
+) (chapters/07.tex [25
+
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[26]
 Chapter 7.
-) [23
+) [27
 
 ]
 
@@ -1801,12 +1866,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[24
+[28
 
-] [25
+]
+Overfull \hbox (10.66753pt too wide) in paragraph at lines 181--181
+[] [] [][][][] [] [][][][][][][][] [] [][][] [] [][][][][][][] [][] [][][][][][
+][] [][] [][][][] [][] [][][][][][][][][]$[] \TU/lmr/m/n/12 (visited on 16/03/2
+023). 
+ []
+
+
+Overfull \hbox (22.02751pt too wide) in paragraph at lines 181--181
+[]$[][][][][] [] [] [] [][][] [] [][][][][][][] [] [][][] [] [][][][] [] [][][]
+[][][][][][][][] [][] [][][][][][][][][][][]$[] \TU/lmr/m/n/12 (visited on 01/0
+6/2017). 
+ []
+
+[29
 
 
 ]
+Overfull \hbox (0.11371pt too wide) in paragraph at lines 181--181
+\TU/lmr/m/it/12 Time Object Detectors\TU/lmr/m/n/12 . 2025. \TU/lmr/m/sc/12 url
+\TU/lmr/m/n/12 : []$[][][][][] [] [] [] [][][][][][] [] [][][] [] [][][][][][][
+][][][][][][] [] [][][][][][][]$[]. 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1814,31 +1899,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[26
+[30] [31
 
-] [27] [28] (chapters/08.tex) (chapters/09.tex [29
+] [32] (chapters/08.tex) (chapters/09.tex [33
 
 ]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[30
-
-]) (chapters/10.tex [31]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[32
-
-]) [33]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1848,11 +1913,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [34
 
-] (main.lof)
-\tf@lof=\write7
-\openout7 = `main.lof'.
-
- [35]
+]) (chapters/10.tex [35]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1862,11 +1923,35 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [36
 
+]) [37]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[38
+
+] (main.lof)
+\tf@lof=\write7
+\openout7 = `main.lof'.
+
+ [39]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[40
+
 ] (main.lot)
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
- [37] (main.aux)
+ [41] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1876,7 +1961,7 @@ L3 programming layer <2024-01-04>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B9B0CBE134EFE996C49DF79100264B5D;7554.
+(rerunfilecheck)             Checksum: D5326A2854F8662BD6E6B445AC5B7AAE;9708.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                main
@@ -1887,12 +1972,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 50792 strings out of 409616
- 1127132 string characters out of 5773991
- 2015605 words of memory out of 5000000
- 72160 multiletter control sequences out of 15000+600000
+ 50597 strings out of 409616
+ 1118679 string characters out of 5773991
+ 2059078 words of memory out of 5000000
+ 71955 multiletter control sequences out of 15000+600000
  569113 words of font info for 102 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,11n,96p,1925b,5556s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (43 pages).
+Output written on main.pdf (47 pages).

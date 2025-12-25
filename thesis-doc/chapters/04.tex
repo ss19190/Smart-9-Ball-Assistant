@@ -1,88 +1,186 @@
 \chapter{External specification}
+
+This chapter provides a detailed description of the system from the user's perspective. It covers the installation requirements, setup procedures, and a walkthrough of typical usage scenarios, including the user interface (UI) and system output.
+
+\section{Hardware and software requirements}
+
+To ensure the correct operation of the "Smart Pool Assistant", the following minimum requirements must be met.
+
+\subsection{Hardware Requirements}
 \begin{itemize}
-\item hardware and software requirements
-\item installation procedure
-\item activation procedure
-\item types of users
-\item user manual
-\item system administration
-\item security issues
-\item example of usage
-\item working scenarios (with screenshots or output files)
+    \item \textbf{Desktop Workstation (Server):}
+    \begin{itemize}
+        \item CPU: Intel Core i5 (8th Gen) / AMD Ryzen 5 or better.
+        \item RAM: Minimum 8 GB (16 GB recommended for smooth video processing).
+        \item GPU: Dedicated NVIDIA GPU (GTX 1050 or better) recommended for YOLO inference, though CPU-only execution is supported.
+        \item Ports: At least one USB 3.0 port (the phone connection).
+    \end{itemize}
+    \item \textbf{Video Input:}
+    \begin{itemize}
+        \item HD Webcam (720p minimum resolution) mounted on a tripod or ceiling bracket directly above the pool table.
+    \end{itemize}
+    \item \textbf{Mobile Device (Client):}
+    \begin{itemize}
+        \item Smartphone running Android 9.0 (Pie) or higher.
+        \item Must contain hardware sensors: Accelerometer and Gyroscope.
+        \item USB cable for data tethering.
+    \end{itemize}
 \end{itemize}
 
+\subsection{Software Requirements}
+\begin{itemize}
+    \item \textbf{PC Operating System:} Windows 10/11 or Linux.
+    \item \textbf{Python Environment:} Python 3.8 or newer.
+    \item \textbf{Android Environment:} Android device with "Developer Options" and "USB Debugging" enabled.
+    \item \textbf{Dependencies:} The required Python libraries are listed in the \texttt{req.txt} file (e.g., \texttt{ultralytics}, \texttt{opencv-python}, \texttt{inference}, \texttt{supervision}).
+\end{itemize}
 
+\section{Installation procedure}
 
- 
-\begin{figure}
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-    y tick label style={
-        /pgf/number format/.cd,
-            fixed,    
-            fixed zerofill, % 1.0 zamiast 1
-            precision=1,
-        /tikz/.cd
-    },
-    x tick label style={
-        /pgf/number format/.cd,
-            fixed,
-            fixed zerofill,
-            precision=2,
-        /tikz/.cd
-    }
-]
-\addplot [domain=0.0:0.1] {rnd};
-\end{axis} 
-\end{tikzpicture}
-\caption{Figure caption (below the figure).}
-\label{fig:2}
+The installation process is twofold, involving the desktop server and the mobile client.
+
+\subsection{Desktop Installation}
+\begin{enumerate}
+    \item \textbf{Clone the Repository:} Download the project source code from the official GitHub repository. You can download the ZIP file directly:
+    
+    \begin{center}
+        \url{https://github.com/ss19190/Smart-9-Ball-Assistant}
+    \end{center}
+    
+    Or via terminal:
+    \begin{lstlisting}[language=bash]
+    git clone https://github.com/ss19190/Smart-9-Ball-Assistant
+    \end{lstlisting}
+
+    \item \textbf{Install Dependencies:} Open a terminal in the project folder and run:
+    \begin{lstlisting}[language=bash]
+    pip install -r requirements.txt
+    \end{lstlisting}
+
+    \item \textbf{Install ADB:} Ensure the Android Debug Bridge (ADB) is installed and added to the system PATH variables.
+
+    \item \textbf{Configure API Keys:} You need a valid API Key to access the trained models.
+    \begin{itemize}
+        \item Create a free account at \url{https://roboflow.com}.
+        \item Navigate to \textbf{Settings} $\rightarrow$ \textbf{API} (or your Workspace Settings).
+        \item Copy your \texttt{Private API Key}.
+    \end{itemize}
+    Open a \texttt{.env} file in the root directory of the project and paste the key:
+    \begin{lstlisting}
+    API_KEY=your_copied_key_here
+    \end{lstlisting}
+\end{enumerate}
+
+\subsection{Mobile Installation}
+\begin{enumerate}
+    \item \textbf{Enable Developer Mode:} On the Android phone, go to \textbf{Settings} $\rightarrow$ \textbf{About Phone}. Find the "Build Number" entry and tap it 7 times repeatedly until you see a message "You are now a developer!".
+
+    \item \textbf{Enable USB Debugging:} Go back to the main Settings menu (or System $\rightarrow$ Advanced), open \textbf{Developer Options}, and toggle the switch for \textbf{USB Debugging} to ON. Confirm the security prompt if requested.
+    
+    
+
+    \item \textbf{Install the App:} Locate the \texttt{sensorApp.apk} file in the project directory. You can install it manually by copying it to the phone, or simpler, by running this command in your PC terminal (while the phone is connected):
+    \begin{lstlisting}[language=bash]
+    adb install sensorApp.apk
+    \end{lstlisting}
+    Ensure you allow installation from unknown sources if prompted on the device.
+\end{enumerate}
+\section{Activation procedure}
+
+To start a training session, the user must follow a specific sequence of steps to establish the client-server connection.
+
+\begin{enumerate}
+    \item \textbf{Connect Hardware:} Plug the webcam into the PC and connect the Android phone via USB.
+    \item \textbf{Setup ADB Forwarding:} This step is crucial for the phone to communicate with the PC via localhost. Run the following command in the terminal:
+    \begin{lstlisting}[language=bash]
+    adb reverse tcp:5555 tcp:5555
+    \end{lstlisting}
+    \item \textbf{Start the Sensor Server:} Run the script responsible for handling telemetry data:
+    \begin{lstlisting}[language=bash]
+    python sensors.py
+    \end{lstlisting}
+    \item \textbf{Start the Vision Assistant:} Open a second terminal window and run the AR visualization script:
+    \begin{lstlisting}[language=bash]
+    python bilard.py
+    \end{lstlisting}
+    \item \textbf{Connect the App:} Launch the app on the phone and tap the "CONNECT" button. The status should change to green "CONNECTED".
+\end{enumerate}
+
+\section{Types of users}
+
+The system is designed for a single type of user, although the roles can be conceptually divided:
+\begin{itemize}
+    \item \textbf{The Player (Trainee):} The primary user who wears the sensor and performs the shots. They interact with the physical game and view the feedback on the screen.
+    \item \textbf{The Operator (Optional):} A second person (e.g., a coach) who manages the software, starts/stops the scripts, and analyzes the history logs, though the Player can perform these tasks themselves.
+\end{itemize}
+
+\section{User manual}
+
+\subsection{Main Interface (Desktop)}
+The desktop window displays the live camera feed overlaid with augmented reality elements.
+\begin{itemize}
+    \item \textbf{Ghost Ball Indicator:} A white circle appearing on the aiming line, showing where the cue ball will be at impact.
+    \item \textbf{Trajectory Lines:}
+    \begin{itemize}
+        \item \textit{Gray Line:} The aiming line extending from the cue stick.
+        \item \textit{Yellow Line:} The predicted path of the cue ball after impact (Tangent Line).
+        \item \textit{Green Line:} The predicted path of the object ball.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Mobile Interface}
+The mobile app interface is minimal to avoid distraction.
+\begin{itemize}
+    \item \textbf{Status Bar:} Shows connection state (Disconnected/Connected).
+    \item \textbf{Real-time Values:} Displays raw linear acceleration ($X, Y, Z$) for debugging purposes.
+    \item \textbf{Connect Button:} Toggles the TCP connection.
+\end{itemize}
+
+\section{System administration}
+
+Since this is a standalone prototype, system administration tasks are limited to:
+\begin{itemize}
+    \item \textbf{Log Management:} The system generates CSV files (\texttt{hit\_history.csv}) and image snapshots in the \texttt{saved\_graphs/} folder. The user should periodically archive or delete old files to save disk space.
+    \item \textbf{Calibration:} If the "Ghost Ball" accuracy drifts, the user may need to verify the \texttt{SREDNICA\_BILI\_PX} constant in \texttt{bilard.py} to match the current camera height.
+\end{itemize}
+
+\section{Security issues}
+
+\begin{itemize}
+    \item \textbf{Network Security:} The communication uses unencrypted TCP sockets. This is acceptable for a local USB connection (ADB forwarding), but if used over public Wi-Fi, the data stream could be intercepted.
+    \item \textbf{API Keys:} The Roboflow API key is stored in a \texttt{.env} file. This file should not be shared or committed to public version control repositories.
+\end{itemize}
+
+\section{Example of usage}
+
+\textbf{Scenario: Practicing the Cut Shot}
+The player wants to practice a difficult cut shot into the corner pocket.
+
+\begin{enumerate}
+    \item The player sets up the white ball and the target ball.
+    \item The system detects the balls and waits for the cue stick.
+    \item The player addresses the cue ball. The system detects the cue pose and renders the "Ghost Ball" slightly to the left of the target ball.
+    \item The AR lines show that the current aim will cause the target ball to miss the pocket (hit the rail).
+    \item The player adjusts their stance until the Green Line points directly into the pocket.
+    \item The player executes the stroke.
+    \item The \texttt{sensors.py} script detects a peak acceleration of $25 m/s^2$.
+    \item The system saves a snapshot of the stroke metrics, allowing the player to see if they maintained wrist stability during the shot.
+\end{enumerate}
+
+\section{Working scenarios}
+
+This section illustrates the system in action with screenshots from the prototype.
+
+\begin{figure}[h!]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{figures/screenshot_ar.png}
+    \caption{Scenario A: The Vision Assistant visualizing a valid collision. The Ghost Ball (white circle) and predicted paths (yellow/green) are displayed.}
+    \label{fig:scenario_ar}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%
-% FIGURE FROM FILE
-%
-%\begin{figure}
-%\centering
-%\includegraphics[width=0.5\textwidth]{./graf/politechnika_sl_logo_bw_pion_en.pdf}
-%\caption{Caption of a figure is always below the figure.}
-%\label{fig:label}
-%\end{figure}
-%Fig. \ref{fig:label} presents …
-%%%%%%%%%%%%%%%%%%%%%
-%
-%%%%%%%%%%%%%%%%%%%%
-%% SUBFIGURES
-%
-%\begin{figure}
-%\centering
-%\begin{subfigure}{0.4\textwidth}
-%    \includegraphics[width=\textwidth]{./graf/politechnika_sl_logo_bw_pion_en.pdf}
-%    \caption{Upper left figure.}
-%    \label{fig:upper-left}
-%\end{subfigure}
-%\hfill
-%\begin{subfigure}{0.4\textwidth}
-%    \includegraphics[width=\textwidth]{./graf/politechnika_sl_logo_bw_pion_en.pdf}
-%    \caption{Upper right figure.}
-%    \label{fig:upper-right}
-%\end{subfigure}
-%
-%\begin{subfigure}{0.4\textwidth}
-%    \includegraphics[width=\textwidth]{./graf/politechnika_sl_logo_bw_pion_en.pdf}
-%    \caption{Lower left figure.}
-%    \label{fig:lower-left}
-%\end{subfigure}
-%\hfill
-%\begin{subfigure}{0.4\textwidth}
-%    \includegraphics[width=\textwidth]{./graf/politechnika_sl_logo_bw_pion_en.pdf}
-%    \caption{Lower right figure.}
-%    \label{fig:lower-right}
-%\end{subfigure}
-%        
-%\caption{Common caption for all subfigures.}
-%\label{fig:subfigures}
-%\end{figure}
-%Fig. \ref{fig:subfigures} presents very important information, eg. Fig. \ref{fig:upper-right} is an upper right subfigure.
-%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h!]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{figures/screenshot_graph.png}
+    \caption{Scenario B: Stroke Analysis. The system has detected a shot and displays the Acceleration graph (Red), Force metric (Orange), and Wrist Rotation (Purple).}
+    \label{fig:scenario_graph}
+\end{figure}

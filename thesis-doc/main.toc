@@ -28,26 +28,40 @@
 \contentsline {subsubsection}{Object Detection (Balls)}{8}{section*.10}%
 \contentsline {subsubsection}{Pose Estimation (Cue Stick)}{8}{section*.11}%
 \contentsline {subsection}{\numberline {2.4.2}Peak Detection Algorithm}{8}{subsection.2.4.2}%
-\contentsline {chapter}{\numberline {3}Requirements and tools}{11}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Functional and non-functional requirements}{11}{section.3.1}%
+\contentsline {chapter}{\numberline {3}Requirements and Tools}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Functional and Non-functional Requirements}{11}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Functional Requirements}{11}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Non-functional Requirements}{12}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Use cases}{12}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Description of tools}{13}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Hardware Tools}{13}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Software Tools}{13}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Methodology of design and implementation}{14}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Phase 1: Data Collection and Model Training}{14}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Phase 2: Vision Logic Implementation}{14}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Phase 3: Sensor Module Development}{14}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Phase 4: Integration and Testing}{15}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.2}Use Cases}{12}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Description of Tools}{14}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Hardware tools}{14}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Software tools}{14}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Methodology of design and implementation}{15}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Phase 1: Data collection and model training}{15}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Phase 2: Vision logic implementation}{15}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Phase 3: Sensor module development}{15}{subsection.3.4.3}%
 \contentsline {chapter}{\numberline {4}External specification}{17}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Internal specification}{19}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Verification and validation}{21}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusions}{23}{chapter.7}%
-\contentsline {chapter}{Bibliography}{25}{section*.16}%
-\contentsline {chapter}{Index of abbreviations and symbols}{29}{appendix*.18}%
-\contentsline {chapter}{Listings}{31}{appendix*.19}%
-\contentsline {chapter}{List of additional files in~electronic submission (if applicable)}{33}{appendix*.20}%
-\contentsline {chapter}{List of figures}{35}{appendix*.21}%
-\contentsline {chapter}{List of tables}{37}{appendix*.22}%
+\contentsline {section}{\numberline {4.1}Hardware and software requirements}{17}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Hardware Requirements}{17}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Software Requirements}{18}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Installation procedure}{18}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Desktop Installation}{18}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Mobile Installation}{19}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Activation procedure}{19}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Types of users}{20}{section.4.4}%
+\contentsline {section}{\numberline {4.5}User manual}{20}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Main Interface (Desktop)}{20}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Mobile Interface}{20}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}System administration}{20}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Security issues}{21}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Example of usage}{21}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Working scenarios}{21}{section.4.9}%
+\contentsline {chapter}{\numberline {5}Internal specification}{23}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Verification and validation}{25}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusions}{27}{chapter.7}%
+\contentsline {chapter}{Bibliography}{29}{section*.17}%
+\contentsline {chapter}{Index of abbreviations and symbols}{33}{appendix*.19}%
+\contentsline {chapter}{Listings}{35}{appendix*.20}%
+\contentsline {chapter}{List of additional files in~electronic submission (if applicable)}{37}{appendix*.21}%
+\contentsline {chapter}{List of figures}{39}{appendix*.22}%
+\contentsline {chapter}{List of tables}{41}{appendix*.23}%

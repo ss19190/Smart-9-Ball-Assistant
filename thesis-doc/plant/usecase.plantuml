@@ -1,0 +1,31 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+
+' Definicja aktora
+actor "Player" as player
+
+' Granice systemu
+rectangle "Smart Pool Assistant System" {
+    
+    ' Przypadki użycia zdefiniowane w rozdziale 3
+    usecase "UC-1: System Setup\n(Connect Android via ADB)" as UC1
+    usecase "UC-2: Aiming Assistance\n(Ghost Ball AR Visualization)" as UC2
+    usecase "UC-3: Stroke Execution\n& Biometric Analysis" as UC3
+    usecase "UC-4: Review History\n(Performance Stats)" as UC4
+
+}
+
+' Relacje (Aktor -> Przypadek Użycia)
+player --> UC1
+player --> UC2
+player --> UC3
+player --> UC4
+
+' Notatki wyjaśniające moduły (opcjonalne, ale ładnie wyglądają)
+note bottom of UC1 : Requires Phone (Sensor Module)\n& PC (Vision Module)
+note bottom of UC2 : Uses Computer Vision\n& Cue Detection
+note bottom of UC3 : Triggered by Accelerometer\nPeak Detection (F=ma)
+
+@enduml

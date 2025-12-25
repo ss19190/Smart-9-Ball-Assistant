@@ -102,6 +102,106 @@
     \field{year}{2013}
   \endentry
 
+  \entry{bib:adb}{online}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Android Developers}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Google}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{note}{Official Documentation}
+    \field{title}{Android Debug Bridge (adb)}
+    \verb{url}
+    \verb https://developer.android.com/tools/adb
+    \endverb
+    \field{year}{2025}
+    \field{urlday}{19}
+    \field{urlmonth}{02}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{bib:linear}{online}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Android Developers}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Google}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{note}{Official Documentation}
+    \field{title}{Motion sensors}
+    \verb{url}
+    \verb https://developer.android.com/develop/sensors-and-location/sensors/se
+    \verb nsors_motion
+    \endverb
+    \field{year}{2025}
+    \field{urlday}{19}
+    \field{urlmonth}{02}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{bib:opencv-library}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BG}{%
+         family={Bradski},
+         familyi={B\bibinitperiod},
+         given={G.},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \keyw{bibtex-import}
+    \strng{namehash}{BG1}
+    \strng{fullhash}{BG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{title}{{The OpenCV Library}}
+    \field{journaltitle}{Dr. Dobb's Journal of Software Tools}
+    \field{year}{2000}
+  \endentry
+
+  \entry{bib:python}{book}{}
+    \name{author}{1}{}{%
+      {{hash=DA}{%
+         family={Dadhich},
+         familyi={D\bibinitperiod},
+         given={Abhinav},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Packt Publishing}%
+    }
+    \strng{namehash}{DA1}
+    \strng{fullhash}{DA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{isbn}{978-17-882-9476-8}
+    \field{title}{Practical Computer Vision: Extract insightful information
+  from images using TensorFlow, Keras, and OpenCV}
+    \field{year}{2018}
+  \endentry
+
   \entry{bib:hawk-eye}{article}{}
     \name{author}{1}{}{%
       {{hash=DM}{%
@@ -124,6 +224,37 @@
     \field{journaltitle}{Journal of Global Research Computer Science \&
   Technology}
     \field{year}{2024}
+  \endentry
+
+  \entry{bib:roboflow}{online}{}
+    \name{author}{2}{}{%
+      {{hash=DB}{%
+         family={Dwyer},
+         familyi={D\bibinitperiod},
+         given={Brad},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Gallagher},
+         familyi={G\bibinitperiod},
+         given={James},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DBGJ1}
+    \strng{fullhash}{DBGJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{title}{Getting Started with Roboflow}
+    \verb{url}
+    \verb https://blog.roboflow.com/getting-started-with-roboflow/
+    \endverb
+    \field{year}{2023}
+    \field{urlday}{16}
+    \field{urlmonth}{03}
+    \field{urlyear}{2023}
   \endentry
 
   \entry{bib:sensors}{article}{}
@@ -166,6 +297,64 @@
     \field{volume}{20}
     \field{journaltitle}{Sensors}
     \field{year}{2020}
+  \endentry
+
+  \entry{bib:yolov8-ultralytics}{software}{}
+    \name{author}{3}{}{%
+      {{hash=JG}{%
+         family={Jocher},
+         familyi={J\bibinitperiod},
+         given={Glenn},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=CA}{%
+         family={Chaurasia},
+         familyi={C\bibinitperiod},
+         given={Ayush},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=QJ}{%
+         family={Qiu},
+         familyi={Q\bibinitperiod},
+         given={Jing},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JGCAQJ1}
+    \strng{fullhash}{JGCAQJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{title}{Ultralytics YOLOv8}
+    \verb{url}
+    \verb https://github.com/ultralytics/ultralytics
+    \endverb
+    \field{version}{8.0.0}
+    \field{year}{2023}
+  \endentry
+
+  \entry{bib:method}{online}{}
+    \name{author}{1}{}{%
+      {{hash=L}{%
+         family={Lumitex},
+         familyi={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{L1}
+    \strng{fullhash}{L1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Prototyping Methodology Steps on How to Use It Correctly}
+    \verb{url}
+    \verb https://www.lumitex.com/blog/prototyping-methodology
+    \endverb
+    \field{year}{2017}
+    \field{urlday}{01}
+    \field{urlmonth}{06}
+    \field{urlyear}{2017}
   \endentry
 
   \entry{bib:moore}{inproceedings}{}
@@ -214,6 +403,65 @@
     \field{urlday}{13}
     \field{urlmonth}{10}
     \field{urlyear}{2022}
+  \endentry
+
+  \entry{bib:android}{book}{}
+    \name{author}{1}{}{%
+      {{hash=SN}{%
+         family={Smyth},
+         familyi={S\bibinitperiod},
+         given={Neil},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Payload Media, Inc.}%
+    }
+    \strng{namehash}{SN1}
+    \strng{fullhash}{SN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{isbn}{978-1795654760}
+    \field{title}{Android Studio 3.3 Development Essentials - Android 9
+  Edition: Developing Android 9 Apps Using Android Studio 3.3, Java and Android
+  Jetpack}
+    \field{year}{2019}
+  \endentry
+
+  \entry{bib:yolo12}{software}{}
+    \name{author}{3}{}{%
+      {{hash=TY}{%
+         family={Tian},
+         familyi={T\bibinitperiod},
+         given={Yunjie},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=YQ}{%
+         family={Ye},
+         familyi={Y\bibinitperiod},
+         given={Qixiang},
+         giveni={Q\bibinitperiod},
+      }}%
+      {{hash=DD}{%
+         family={Doermann},
+         familyi={D\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TYYQDD1}
+    \strng{fullhash}{TYYQDD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{title}{YOLO12: Attention-Centric Real-Time Object Detectors}
+    \verb{url}
+    \verb https://github.com/sunsmarterjie/yolov12
+    \endverb
+    \field{year}{2025}
   \endentry
 \enddatalist
 \endinput

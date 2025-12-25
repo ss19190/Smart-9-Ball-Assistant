@@ -28,45 +28,45 @@ Warning--I didn't find a database entry for "bib:hawk_eye"
 Biblatex version: 3.19
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 8 entries,
+You've used 17 entries,
             6399 wiz_defined-function locations,
-            1246 strings with 10039 characters,
-and the built_in function-call counts, 47916 in all, are:
-= -- 3187
-> -- 1611
-< -- 285
-+ -- 1905
-- -- 991
-* -- 2981
-:= -- 5538
+            1295 strings with 11304 characters,
+and the built_in function-call counts, 100880 in all, are:
+= -- 6449
+> -- 3598
+< -- 633
++ -- 4069
+- -- 2248
+* -- 6244
+:= -- 11298
 add.period$ -- 0
-call.type$ -- 8
-change.case$ -- 111
-chr.to.int$ -- 116
-cite$ -- 14
-duplicate$ -- 4950
-empty$ -- 3980
-format.name$ -- 421
-if$ -- 9287
+call.type$ -- 17
+change.case$ -- 241
+chr.to.int$ -- 212
+cite$ -- 32
+duplicate$ -- 10690
+empty$ -- 8452
+format.name$ -- 951
+if$ -- 19495
 int.to.chr$ -- 0
-int.to.str$ -- 17
+int.to.str$ -- 41
 missing$ -- 0
-newline$ -- 214
-num.names$ -- 341
-pop$ -- 2469
+newline$ -- 459
+num.names$ -- 773
+pop$ -- 5538
 preamble$ -- 1
-purify$ -- 137
+purify$ -- 300
 quote$ -- 0
-skip$ -- 1463
+skip$ -- 3203
 stack$ -- 0
-substring$ -- 5415
-swap$ -- 1076
-text.length$ -- 249
-text.prefix$ -- 7
+substring$ -- 10626
+swap$ -- 2395
+text.length$ -- 537
+text.prefix$ -- 16
 top$ -- 1
-type$ -- 260
+type$ -- 566
 warning$ -- 0
-while$ -- 674
+while$ -- 1352
 width$ -- 0
-write$ -- 207
+write$ -- 443
 (There were 3 warnings)
