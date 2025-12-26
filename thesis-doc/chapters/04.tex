@@ -172,16 +172,34 @@ The player wants to practice a difficult cut shot into the corner pocket.
 
 This section illustrates the system in action with screenshots from the prototype.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
-    % \includegraphics[width=0.8\textwidth]{figures/screenshot_ar.png}
-    \caption{Scenario A: The Vision Assistant visualizing a valid collision. The Ghost Ball (white circle) and predicted paths (yellow/green) are displayed.}
-    \label{fig:scenario_ar}
+    % Pierwszy obrazek
+    \begin{subfigure}[b]{0.8\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{./graf/example.png}
+        \caption{Visualization on a small table.}
+        \label{fig:scenario_a_1}
+    \end{subfigure}
+    
+    \vspace{0.5cm} % Odstęp
+    
+    % Drugi obrazek
+    \begin{subfigure}[b]{0.8\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{./graf/example2.png}
+        \caption{Visualization on a standard pool table.}
+        \label{fig:scenario_a_2}
+    \end{subfigure}
+    
+    % Główny podpis dla obu
+    \caption{Scenario A: The Vision Assistant interface visualizing a valid collision. The system calculates and displays the predicted outcome in real-time.}
+    \label{fig:scenario_a_full}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
-    % \includegraphics[width=0.8\textwidth]{figures/screenshot_graph.png}
+    \includegraphics[width=0.8\textwidth]{./graf/strokeExample.png}
     \caption{Scenario B: Stroke Analysis. The system has detected a shot and displays the Acceleration graph (Red), Force metric (Orange), and Wrist Rotation (Purple).}
     \label{fig:scenario_graph}
 \end{figure}

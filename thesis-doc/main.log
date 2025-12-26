@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.12.25)  25 DEC 2025 17:15
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.12.25)  25 DEC 2025 19:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1807,13 +1807,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [20]
+File: ./graf/example.png Graphic file (type bmp)
+<./graf/example.png>
+File: ./graf/example2.png Graphic file (type bmp)
+<./graf/example2.png>
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) (chapters/05.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1822,6 +1820,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [21]
+File: ./graf/strokeExample.png Graphic file (type bmp)
+<./graf/strokeExample.png>
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1829,11 +1833,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[22]
-Chapter 5.
-[23
-
-]) (chapters/06.tex
+[22] (chapters/05.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1841,12 +1841,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[24]
-Chapter 6.
-) (chapters/07.tex [25
+[23]
 
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[24
 
 ]
+Chapter 5.
+[25]) (chapters/06.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1855,8 +1862,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [26]
-Chapter 7.
-) [27
+Chapter 6.
+) (chapters/07.tex [27
+
 
 ]
 
@@ -1866,7 +1874,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[28
+[28]
+Chapter 7.
+) [29
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[30
 
 ]
 Overfull \hbox (10.66753pt too wide) in paragraph at lines 181--181
@@ -1882,7 +1902,7 @@ Overfull \hbox (22.02751pt too wide) in paragraph at lines 181--181
 6/2017). 
  []
 
-[29
+[31
 
 
 ]
@@ -1899,9 +1919,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[30] [31
+[32] [33
 
-] [32] (chapters/08.tex) (chapters/09.tex [33
+] [34] (chapters/08.tex) (chapters/09.tex [35
 
 ]
 
@@ -1911,19 +1931,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[34
-
-]) (chapters/10.tex [35]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
 [36
 
-]) [37]
+]) (chapters/10.tex [37]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1933,11 +1943,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [38
 
-] (main.lof)
-\tf@lof=\write7
-\openout7 = `main.lof'.
-
- [39]
+]) [39]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1947,11 +1953,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [40
 
+] (main.lof)
+\tf@lof=\write7
+\openout7 = `main.lof'.
+
+ [41]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[42
+
 ] (main.lot)
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
- [41] (main.aux)
+ [43] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1972,12 +1992,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 50597 strings out of 409616
- 1118679 string characters out of 5773991
- 2059078 words of memory out of 5000000
- 71955 multiletter control sequences out of 15000+600000
- 569113 words of font info for 102 fonts, out of 8000000 for 9000
+ 50639 strings out of 409616
+ 1119693 string characters out of 5773991
+ 2059349 words of memory out of 5000000
+ 71993 multiletter control sequences out of 15000+600000
+ 569121 words of font info for 103 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,11n,96p,1925b,5556s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (47 pages).
+Output written on main.pdf (49 pages).

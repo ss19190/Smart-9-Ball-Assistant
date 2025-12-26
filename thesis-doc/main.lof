@@ -10,10 +10,10 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Use case diagram}}{13}{figure.caption.12}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Scenario A: The Vision Assistant visualizing a valid collision. The Ghost Ball (white circle) and predicted paths (yellow/green) are displayed.}}{22}{figure.caption.13}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Scenario B: Stroke Analysis. The system has detected a shot and displays the Acceleration graph (Red), Force metric (Orange), and Wrist Rotation (Purple).}}{22}{figure.caption.14}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Scenario A: The Vision Assistant interface visualizing a valid collision. The system calculates and displays the predicted outcome in real-time.}}{22}{figure.caption.13}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Scenario B: Stroke Analysis. The system has detected a shot and displays the Acceleration graph (Red), Force metric (Orange), and Wrist Rotation (Purple).}}{23}{figure.caption.14}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Pseudocode in \texttt {listings}.}}{24}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Pseudocode in \texttt {listings}.}}{26}{figure.caption.15}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

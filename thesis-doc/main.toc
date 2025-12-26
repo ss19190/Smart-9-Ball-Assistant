@@ -55,13 +55,13 @@
 \contentsline {section}{\numberline {4.6}System administration}{20}{section.4.6}%
 \contentsline {section}{\numberline {4.7}Security issues}{21}{section.4.7}%
 \contentsline {section}{\numberline {4.8}Example of usage}{21}{section.4.8}%
-\contentsline {section}{\numberline {4.9}Working scenarios}{21}{section.4.9}%
-\contentsline {chapter}{\numberline {5}Internal specification}{23}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Verification and validation}{25}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusions}{27}{chapter.7}%
-\contentsline {chapter}{Bibliography}{29}{section*.17}%
-\contentsline {chapter}{Index of abbreviations and symbols}{33}{appendix*.19}%
-\contentsline {chapter}{Listings}{35}{appendix*.20}%
-\contentsline {chapter}{List of additional files in~electronic submission (if applicable)}{37}{appendix*.21}%
-\contentsline {chapter}{List of figures}{39}{appendix*.22}%
-\contentsline {chapter}{List of tables}{41}{appendix*.23}%
+\contentsline {section}{\numberline {4.9}Working scenarios}{22}{section.4.9}%
+\contentsline {chapter}{\numberline {5}Internal specification}{25}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Verification and validation}{27}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusions}{29}{chapter.7}%
+\contentsline {chapter}{Bibliography}{31}{section*.17}%
+\contentsline {chapter}{Index of abbreviations and symbols}{35}{appendix*.19}%
+\contentsline {chapter}{Listings}{37}{appendix*.20}%
+\contentsline {chapter}{List of additional files in~electronic submission (if applicable)}{39}{appendix*.21}%
+\contentsline {chapter}{List of figures}{41}{appendix*.22}%
+\contentsline {chapter}{List of tables}{43}{appendix*.23}%
