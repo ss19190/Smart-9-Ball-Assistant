@@ -199,7 +199,41 @@ This section illustrates the system in action with screenshots from the prototyp
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{./graf/strokeExample.png}
-    \caption{Scenario B: Stroke Analysis. The system has detected a shot and displays the Acceleration graph (Red), Force metric (Orange), and Wrist Rotation (Purple).}
-    \label{fig:scenario_graph}
+    % --- Rząd 1: Widok Desktop ---
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{./graf/sensorExample.png}
+        \caption{Desktop interface in a state before a stroke.}
+        \label{fig:scen_b_desktop_idle}
+    \end{subfigure}
+    \hfill % Rozpycha obrazki na boki
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{./graf/strokeExample.png}
+        \caption{Desktop interface showing impact analysis showing max force of 89 N.}
+        \label{fig:scen_b_desktop_impact}
+    \end{subfigure}
+
+    \vspace{0.5cm} % Odstęp między rzędami
+
+    % --- Rząd 2: Widok Mobile ---
+    % Uwaga: Dla screenshotów z telefonu lepiej sterować wysokością [height=], 
+    % żeby nie były za wielkie w pionie.
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[height=5.5cm]{./graf/phone1.png}
+        \caption{Mobile app in disconnected state.}
+        \label{fig:scen_b_mobile_disco}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[height=5.5cm]{./graf/phone2.png}
+        \caption{Mobile app connected, streaming sensor data.}
+        \label{fig:scen_b_mobile_conn}
+    \end{subfigure}
+
+    % Główny podpis dla całego rysunku
+    \caption{Scenario B: Stroke Analysis workflow. The top row shows the PC application analyzing the stroke data, where (a) is pre-hit and (b) is post-hit showing impact metrics. The bottom row shows the corresponding state of the mobile sensor app (c, d).}
+    \label{fig:scenario_b_full}
 \end{figure}

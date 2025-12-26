@@ -357,6 +357,51 @@
     \field{urlyear}{2017}
   \endentry
 
+  \entry{bib:patterns}{book}{}
+    \name{author}{4}{}{%
+      {{hash=MZ}{%
+         family={Mednieks},
+         familyi={M\bibinitperiod},
+         given={Zigurd},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=DL}{%
+         family={Dornin},
+         familyi={D\bibinitperiod},
+         given={Laird},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=MGB}{%
+         family={Meike},
+         familyi={M\bibinitperiod},
+         given={G.\bibnamedelima Blake},
+         giveni={G\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=NM}{%
+         family={Nakamura},
+         familyi={N\bibinitperiod},
+         given={Masumi},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {O'Reilly Media, Inc.}%
+    }
+    \strng{namehash}{MZ+1}
+    \strng{fullhash}{MZDLMGBNM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{isbn}{978-14-493-5847-1}
+    \field{title}{Programming Android, 2nd Edition: Java Programming for the
+  New Generation of Mobile Devices}
+    \list{location}{1}{%
+      {Sebastopol, CA, USA}%
+    }
+    \field{year}{2012}
+  \endentry
+
   \entry{bib:moore}{inproceedings}{}
     \name{author}{1}{}{%
       {{hash=MAD}{%
@@ -403,6 +448,41 @@
     \field{urlday}{13}
     \field{urlmonth}{10}
     \field{urlyear}{2022}
+  \endentry
+
+  \entry{bib:anatomical}{article}{}
+    \name{author}{3}{}{%
+      {{hash=PS}{%
+         family={Plagenhoef},
+         familyi={P\bibinitperiod},
+         given={Stanley},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=EFG}{%
+         family={Evans},
+         familyi={E\bibinitperiod},
+         given={F.\bibnamedelima Gaynor},
+         giveni={F\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+      {{hash=AT}{%
+         family={Abdelnour},
+         familyi={A\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PSEFGAT1}
+    \strng{fullhash}{PSEFGAT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{number}{2}
+    \field{pages}{169 \bibrangedash  178}
+    \field{title}{Anatomical Data for Analyzing Human Motion}
+    \field{volume}{54}
+    \field{journaltitle}{RESEARCH QUARTERLY FOR EXERCISE AND SPORT}
+    \field{year}{1983}
   \endentry
 
   \entry{bib:android}{book}{}

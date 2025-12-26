@@ -1,66 +1,161 @@
-\chapter{Internal specification}
+\chapter{Internal Specification}
 
-\begin{itemize}
-\item concept of the system
-\item system architecture
-\item description of data structures (and data bases)
-\item components, modules, libraries, resume of important classes (if used)
-\item resume of important algorithms (if used)
-\item details of implementation of selected parts
-\item applied design patterns
-\item UML diagrams
-\end{itemize}
+This chapter presents the technical details of the solution, including the system architecture, key data structures, and a description of the implementation of the most critical modules in Python and Java.
 
+\section{System Concept}
+The system concept is based on the fusion of sensory and visual data to assist in playing billiards. The system consists of:
+\begin{enumerate}
+    \item \textbf{Vision Module (AI):} Analyzes the camera feed, detects billiard balls and the cue, and subsequently calculates the "Ghost Ball"—the predicted position of the cue ball at the moment of impact.
+    \item \textbf{Telemetry Module:} Analyzes the force of the impact and the smoothness of the player's movement based on IMU sensor data (accelerometer, gyroscope) transmitted via USB cable from a smartphone.
+\end{enumerate}
 
+\section{System Architecture}
+The system operates on a client-server architecture. The smartphone (Client) collects data and transmits it via TCP to the workstation (Server), which processes the camera image in parallel.
 
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
-% To use the minted package, import the package:                    %
-% \usepackage{minted}                                               %
-% and compile with the shell escape                                 %
-% pdflatex -shell-escape main                                       %
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
-
-
-Use special environments for inline code, eg  \lstinline|int a;| (package \texttt{listings})% or  \mintinline{C++}|int a;| (package \texttt{minted})
-. Longer parts of code put in the figure environment, eg. code in Fig. \ref{fig:pseudocode:listings}% and Fig. \ref{fig:pseudocode:minted}
-. Very long listings–move to an appendix.
-
-
-\clearpage
-\begin{figure}
-\centering
-\begin{lstlisting}
-class test : public basic
-{
-    public:
-      test (int a);
-      friend std::ostream operator<<(std::ostream & s, 
-                                     const test & t);
-    protected:
-      int _a;  
-      
-};
-\end{lstlisting}
-\caption{Pseudocode in \texttt{listings}.}
-\label{fig:pseudocode:listings}
+\begin{figure}[htbp]
+    \centering
+    % Ensure the path exists or remove the line below to compile without the image
+    \includegraphics[width=0.9\textwidth]{./graf/arch.png}
+    \caption{System Architecture Diagram and logic flow.}
+    \label{fig:sys_arch}
 \end{figure}
 
-%\begin{figure}
-%\centering
-%\begin{minted}[linenos,frame=lines]{c++}
-%class test : public basic
-%{
-%    public:
-%      test (int a);
-%      friend std::ostream operator<<(std::ostream & s, 
-%                                     const test & t);
-%    protected:
-%      int _a;  
-%      
-%};
-%\end{minted}
-%\caption{Pseudocode in \texttt{minted}.}
-%\label{fig:pseudocode:minted}
-%\end{figure}
+The main unit (PC) runs two independent processes (Python scripts):
+\begin{itemize}
+    \item \textbf{Vision Process (\texttt{bilard.py}):} Utilizes the \texttt{inference} and \texttt{supervision} libraries for object detection and vector calculations.
+    \item \textbf{Sensor Server (\texttt{sensors.py}):} A multi-threaded TCP server that receives JSON data, parses it, and visualizes graphs using the \texttt{OpenCV} library.
+\end{itemize}
 
+\section{Description of Data Structures}
 
+\subsection{Network Payload (JSON)}
+Communication between the Android device and the PC is handled using the JSON format. A key aspect is the transmission of linear acceleration (gravity excluded) and angular velocity.
+
+\begin{figure}[htbp]
+\centering
+\begin{lstlisting}[
+    language=Java,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    captionpos=b
+]
+// JSON format generated in MainActivity.java
+String json = String.format(Locale.US,
+    "{\"acc_x\": %.4f, \"acc_y\": %.4f, \"acc_z\": %.4f, " +
+    "\"gyro_x\": %.4f, \"gyro_y\": %.4f, \"gyro_z\": %.4f}",
+    ax, ay, az, gx, gy, gz);
+\end{lstlisting}
+\caption{JSON structure creation in Java (Android).}
+\label{fig:code:json_payload}
+\end{figure}
+
+\subsection{Physics Vectors (Python)}
+The vision module operates on vectors from the \texttt{NumPy} library to calculate trajectories.
+
+\begin{lstlisting}[
+    language=Python,
+    basicstyle=\ttfamily\small,
+    breaklines=true
+]
+# Position representation in bilard.py
+cue_ball_center = np.array([x, y], dtype=np.float32)
+aim_vector = normalize_vector(tip_pos - handle_pos)
+\end{lstlisting}
+
+\section{Components and Modules}
+
+\subsection{Mobile Module (Android)}
+The mobile application was developed in Java. The key component is the \texttt{SensorManager}. The \texttt{TYPE\_LINEAR\_ACCELERATION} sensor was utilized instead of the standard accelerometer to eliminate the influence of gravity on the impact force measurement.
+
+\begin{lstlisting}[
+    language=Java,
+    basicstyle=\ttfamily\small,
+    breaklines=true
+]
+// MainActivity.java - sensor initialization
+linearAcceleration = sensorManager.getDefaultSensor(
+    Sensor.TYPE_LINEAR_ACCELERATION
+);
+\end{lstlisting}
+
+\subsection{Vision Module (Computer Vision)}
+This module utilizes two separate neural network models hosted on the Roboflow platform:
+\begin{itemize}
+    \item \textbf{Ball Detection:} Model \texttt{ball-detection-bzirz/3} for localizing billiard balls.
+    \item \textbf{Cue Detection:} Model \texttt{cue-detection-ciazj/3} for detecting key points of the cue (tip, handle).
+\end{itemize}
+
+\section{Overview of Key Algorithms}
+
+\subsection{Ghost Ball Algorithm}
+The algorithm calculates the "Ghost Ball" position (the point of collision). It works by projecting the aim vector onto the vector connecting the balls.
+
+\begin{figure}[htbp]
+\centering
+\begin{lstlisting}[
+    language=Python,
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    captionpos=b
+]
+def find_ghost_ball_position(cue_ball_pos, aim_vector, target_ball_pos):
+    vec_to_target = target_ball_pos - cue_ball_pos
+    projection_length = np.dot(vec_to_target, aim_vector)
+    
+    # Calculating the closest point on the shot line
+    closest_point = cue_ball_pos + aim_vector * projection_length
+    perp_dist = np.linalg.norm(target_ball_pos - closest_point)
+    
+    # Correction for ball radius (backward offset)
+    if perp_dist < BALL_DIAMETER_PX:
+        back_offset = math.sqrt(BALL_DIAMETER_PX**2 - perp_dist**2)
+        dist_impact = projection_length - back_offset
+        return cue_ball_pos + aim_vector * dist_impact
+\end{lstlisting}
+\caption{Vector-based Ghost Ball calculation implementation.}
+\label{fig:code:ghost_ball}
+\end{figure}
+
+\subsection{Impact Force Calculation (Physics)}
+In the \texttt{sensors.py} module, the impact force estimation is implemented based on Newton's Second Law of Motion ($F=ma$). System dynamically calculates the effective mass ($m_{arm}$) based on anthropometric data derived from Plagenhoef et al. \cite{bib:anatomical}.
+
+The effective arm mass is determined by summing the percentages of total body weight for the hand, forearm, and upper arm. According to the tables presented in \cite{bib:anatomical}, these values are:
+\begin{itemize}
+    \item \textbf{Male:} $0.65\% + 1.87\% + 3.25\% = 5.77\%$ of the total body weight.
+    \item \textbf{Female:} $0.50\% + 1.57\% + 2.90\% = 4.97\%$ of the total body weight.
+\end{itemize}
+
+The system reads the user's attributes (weight and gender) from a configuration file (\texttt{config.json}) to compute the personalized arm mass. The force is calculated as follows:
+
+\begin{equation}
+    F_{hit} = a_{total} \cdot m_{arm}
+\end{equation}
+
+Additionally, the algorithm implements a peak detection mechanism that identifies the second peak in the acceleration signal, distinguishing the actual strike from the backswing phase.
+\section{Implementation Details}
+
+\subsection{Thread Synchronization (Python)}
+The TCP server in \texttt{sensors.py} operates in a separate thread (\texttt{daemon=True}) to avoid blocking the interface drawing loop (GUI) in the OpenCV library, if someone would like to run both moduls at the same time.
+
+\begin{lstlisting}[
+    language=Python,
+    basicstyle=\ttfamily\small,
+    breaklines=true
+]
+# sensors.py - Threading implementation
+threading.Thread(target=tcp_server_thread, daemon=True).start()
+
+while True:
+    # Main GUI Loop (OpenCV)
+    cv2.imshow("Hit Analysis", window)
+    if cv2.waitKey(20) & 0xFF == ord('q'): break
+\end{lstlisting}
+
+\subsection{Network Handling (Android)}
+In the Android application, a separate thread was employed for network operations to avoid the \texttt{NetworkOnMainThreadException}. Data is transmitted at a frequency of approximately 100Hz (every 10ms), ensuring smooth physics representation.
+
+\section{Applied Design Patterns}
+\begin{itemize}
+    \item \textbf{Listener Pattern (Android):} The implementation of the \texttt{SensorEventListener} interface allows for reactive handling of sensor value changes only when they occur. \cite{bib:patterns}
+    \item \textbf{Producer-Consumer:} The TCP thread (Producer) receives data and updates the global \texttt{sensor\_data} structure, which is subsequently consumed by the main visualization loop.\cite{bib:patterns}
+\end{itemize}

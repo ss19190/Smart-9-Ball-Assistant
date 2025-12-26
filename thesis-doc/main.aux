@@ -29,7 +29,7 @@
 \citation{bib:hawk_eye}
 \abx@aux@cite{0}{bib:hawk_eye}
 \abx@aux@segm{0}{0}{bib:hawk_eye}
-\HyPL@Entry{6<</S/D>>}
+\HyPL@Entry{8<</S/D>>}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -157,34 +157,73 @@
 \newlabel{sub@fig:scenario_a_2}{{b}{22}{Visualization on a standard pool table}{figure.caption.13}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Scenario A: The Vision Assistant interface visualizing a valid collision. The system calculates and displays the predicted outcome in real-time.}}{22}{figure.caption.13}\protected@file@percent }
 \newlabel{fig:scenario_a_full}{{4.1}{22}{Scenario A: The Vision Assistant interface visualizing a valid collision. The system calculates and displays the predicted outcome in real-time}{figure.caption.13}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Scenario B: Stroke Analysis. The system has detected a shot and displays the Acceleration graph (Red), Force metric (Orange), and Wrist Rotation (Purple).}}{23}{figure.caption.14}\protected@file@percent }
-\newlabel{fig:scenario_graph}{{4.2}{23}{Scenario B: Stroke Analysis. The system has detected a shot and displays the Acceleration graph (Red), Force metric (Orange), and Wrist Rotation (Purple)}{figure.caption.14}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Internal specification}{25}{chapter.5}\protected@file@percent }
+\newlabel{fig:scen_b_desktop_idle}{{4.2a}{23}{Desktop interface in a state before a stroke}{figure.caption.14}{}}
+\newlabel{sub@fig:scen_b_desktop_idle}{{a}{23}{Desktop interface in a state before a stroke}{figure.caption.14}{}}
+\newlabel{fig:scen_b_desktop_impact}{{4.2b}{23}{Desktop interface showing impact analysis showing max force of 89 N}{figure.caption.14}{}}
+\newlabel{sub@fig:scen_b_desktop_impact}{{b}{23}{Desktop interface showing impact analysis showing max force of 89 N}{figure.caption.14}{}}
+\newlabel{fig:scen_b_mobile_disco}{{4.2c}{23}{Mobile app in disconnected state}{figure.caption.14}{}}
+\newlabel{sub@fig:scen_b_mobile_disco}{{c}{23}{Mobile app in disconnected state}{figure.caption.14}{}}
+\newlabel{fig:scen_b_mobile_conn}{{4.2d}{23}{Mobile app connected, streaming sensor data}{figure.caption.14}{}}
+\newlabel{sub@fig:scen_b_mobile_conn}{{d}{23}{Mobile app connected, streaming sensor data}{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Scenario B: Stroke Analysis workflow. The top row shows the PC application analyzing the stroke data, where (a) is pre-hit and (b) is post-hit showing impact metrics. The bottom row shows the corresponding state of the mobile sensor app (c, d).}}{23}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:scenario_b_full}{{4.2}{23}{Scenario B: Stroke Analysis workflow. The top row shows the PC application analyzing the stroke data, where (a) is pre-hit and (b) is post-hit showing impact metrics. The bottom row shows the corresponding state of the mobile sensor app (c, d)}{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Internal Specification}{25}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Pseudocode in \texttt  {listings}.}}{26}{figure.caption.15}\protected@file@percent }
-\newlabel{fig:pseudocode:listings}{{5.1}{26}{Pseudocode in \texttt {listings}}{figure.caption.15}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Verification and validation}{27}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}System Concept}{25}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}System Architecture}{25}{section.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces System Architecture Diagram and logic flow.}}{26}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:sys_arch}{{5.1}{26}{System Architecture Diagram and logic flow}{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Description of Data Structures}{26}{section.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Network Payload (JSON)}{26}{subsection.5.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces JSON structure creation in Java (Android).}}{26}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:code:json_payload}{{5.2}{26}{JSON structure creation in Java (Android)}{figure.caption.16}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Physics Vectors (Python)}{26}{subsection.5.3.2}\protected@file@percent }
+\citation{bib:anatomical}
+\abx@aux@cite{0}{bib:anatomical}
+\abx@aux@segm{0}{0}{bib:anatomical}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Components and Modules}{27}{section.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Mobile Module (Android)}{27}{subsection.5.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Vision Module (Computer Vision)}{27}{subsection.5.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Overview of Key Algorithms}{27}{section.5.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Ghost Ball Algorithm}{27}{subsection.5.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Vector-based Ghost Ball calculation implementation.}}{27}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:code:ghost_ball}{{5.3}{27}{Vector-based Ghost Ball calculation implementation}{figure.caption.17}{}}
+\citation{bib:anatomical}
+\abx@aux@cite{0}{bib:anatomical}
+\abx@aux@segm{0}{0}{bib:anatomical}
+\citation{bib:patterns}
+\abx@aux@cite{0}{bib:patterns}
+\abx@aux@segm{0}{0}{bib:patterns}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Impact Force Calculation (Physics)}{28}{subsection.5.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.6}Implementation Details}{28}{section.5.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.1}Thread Synchronization (Python)}{28}{subsection.5.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.2}Network Handling (Android)}{28}{subsection.5.6.2}\protected@file@percent }
+\citation{bib:patterns}
+\abx@aux@cite{0}{bib:patterns}
+\abx@aux@segm{0}{0}{bib:patterns}
+\@writefile{toc}{\contentsline {section}{\numberline {5.7}Applied Design Patterns}{29}{section.5.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Verification and validation}{31}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces A caption of a table is \textbf  {above} it.}}{28}{table.caption.16}\protected@file@percent }
-\newlabel{id:tab:wyniki}{{6.1}{28}{A caption of a table is \textbf {above} it}{table.caption.16}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{29}{chapter.7}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces A caption of a table is \textbf  {above} it.}}{32}{table.caption.18}\protected@file@percent }
+\newlabel{id:tab:wyniki}{{6.1}{32}{A caption of a table is \textbf {above} it}{table.caption.18}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{33}{chapter.7}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{31}{section*.17}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Index of abbreviations and symbols}{35}{appendix*.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{35}{section*.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Index of abbreviations and symbols}{39}{appendix*.21}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{Listings}{37}{appendix*.20}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Listings}{41}{appendix*.22}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{List of additional files in~electronic submission (if applicable)}{39}{appendix*.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{List of additional files in~electronic submission (if applicable)}{43}{appendix*.23}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{List of figures}{41}{appendix*.22}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{List of tables}{43}{appendix*.23}\protected@file@percent }
-\abx@aux@read@bbl@mdfivesum{D72B5AC95CBB2DEFA8D826A782767FE5}
+\@writefile{toc}{\contentsline {chapter}{List of figures}{45}{appendix*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{List of tables}{47}{appendix*.25}\protected@file@percent }
+\abx@aux@read@bbl@mdfivesum{C605434085292C8E4F303E5479019100}
 \abx@aux@defaultrefcontext{0}{bib:ghost-ball}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:english}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:pool-live}{nty/global//global/global}
@@ -197,8 +236,10 @@
 \abx@aux@defaultrefcontext{0}{bib:sensors}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:yolov8-ultralytics}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:method}{nty/global//global/global}
+\abx@aux@defaultrefcontext{0}{bib:patterns}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:moore}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:blast}{nty/global//global/global}
+\abx@aux@defaultrefcontext{0}{bib:anatomical}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:android}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:yolo12}{nty/global//global/global}
 \abx@aux@defaultlabelprefix{0}{bib:ghost-ball}{}
@@ -213,8 +254,10 @@
 \abx@aux@defaultlabelprefix{0}{bib:sensors}{}
 \abx@aux@defaultlabelprefix{0}{bib:yolov8-ultralytics}{}
 \abx@aux@defaultlabelprefix{0}{bib:method}{}
+\abx@aux@defaultlabelprefix{0}{bib:patterns}{}
 \abx@aux@defaultlabelprefix{0}{bib:moore}{}
 \abx@aux@defaultlabelprefix{0}{bib:blast}{}
+\abx@aux@defaultlabelprefix{0}{bib:anatomical}{}
 \abx@aux@defaultlabelprefix{0}{bib:android}{}
 \abx@aux@defaultlabelprefix{0}{bib:yolo12}{}
-\gdef \@abspage@last{49}
+\gdef \@abspage@last{55}
