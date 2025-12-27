@@ -75,7 +75,7 @@ The installation process is twofold, involving the desktop server and the mobile
 \begin{enumerate}
     \item \textbf{Enable Developer Mode:} On the Android phone, go to \textbf{Settings} $\rightarrow$ \textbf{About Phone}. Find the "Build Number" entry and tap it 7 times repeatedly until you see a message "You are now a developer!".
 
-    \item \textbf{Enable USB Debugging:} Go back to the main Settings menu (or System $\rightarrow$ Advanced), open \textbf{Developer Options}, and toggle the switch for \textbf{USB Debugging} to ON. Confirm the security prompt if requested.
+    \item \textbf{Enable USB Debugging:} Go back to the main Settings menu (or System $\rightarrow$ Advanced), open \textbf{Developer Options}, and turn on the switch for \textbf{USB Debugging} to ON. Confirm the security prompt if requested.
     
     
 
@@ -92,7 +92,7 @@ To start a training session, the user must follow a specific sequence of steps t
 
 \begin{enumerate}
     \item \textbf{Connect Hardware:} Plug the webcam into the PC and connect the Android phone via USB.
-    \item \textbf{Setup ADB Forwarding:} This step is crucial for the phone to communicate with the PC via localhost. Run the following command in the terminal:
+    \item \textbf{Setup ADB Forwarding:} This step is important for the phone to communicate with the PC via localhost. Run the following command in the terminal:
     \begin{lstlisting}[language=bash]
     adb reverse tcp:5555 tcp:5555
     \end{lstlisting}
@@ -165,7 +165,7 @@ The player wants to practice a difficult cut shot into the corner pocket.
     \item The player adjusts their stance until the Green Line points directly into the pocket.
     \item The player executes the stroke.
     \item The \texttt{sensors.py} script detects a peak acceleration of $25 m/s^2$.
-    \item The system saves a snapshot of the stroke metrics, allowing the player to see if they maintained wrist stability during the shot.
+    \item The system saves a snapshot of the stroke metrics, allowing the player to see if they maintained wrist steadiness during the shot.
 \end{enumerate}
 
 \section{Working scenarios}

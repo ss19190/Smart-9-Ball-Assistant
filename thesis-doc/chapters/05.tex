@@ -29,7 +29,7 @@ The main unit (PC) runs two independent processes (Python scripts):
 \section{Description of Data Structures}
 
 \subsection{Network Payload (JSON)}
-Communication between the Android device and the PC is handled using the JSON format. A key aspect is the transmission of linear acceleration (gravity excluded) and angular velocity.
+Communication between the Android device and the PC is handled using the JSON format. A main feature is the transmission of linear acceleration (gravity excluded) and angular velocity.
 
 \begin{figure}[htbp]
 \centering
@@ -50,7 +50,7 @@ String json = String.format(Locale.US,
 \end{figure}
 
 \subsection{Physics Vectors (Python)}
-The vision module operates on vectors from the \texttt{NumPy} library to calculate trajectories.
+The vision module operates on vectors from the \texttt{NumPy} library to compute trajectories.
 
 \begin{lstlisting}[
     language=Python,
@@ -79,10 +79,11 @@ linearAcceleration = sensorManager.getDefaultSensor(
 \end{lstlisting}
 
 \subsection{Vision Module (Computer Vision)}
-This module utilizes two separate neural network models hosted on the Roboflow platform:
+This module utilizes two separate neural network models hosted on the Roboflow platform, optimized for instant inference:
+
 \begin{itemize}
-    \item \textbf{Ball Detection:} Model \texttt{ball-detection-bzirz/3} for localizing billiard balls.
-    \item \textbf{Cue Detection:} Model \texttt{cue-detection-ciazj/3} for detecting key points of the cue (tip, handle).
+    \item \textbf{Ball Detection:} A generic object detection model (version \texttt{ball-detection-bzirz/3}) based on the state-of-the-art \textbf{YOLOv12} \cite{bib:yolo12} architecture. It is trained to localize billiard balls and classifies objects into two distinct classes: \texttt{cue ball} and \texttt{other}. The model works on a standard input resolution ($640 \times 640$) and outputs bounding box coordinates.
+    \item \textbf{Cue Detection:} A pose estimation model (version \texttt{cue-detection-ciazj/3}) utilizing the \textbf{YOLOv8-pose} \cite{bib:yolov8-ultralytics} architecture. Unlike the ball detector, this model outputs semantic keypoints representing the \texttt{tip} and \texttt{handle}, necessary for calculating the aiming vector.
 \end{itemize}
 
 \section{Overview of Key Algorithms}
@@ -156,6 +157,6 @@ In the Android application, a separate thread was employed for network operation
 
 \section{Applied Design Patterns}
 \begin{itemize}
-    \item \textbf{Listener Pattern (Android):} The implementation of the \texttt{SensorEventListener} interface allows for reactive handling of sensor value changes only when they occur. \cite{bib:patterns}
+    \item \textbf{Listener Pattern (Android):} The implementation if the \texttt{SensorEventListener} interface enables reactive handling of sensor value changes only when they occur. \cite{bib:patterns}
     \item \textbf{Producer-Consumer:} The TCP thread (Producer) receives data and updates the global \texttt{sensor\_data} structure, which is subsequently consumed by the main visualization loop.\cite{bib:patterns}
 \end{itemize}

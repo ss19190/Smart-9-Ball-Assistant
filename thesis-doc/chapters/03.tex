@@ -1,6 +1,6 @@
 \chapter{Requirements and Tools}
 
-This chapter details the functional and non-functional requirements of the "smart pool assistant" and presents the technological stack selected for implementation. It also describes the system's use cases and the methodology adopted for the design and development process.
+This chapter details the functional and non-functional requirements of the "smart pool assistant" and presents the technological stack selected for implementation. It also describes the system's use cases and the method adopted for the design and development process.
 
 \section{Functional and Non-functional Requirements}
 
@@ -38,7 +38,7 @@ The non-functional requirements define the quality attributes of the system:
 
 \section{Use Cases}
 
-The interaction between the user (player) and the system is modeled through several key use cases. The primary actor is the player, who interacts with both the physical equipment (phone, cue) and the software (desktop app).
+The interaction between the user (player) and the system is shown by a number of essential use cases. The primary actor is the player, who interacts with both the physical equipment (phone, cue) and the software (desktop app).
 
 \begin{figure}[H]
 \centering
@@ -57,23 +57,23 @@ The main use cases are defined as follows:
 \end{enumerate}
 
 \section{Description of Tools}
-The project leverages a modern technology stack combining computer vision, AI, and mobile development.
+The project applies a modern technology stack combining computer vision, AI, and mobile development.
 
 \subsection{Hardware tools}
 \begin{itemize}
     \item \textbf{Webcam:} A standard HD webcam is used for video input. It is mounted in a "top-down" configuration to minimize perspective distortion.
-    \item \textbf{Android smartphone:} A device equipped with an inertial measurement unit (IMU). It serves as the telemetry unit attached to the player's cue.
+    \item \textbf{Android smartphone:} A device equipped with an inertial measurement unit (IMU). It works as the telemetry unit attached to the player's cue.
     \item \textbf{Workstation (PC):} A computer with access to the internet and with installed Python 3.x environment to run the vision server and process data.
 \end{itemize}
 
 \subsection{Software tools}
 \begin{itemize}
-    \item \textbf{Python 3.x:} The core programming language for the backend server and vision processing. \cite{bib:python}
-    \item \textbf{OpenCV (open source computer vision library):} Used for image pre-processing, drawing the AR visualization (lines, circles), and rendering the real-time telemetry graphs. \cite{bib:opencv-library}
+    \item \textbf{Python 3.x:} The main programming language for the backend server and vision processing. \cite{bib:python}
+    \item \textbf{OpenCV (open source computer vision library):} Used for image pre-processing, drawing the AR visualization (lines, circles), and rendering the live telemetry graphs. \cite{bib:opencv-library}
     \item \textbf{Ultralytics YOLO (You Only Look Once):} A state-of-the-art framework for object detection.
     \begin{itemize}
-        \item \textit{yolov12 (detection):} Used for robust detection of billiard balls under varying lighting conditions. \cite{bib:yolo12}
-        \item \textit{yolov8-pose (keypoint estimation):} Specifically used to detect the \texttt{tip} and \texttt{handle} of the cue stick, enabling precise vector calculation. \cite{bib:yolov8-ultralytics}
+        \item \textit{yolov12 (detection):} Used for robust detection of billiard balls under different lighting conditions. \cite{bib:yolo12}
+        \item \textit{yolov8-pose (keypoint estimation):} Specifically used to detect the \texttt{tip} and \texttt{handle} of the cue stick, allowing accurate vector calculation. \cite{bib:yolov8-ultralytics}
     \end{itemize}
     \item \textbf{Roboflow:} A platform used for dataset management, image annotation, and versioning. It facilitated the preparation of the training data for the custom billiard model. \cite{bib:roboflow}
     \item \textbf{Android Studio \& Java:} The development environment for the mobile sensor application. Java was chosen for its native support of Android sensor APIs. \cite{bib:android}
@@ -82,13 +82,31 @@ The project leverages a modern technology stack combining computer vision, AI, a
 
 \section{Methodology of design and implementation}
 
-The development followed an iterative **prototyping methodology** \cite{bib:method}, which is suitable for systems involving experimental algorithms (like computer vision) and hardware integration. The process was divided into four phases:
+The development followed an iterative **prototyping methodology** \cite{bib:method}, which is suitable for systems that include experimental algorithms (like computer vision) and hardware integration. The process was divided into four phases:
 
 \subsection{Phase 1: Data collection and model training}
-The initial phase focused on the vision module. A custom dataset of billiard balls and cue sticks was collected and annotated using Roboflow \cite{bib:roboflow}. The YOLO models were trained iteratively (using Google Colab GPUs) to achieve high mean average precision (mAP) for ball detection and keypoint estimation.
+The initial phase focused on the preparation of the Computer Vision module. Two separate custom datasets were curated and annotated using the Roboflow platform~\cite{bib:roboflow}: one for billiard balls and one for the cue stick.
+
+For the \textbf{Ball Detection model}, a dataset of overhead table images was collected. As shown in the class distribution analysis (see Figure~\ref{fig:labels_ball}), the dataset reflects the natural disproportion of the game: the "other" class (object balls 1--15) is significantly more frequent than the "cue ball" class. To reduce possible overfitting as weel as improve model dependability under different lighting conditions, image augmentation procedures (including rotation, brightness adjustment, and noise augmentation) were applied during the preprocessing stage.
+
+A similar process was followed for the \textbf{Cue Detection model}, where the dataset was annotated with keypoints (skeleton) to define the tip and handle positions for the pose estimation task. The class distribution for this dataset (see Figure~\ref{fig:labels_cue}) focuses on a single class, "cue", with corresponding bounding box dimensions and instance counts showing the nature of cue stick detection.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./graf/ball-detection/labels.jpg}
+    \caption{Class distribution in the ball detection training dataset, highlighting the imbalance between the single 'cue ball' and multiple 'other' balls.}
+    \label{fig:labels_ball}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./graf/cue-detection/labels.jpg}
+    \caption{Class distribution and instance analysis in the cue detection training dataset.}
+    \label{fig:labels_cue}
+\end{figure}
 
 \subsection{Phase 2: Vision logic implementation}
 Once the models were trained, the Python logic was developed to translate raw detections into game state information. This involved implementing the vector algebra for the "ghost ball" \cite{bib:ghost-ball} algorithm and using OpenCV \cite{bib:opencv-library} to render the visual overlays.
 
 \subsection{Phase 3: Sensor module development}
-The Android application was developed to reliably extract linear acceleration and gyroscope data. The focus was on implementing the `type\_linear\_acceleration` \cite{bib:linear} sensor to filter out gravity and establishing a robust TCP socket protocol for data transmission.
+The Android application was developed to reliably extract linear acceleration and gyroscope data. The focus was on implementing the `type\_linear\_acceleration` \cite{bib:linear} sensor to filter out gravity and developing a stable TCP socket protocol for data transmission.

@@ -1,10 +1,9 @@
 \chapter{Problem analysis}
 
-This chapter provides the theoretical and mathematical foundation for the developed system. It analyzes the geometric complexities of billiard aiming implemented in the vision module and the biomechanical principles governing the sensor analysis. Furthermore, it reviews the current state of the art to contextualize the proposed hybrid solution.
-
+This chapter provides the theoretical and mathematical groundwork for the developed system. It analyzes the geometric difficulties of billiard aiming implemented in the vision module and the biomechanical rules guiding the sensor analysis. Furthermore, it reviews the current state of the art to contextualize the proposed hybrid solution.
 \section{Problem analysis}
 
-The game of 9-ball billiards presents a unique challenge where the player must translate a 3D physical intention into a 2D geometric execution. The core problems addressed by this thesis are classified into visual perception and biomechanical execution.
+The game of 9-ball billiards provides a singular challenge where the player must translate a 3D physical intention into a 2D geometric execution. The core problems addressed by this thesis are classified into visual perception and biomechanical execution.
 
 \subsection{The Visual Paradox (Ghost Ball)}
 As defined by Alciatore, the "Ghost Ball" (the required position of the cue ball at impact) is an imaginary point in empty space \cite{bib:ghost-ball}. Players struggle to visualize this point because the line of aim (passing through the ghost ball center) does not coincide with the contact point on the object ball. This geometric offset forces the player to aim at a non-existent target, creating a "visual paradox" that is difficult for novices to overcome without augmented feedback.
@@ -13,22 +12,22 @@ As defined by Alciatore, the "Ghost Ball" (the required position of the cue ball
 A correct aiming line is useless if the stroke delivery is flawed. The mechanics of the cue stroke are critical to the outcome of the shot.
 
 \textbf{Ballistic vs. Tetanic Stroke:}
-According to the analysis by Moore, a fundamental distinction exists between amateur and professional stroke mechanics \cite{bib:moore}. Amateur players often utilize a "ballistic" stroke characterized by a sudden "quick yank" at the start of the movement. This approach makes velocity control at the moment of impact unreliable. In contrast, professionals strive for a "tetanic" stroke—a constant state of muscle contraction—which maintains a consistent accelerating force throughout the cue delivery \cite{bib:moore}.
+According to the analysis by Moore, a fundamental distinction exists between amateur and professional stroke mechanics \cite{bib:moore}. Amateur players often use a "ballistic" stroke characterized by a sudden "quick yank" at the start of the movement. This approach makes velocity control at the moment of impact unreliable. In contrast, professionals strive for a "tetanic" stroke—a constant state of muscle contraction—which keeps a steady accelerating force throughout the cue delivery \cite{bib:moore}.
 
 \textbf{Lateral Deviation:}
-Another critical factor is the stability of the swing axis. Failure to maintain a vertical "pendulum swing" (keeping the elbow fixed in space) causes the cue tip to wander laterally off the intended aiming line \cite{bib:moore}. Common errors include lateral wrist deviation (measured via gyroscope) and inconsistent impact force (measured via accelerometer).
+An additional important aspect is the stability of the swing axis. Failure to maintain a vertical "pendulum swing" (keeping the elbow fixed in space) causes the cue tip to wander laterally off the intended aiming line \cite{bib:moore}. Common errors include lateral wrist deviation (measured via gyroscope) and inconsistent impact force (measured via accelerometer).
 
 \section{State of the art}
 
-The domain of "Smart Sports" has evolved significantly with the adoption of Convolutional Neural Networks (CNNs) and Wearable Sensors. \cite{bib:sensors}
+The domain of "Smart Sports" has progressed markedly with the adoption of Convolutional Neural Networks (CNNs) and Wearable Sensors. \cite{bib:sensors}
 
 \subsection{Existing Solutions}
 \begin{itemize}
-    \item \textbf{Hawk-Eye (Computer Vision):} Widely used in snooker and tennis, this system relies on multiple calibrated high-speed cameras to triangulate 3D ball positions. While highly accurate ($<3$mm error), it requires a fixed, expensive infrastructure and typically does not analyze the player's biomechanics, only the ball's trajectory. \cite{bib:hawk-eye}
+    \item \textbf{Hawk-Eye (Computer Vision):} Widely used in snooker and tennis, this system relies on multiple calibrated high-speed cameras to triangulate 3D ball positions. While highly accurate ($<3$mm error), it requires a fixed, expensive infrastructure and typically does not examine the player's biomechanics, only the ball's trajectory. \cite{bib:hawk-eye}
     
-    \item \textbf{Projection AR Systems:} Solutions like \textit{PoolLiveAid} use overhead projectors to display trajectories directly onto the table cloth. These provide excellent user experience but require expensive hardware and complex calibration procedures. \cite{bib:pool-live}
+    \item \textbf{Projection AR Systems:} Solutions like \textit{PoolLiveAid} use overhead projectors to display trajectories directly onto the table cloth. These provide excellent user experience however require expensive hardware and complex calibration procedures. \cite{bib:pool-live}
     
-    \item \textbf{Wearable IMU Analyzers:} Devices such as \textit{Blast Motion} (used in golf or baseball) utilize inertial sensors to track swing metrics. However, these are typically "closed systems" that analyze the swing in isolation. They track the movement but do not interact with the game environment (e.g., they do not know the position of the balls). \cite{bib:blast}
+    \item \textbf{Wearable IMU Analyzers:} Devices such as \textit{Blast Motion} (used in golf or baseball) utilize inertial sensors to track swing metrics. However, these are typically "closed systems" that evaluate the swing in isolation. They track the movement but do not interact with the game environment (e.g., they do not know the position of the balls). \cite{bib:blast}
 \end{itemize}
 
 \section{Mathematical Models}
@@ -65,7 +64,7 @@ If $d_{\perp} < D$, the Ghost Ball position $P_{ghost}$ is found by retreating f
 This formula allows the system to draw the "Ghost Ball" circle exactly where the white ball will be at the moment of impact.
 
 \subsection{Physics of the Stroke (Sensor Fusion)}
-The sensor module processes raw data to estimate the force of the shot.
+The sensor module manages raw data to estimate the force of the shot.
 
 \subsubsection{Linear Acceleration}
 The Android `TYPE\_LINEAR\_ACCELERATION` virtual sensor is used to isolate the user's movement from Earth's gravity ($g$). The resulting acceleration vector $\vec{a} = [a_x, a_y, a_z]$ represents the proper acceleration of the cue stick. The magnitude of this acceleration is:
@@ -98,7 +97,7 @@ To identify the game elements, a standard object detection model is employed. It
 where $(x, y)$ is the center of the ball, used as the input for the "Ghost Ball" geometric calculation.
 
 \subsubsection{Pose Estimation (Cue Stick)}
-Determining the aiming line requires more precision than a bounding box can provide. Therefore, a **Pose Estimation** model (specifically \texttt{yolov8-pose}) is used to detect the cue stick. Instead of a box, this model predicts specific semantic keypoints: the \texttt{tip} (cue tip) and the \texttt{handle} (grip point). The output is a set of coordinates $K$:
+Determining the aiming line requires more precision than a bounding box can provide. Therefore, a **Pose Estimation** model (specifically \texttt{yolov8-pose}) is used to detect the cue stick. Instead of a box, this model detects exact semantic keypoints: the \texttt{tip} (cue tip) and the \texttt{handle} (grip point). The output is a set of coordinates $K$:
 
 \begin{equation}
     f_{pose}(I) \rightarrow \{ (x_{tip}, y_{tip}), (x_{handle}, y_{handle}) \}
@@ -107,10 +106,10 @@ Determining the aiming line requires more precision than a bounding box can prov
 The aiming vector $\vec{v}_{aim}$ is then derived directly from these keypoints: $\vec{v}_{aim} = (x_{tip} - x_{handle}, y_{tip} - y_{handle})$.
 
 \subsection{Peak Detection Algorithm}
-To automatically detect the moment of impact without external triggers, the system implements a real-time peak detection algorithm on the linear acceleration data stream. A hit is registered at time $t$ if the acceleration magnitude $a(t)$ satisfies both a threshold condition and a local maximum condition:
+To automatically detect the moment of contact without external triggers, the system implements a real-time peak detection algorithm on the linear acceleration data stream. A hit is registered at time $t$ if the acceleration magnitude $a(t)$ satisfies both a threshold condition and a local maximum condition:
 
 \begin{equation}
     a(t) > T_{peak} \quad \land \quad a(t) \geq a(t-1) \quad \land \quad a(t) \geq a(t+1)
 \end{equation}
 
-where $T_{peak}$ is the noise gate threshold (set to $15.0 m/s^2$ in the implementation). This ensures that the system captures the exact moment of maximum force exertion ($F_{max}$) for the biomechanical analysis.
+where $T_{peak}$ is the noise gate threshold (set to $15.0 m/s^2$ in the implementation). This makes sure that the system captures the exact moment of maximum force exertion ($F_{max}$) for the biomechanical analysis.

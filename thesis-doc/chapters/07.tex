@@ -1,7 +1,34 @@
 \chapter{Conclusions}
+
+The main goal of this thesis was to design and implement the "Smart 9-Ball Assistant," a hybrid system capable of augmenting the game of billiards with real-time visual guidance and biomechanical feedback. The resulting prototype successfully integrates Computer Vision and Telemetry data to bridge the gap between physical execution and geometric visualization.
+
+\section{Achievement of Objectives}
+The project goals, as defined in the introduction, have been met with the following outcomes:
+
 \begin{itemize}
-\item achieved results with regard to objectives of the thesis and requirements
-\item path of further development (eg functional extension …)
-\item encountered difficulties and problems
+    \item \textbf{Computer Vision Module:} A effective detection pipeline was developed using a custom-trained \textbf{YOLOv12} model for billiard balls and \textbf{YOLOv8-pose} for the cue stick. The validation results confirmed exceptional accuracy, with the ball detection model attaining a mean Average Precision (mAP@0.5) of \textbf{0.991}, making sure that the system can reliably track the game state under different lighting conditions.
+    \item \textbf{Trajectory Prediction:} The "Ghost Ball" algorithm was successfully implemented. By calculating the intersection of the cue stick vector with the target ball's geometry, the system provides immediate visual feedback (Augmented Reality overlays) that helps users visualize the aim line and the tangent line.
+    \item \textbf{Telemetry and Biomechanics:} The mobile sensor module, developed for the Android platform, reliably obtains high-frequency inertial data. By implementing the physics-based force model ($F=ma$) and utilizing anthropometric data (Plagenhoef et al.), the system can estimate the impact force in Newtons. Experimental results confirmed that the system allows for the objective differentiation of shot intensity (e.g., distinguishing "Medium" vs. "Hard" shots with clear statistical separation).
+    \item \textbf{Real-time Performance:} The system satisfies the non-functional requirement for low latency. The vision pipeline operates at approximately 30 FPS, and the network transmission delay (approx. 15ms) is negligible for the purpose of static aiming adjustment.
 \end{itemize}
 
+\section{Difficulties Experienced}
+During the development lifecycle, multiple technical challenges were encountered and addressed:
+
+\begin{itemize}
+    \item \textbf{Network Fragmentation:} A significant issue arose with the TCP communication where high-frequency JSON packets were being coalesced or split, causing parsing errors. This was resolved by implementing a stream buffering mechanism with strict delimiter handling.
+    \item \textbf{Android UI Performance:} The initial mobile application suffered from severe "UI Lag" due to processing sensor events on the main thread. Decoupling the data transmission thread from the UI rendering thread (via the producer-consumer pattern) was necessary to maintain stable performance.
+    \item \textbf{Visual Jitter:} Raw detection data from the camera resulted in "shaking" projection lines, which made aiming difficult. A temporal smoothing algorithm (Moving Average Filter) was implemented to stabilize the vector calculations without introducing perceptible lag.
+    \item \textbf{Dataset Imbalance:} Training the neural network required addressing the significant class imbalance between the single "cue ball" and the fifteen "object balls." This was mitigated via focused data augmentation during the pre-processing phase.
+
+\end{itemize}
+
+\section{Future Development}
+While the current prototype is fully functional, several paths for additional development have been identified to enhance the system's commercial viability and user experience:
+
+\begin{itemize}
+    \item \textbf{Perspective Correction (Homography):} Currently, the system requires a strictly top-down camera view. Future iterations could implement a homography transformation matrix to allow the camera to be placed at an angle (e.g., on a tripod at the side of the table), making the setup more flexible.
+    \item \textbf{Wireless Sensor Integration:} Replacing the USB tethering with Bluetooth Low Energy (BLE) or Wi-Fi Direct would significantly improve player comfort, removing the physical cable constraint during the stroke.
+    \item \textbf{Advanced Physics Engine:} The current model assumes elastic collisions. Further development might incorporate the effects of "English" (spin) and cloth friction into the trajectory prediction to simulate curve shots and bank shots more accurately.
+    \item \textbf{Gamification:} The system could be expanded with a "Training Mode" that creates a challenge for the player to hit specific force targets or execute pre-defined shots, tracking their progress over time in a cloud-based database.
+\end{itemize}
