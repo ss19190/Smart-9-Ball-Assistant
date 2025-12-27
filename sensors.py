@@ -46,7 +46,6 @@ def load_arm_mass():
             
         weight = float(config.get("body_weight_kg", 75.0))
         gender = config.get("gender", "male").lower()
-        glove = float(config.get("glove_weight_kg", 0.0)) # Extra weight for equipment
         
         # Calculate biological arm mass based on research percentages
         if gender == "female":
@@ -56,8 +55,8 @@ def load_arm_mass():
             bio_arm_mass = weight * ARM_PERCENTAGE_MALE
             print(f"ℹ️ Loaded settings for MALE: {weight}kg -> Arm mass: {bio_arm_mass:.2f} kg (5.77%)")
             
-        total_mass = bio_arm_mass + glove
-        print(f"✅ Total Effective Mass (Bio + Glove): {total_mass:.2f} kg")
+        total_mass = bio_arm_mass
+        print(f"✅ Total Effective Mass (Bio): {total_mass:.2f} kg")
         return total_mass
 
     except Exception as e:
