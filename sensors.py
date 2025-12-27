@@ -14,13 +14,7 @@ import itertools
 # --- CONFIGURATION ---
 PORT = 5555
 HISTORY_SIZE = 200
-
-# PHYSICAL CONSTANTS
-ESTIMATED_ARM_MASS = 4.0  # kg (Estimated effective mass of arm + glove for F=ma calculation)
-
-# Thresholds
-THRESHOLD_HIT = 20.0  # m/s^2 (Hit detection threshold)
-THRESHOLD_PEAK = 15.0 # m/s^2 (Threshold to recognize a peak in acceleration)
+CONFIG_FILE = "config.json"
 
 # Files and Folders
 CSV_FILE = "hit_history.csv"
@@ -29,6 +23,53 @@ IMAGE_FOLDER = "saved_graphs"
 # Delays
 DELAY_SNAPSHOT_1 = 0.8  
 DELAY_SNAPSHOT_2 = 3.0  
+
+# --- DATA FROM PLAGENHOEF ET AL. (1983) ---
+# Sum of Hand + Forearm + Upper Arm percentages
+# Source: Table 4, Segment Weights as Percentages of Total Body Weight
+ARM_PERCENTAGE_MALE = 0.0577    # 0.65% + 1.87% + 3.25%
+ARM_PERCENTAGE_FEMALE = 0.0497  # 0.5% + 1.57% + 2.9%
+
+def load_arm_mass():
+    """
+    Calculates arm mass based on Plagenhoef et al. (1983) data.
+    """
+    default_mass = 4.0
+    
+    if not os.path.exists(CONFIG_FILE):
+        print(f"⚠️ Config file not found. Using default arm mass: {default_mass} kg")
+        return default_mass
+
+    try:
+        with open(CONFIG_FILE, 'r') as f:
+            config = json.load(f)
+            
+        weight = float(config.get("body_weight_kg", 75.0))
+        gender = config.get("gender", "male").lower()
+        glove = float(config.get("glove_weight_kg", 0.0)) # Extra weight for equipment
+        
+        # Calculate biological arm mass based on research percentages
+        if gender == "female":
+            bio_arm_mass = weight * ARM_PERCENTAGE_FEMALE
+            print(f"ℹ️ Loaded settings for FEMALE: {weight}kg -> Arm mass: {bio_arm_mass:.2f} kg (4.97%)")
+        else:
+            bio_arm_mass = weight * ARM_PERCENTAGE_MALE
+            print(f"ℹ️ Loaded settings for MALE: {weight}kg -> Arm mass: {bio_arm_mass:.2f} kg (5.77%)")
+            
+        total_mass = bio_arm_mass + glove
+        print(f"✅ Total Effective Mass (Bio + Glove): {total_mass:.2f} kg")
+        return total_mass
+
+    except Exception as e:
+        print(f"❌ Error reading config: {e}. Using default: {default_mass} kg")
+        return default_mass
+
+# PHYSICAL CONSTANTS - CALCULATED DYNAMICALLY
+ESTIMATED_ARM_MASS = load_arm_mass()
+
+# Thresholds
+THRESHOLD_HIT = 20.0  # m/s^2 (Hit detection threshold)
+THRESHOLD_PEAK = 15.0 # m/s^2 (Threshold to recognize a peak in acceleration)
 
 # --- GLOBAL VARIABLES ---
 sensor_data = {
