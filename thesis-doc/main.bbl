@@ -178,6 +178,52 @@
     \field{year}{2000}
   \endentry
 
+  \entry{bib:cv-in-sports}{article}{}
+    \name{author}{5}{}{%
+      {{hash=CC}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Cheng},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=XJ}{%
+         family={Xue},
+         familyi={X\bibinitperiod},
+         given={Jiaxin},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=GW}{%
+         family={Gou},
+         familyi={G\bibinitperiod},
+         given={Wenling},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=XM}{%
+         family={Xie},
+         familyi={X\bibinitperiod},
+         given={Mengning},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=YX}{%
+         family={Yao},
+         familyi={Y\bibinitperiod},
+         given={Xiaolin},
+         giveni={X\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CC+1}
+    \strng{fullhash}{CCXJGWXMYX1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{pages}{1 \bibrangedash  8}
+    \field{title}{Quantitative analysis and evaluation of research on the
+  application of computer vision in sports since the 21st century}
+    \field{journaltitle}{frontiers}
+    \field{year}{2025}
+  \endentry
+
   \entry{bib:python}{book}{}
     \name{author}{1}{}{%
       {{hash=DA}{%
