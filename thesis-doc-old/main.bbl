@@ -1,0 +1,708 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{bib:ghost-ball}{online}{}
+    \name{author}{1}{}{%
+      {{hash=AD}{%
+         family={Alciatore},
+         familyi={A\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AD1}
+    \strng{fullhash}{AD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Ghost-ball Aiming}
+    \verb{url}
+    \verb https://drdavepoolinfo.com/resource_files/ghost_ball_aiming.pdf
+    \endverb
+    \field{year}{2025}
+    \field{urlday}{14}
+    \field{urlmonth}{02}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{bib:english}{online}{}
+    \name{author}{1}{}{%
+      {{hash=AD}{%
+         family={Alciatore},
+         familyi={A\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AD1}
+    \strng{fullhash}{AD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Sidespin and English Terminology and Uses}
+    \verb{url}
+    \verb https://drdavepoolinfo.com/faq/sidespin/terminology-and-uses/
+    \endverb
+    \field{year}{2012}
+    \field{urlday}{14}
+    \field{urlmonth}{02}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{bib:pool-live}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=AR}{%
+         family={Alves},
+         familyi={A\bibinitperiod},
+         given={Ricardo},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=SL}{%
+         family={Sousa},
+         familyi={S\bibinitperiod},
+         given={Luís},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=RJ}{%
+         family={Rodrigues},
+         familyi={R\bibinitperiod},
+         given={Joao},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ARSLRJ1}
+    \strng{fullhash}{ARSLRJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{21st International Conference on Computer Graphics,
+  Visualization and Computer Vision}
+    \field{pages}{184 \bibrangedash  193}
+    \field{title}{PoolLiveAid: Augmented reality pool table to assist
+  inexperienced players}
+    \field{year}{2013}
+  \endentry
+
+  \entry{bib:adb}{online}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Android Developers}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Google}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{note}{Official Documentation}
+    \field{title}{Android Debug Bridge (adb)}
+    \verb{url}
+    \verb https://developer.android.com/tools/adb
+    \endverb
+    \field{year}{2025}
+    \field{urlday}{19}
+    \field{urlmonth}{02}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{bib:linear}{online}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Android Developers}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Google}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{note}{Official Documentation}
+    \field{title}{Motion sensors}
+    \verb{url}
+    \verb https://developer.android.com/develop/sensors-and-location/sensors/se
+    \verb nsors_motion
+    \endverb
+    \field{year}{2025}
+    \field{urlday}{19}
+    \field{urlmonth}{02}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{bib:arm}{online}{}
+    \name{author}{1}{}{%
+      {{hash=BD}{%
+         family={Baseball},
+         familyi={B\bibinitperiod},
+         given={Driveline},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BD1}
+    \strng{fullhash}{BD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{title}{Momentum and Arm Action: Myths and Misunderstandings}
+    \verb{url}
+    \verb https://www.drivelinebaseball.com/2014/04/momentum-arm-action-myths-m
+    \verb isunderstandings/
+    \endverb
+    \field{year}{2014}
+    \field{urlday}{28}
+    \field{urlmonth}{04}
+    \field{urlyear}{2014}
+  \endentry
+
+  \entry{bib:hold}{book}{}
+    \name{author}{1}{}{%
+      {{hash=BCM}{%
+         family={Bishop},
+         familyi={B\bibinitperiod},
+         given={Christopher\bibnamedelima M.},
+         giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{BCM1}
+    \strng{fullhash}{BCM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{isbn}{978-1493938438}
+    \field{title}{Pattern Recognition and Machine Learning (Information Science
+  and Statistics)}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{year}{2006}
+  \endentry
+
+  \entry{bib:opencv-library}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BG}{%
+         family={Bradski},
+         familyi={B\bibinitperiod},
+         given={G.},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \keyw{bibtex-import}
+    \strng{namehash}{BG1}
+    \strng{fullhash}{BG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{title}{{The OpenCV Library}}
+    \field{journaltitle}{Dr. Dobb's Journal of Software Tools}
+    \field{year}{2000}
+  \endentry
+
+  \entry{bib:cv-in-sports}{article}{}
+    \name{author}{5}{}{%
+      {{hash=CC}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Cheng},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=XJ}{%
+         family={Xue},
+         familyi={X\bibinitperiod},
+         given={Jiaxin},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=GW}{%
+         family={Gou},
+         familyi={G\bibinitperiod},
+         given={Wenling},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=XM}{%
+         family={Xie},
+         familyi={X\bibinitperiod},
+         given={Mengning},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=YX}{%
+         family={Yao},
+         familyi={Y\bibinitperiod},
+         given={Xiaolin},
+         giveni={X\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CC+1}
+    \strng{fullhash}{CCXJGWXMYX1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{pages}{1 \bibrangedash  8}
+    \field{title}{Quantitative analysis and evaluation of research on the
+  application of computer vision in sports since the 21st century}
+    \field{journaltitle}{frontiers}
+    \field{year}{2025}
+  \endentry
+
+  \entry{bib:python}{book}{}
+    \name{author}{1}{}{%
+      {{hash=DA}{%
+         family={Dadhich},
+         familyi={D\bibinitperiod},
+         given={Abhinav},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Packt Publishing}%
+    }
+    \strng{namehash}{DA1}
+    \strng{fullhash}{DA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{isbn}{978-17-882-9476-8}
+    \field{title}{Practical Computer Vision: Extract insightful information
+  from images using TensorFlow, Keras, and OpenCV}
+    \field{year}{2018}
+  \endentry
+
+  \entry{bib:hawk-eye}{article}{}
+    \name{author}{1}{}{%
+      {{hash=DM}{%
+         family={Duggal},
+         familyi={D\bibinitperiod},
+         given={Manish},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DM1}
+    \strng{fullhash}{DM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{number}{2}
+    \field{pages}{1 \bibrangedash  7}
+    \field{title}{Hawk Eye Technology}
+    \field{volume}{1}
+    \field{journaltitle}{Journal of Global Research Computer Science \&
+  Technology}
+    \field{year}{2024}
+  \endentry
+
+  \entry{bib:roboflow}{online}{}
+    \name{author}{2}{}{%
+      {{hash=DB}{%
+         family={Dwyer},
+         familyi={D\bibinitperiod},
+         given={Brad},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Gallagher},
+         familyi={G\bibinitperiod},
+         given={James},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DBGJ1}
+    \strng{fullhash}{DBGJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{title}{Getting Started with Roboflow}
+    \verb{url}
+    \verb https://blog.roboflow.com/getting-started-with-roboflow/
+    \endverb
+    \field{year}{2023}
+    \field{urlday}{16}
+    \field{urlmonth}{03}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{bib:sensors}{article}{}
+    \name{author}{4}{}{%
+      {{hash=HB}{%
+         family={Hollaus},
+         familyi={H\bibinitperiod},
+         given={Bernhard},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Stabinger},
+         familyi={S\bibinitperiod},
+         given={Sebastian},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MA}{%
+         family={Mehrle},
+         familyi={M\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RC}{%
+         family={Raschner},
+         familyi={R\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HB+1}
+    \strng{fullhash}{HBSSMARC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{23}
+    \field{pages}{6722}
+    \field{title}{Using Wearable Sensors and a Convolutional Neural Network for
+  Catch Detection in American Football}
+    \field{volume}{20}
+    \field{journaltitle}{Sensors}
+    \field{year}{2020}
+  \endentry
+
+  \entry{bib:noise}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HN}{%
+         family={Hussain},
+         familyi={H\bibinitperiod},
+         given={Netha},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=SKS}{%
+         family={Sunnerhagen},
+         familyi={S\bibinitperiod},
+         given={Katharina\bibnamedelima S},
+         giveni={K\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=MMA}{%
+         family={Murphy},
+         familyi={M\bibinitperiod},
+         given={Margit\bibnamedelima Alt},
+         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HNSKSMMA1}
+    \strng{fullhash}{HNSKSMMA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{3}
+    \field{pages}{2771 \bibrangedash  2778}
+    \field{title}{Recovery of arm function during acute to chronic stage of
+  stroke quantified by kinematics.}
+    \field{volume}{53}
+    \field{journaltitle}{Journal of Rehabilitation Medicine}
+    \field{year}{2021}
+  \endentry
+
+  \entry{bib:yolov8-ultralytics}{software}{}
+    \name{author}{3}{}{%
+      {{hash=JG}{%
+         family={Jocher},
+         familyi={J\bibinitperiod},
+         given={Glenn},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=CA}{%
+         family={Chaurasia},
+         familyi={C\bibinitperiod},
+         given={Ayush},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=QJ}{%
+         family={Qiu},
+         familyi={Q\bibinitperiod},
+         given={Jing},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JGCAQJ1}
+    \strng{fullhash}{JGCAQJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{title}{Ultralytics YOLOv8}
+    \verb{url}
+    \verb https://github.com/ultralytics/ultralytics
+    \endverb
+    \field{version}{8.0.0}
+    \field{year}{2023}
+  \endentry
+
+  \entry{bib:method}{online}{}
+    \name{author}{1}{}{%
+      {{hash=L}{%
+         family={Lumitex},
+         familyi={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{L1}
+    \strng{fullhash}{L1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Prototyping Methodology Steps on How to Use It Correctly}
+    \verb{url}
+    \verb https://www.lumitex.com/blog/prototyping-methodology
+    \endverb
+    \field{year}{2017}
+    \field{urlday}{01}
+    \field{urlmonth}{06}
+    \field{urlyear}{2017}
+  \endentry
+
+  \entry{bib:patterns}{book}{}
+    \name{author}{4}{}{%
+      {{hash=MZ}{%
+         family={Mednieks},
+         familyi={M\bibinitperiod},
+         given={Zigurd},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=DL}{%
+         family={Dornin},
+         familyi={D\bibinitperiod},
+         given={Laird},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=MGB}{%
+         family={Meike},
+         familyi={M\bibinitperiod},
+         given={G.\bibnamedelima Blake},
+         giveni={G\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=NM}{%
+         family={Nakamura},
+         familyi={N\bibinitperiod},
+         given={Masumi},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {O'Reilly Media, Inc.}%
+    }
+    \strng{namehash}{MZ+1}
+    \strng{fullhash}{MZDLMGBNM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{isbn}{978-14-493-5847-1}
+    \field{title}{Programming Android, 2nd Edition: Java Programming for the
+  New Generation of Mobile Devices}
+    \list{location}{1}{%
+      {Sebastopol, CA, USA}%
+    }
+    \field{year}{2012}
+  \endentry
+
+  \entry{bib:moore}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=MAD}{%
+         family={Moore},
+         familyi={M\bibinitperiod},
+         given={A.\bibnamedelima D.},
+         giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MAD1}
+    \strng{fullhash}{MAD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Mechanics of Billiards, and Analysis of Willie Hoppe's
+  Stroke}
+    \list{location}{1}{%
+      {University of Michigan, College of Engineering}%
+    }
+    \field{year}{1947}
+  \endentry
+
+  \entry{bib:blast}{online}{}
+    \name{author}{1}{}{%
+      {{hash=OS}{%
+         family={Ogle},
+         familyi={O\bibinitperiod},
+         given={Sean},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{OS1}
+    \strng{fullhash}{OS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{title}{Breaking Eighty}
+    \verb{url}
+    \verb https://breakingeighty.com/blast-motion-golf-review
+    \endverb
+    \field{year}{2022}
+    \field{urlday}{13}
+    \field{urlmonth}{10}
+    \field{urlyear}{2022}
+  \endentry
+
+  \entry{bib:anatomical}{article}{}
+    \name{author}{3}{}{%
+      {{hash=PS}{%
+         family={Plagenhoef},
+         familyi={P\bibinitperiod},
+         given={Stanley},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=EFG}{%
+         family={Evans},
+         familyi={E\bibinitperiod},
+         given={F.\bibnamedelima Gaynor},
+         giveni={F\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+      {{hash=AT}{%
+         family={Abdelnour},
+         familyi={A\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PSEFGAT1}
+    \strng{fullhash}{PSEFGAT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{number}{2}
+    \field{pages}{169 \bibrangedash  178}
+    \field{title}{Anatomical Data for Analyzing Human Motion}
+    \field{volume}{54}
+    \field{journaltitle}{RESEARCH QUARTERLY FOR EXERCISE AND SPORT}
+    \field{year}{1983}
+  \endentry
+
+  \entry{bib:android}{book}{}
+    \name{author}{1}{}{%
+      {{hash=SN}{%
+         family={Smyth},
+         familyi={S\bibinitperiod},
+         given={Neil},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Payload Media, Inc.}%
+    }
+    \strng{namehash}{SN1}
+    \strng{fullhash}{SN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{isbn}{978-1795654760}
+    \field{title}{Android Studio 3.3 Development Essentials - Android 9
+  Edition: Developing Android 9 Apps Using Android Studio 3.3, Java and Android
+  Jetpack}
+    \field{year}{2019}
+  \endentry
+
+  \entry{bib:stapor}{book}{}
+    \name{author}{1}{}{%
+      {{hash=SK}{%
+         family={Stąpor},
+         familyi={S\bibinitperiod},
+         given={Katarzyna},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wydawnictwo Politechniki Śląskiej}%
+    }
+    \strng{namehash}{SK1}
+    \strng{fullhash}{SK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{isbn}{978-83-7335-543-9}
+    \field{title}{Wykłady z metod statystycznych dla informatyków}
+    \list{location}{1}{%
+      {Gliwice}%
+    }
+    \field{year}{2008}
+  \endentry
+
+  \entry{bib:yolo12}{software}{}
+    \name{author}{3}{}{%
+      {{hash=TY}{%
+         family={Tian},
+         familyi={T\bibinitperiod},
+         given={Yunjie},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=YQ}{%
+         family={Ye},
+         familyi={Y\bibinitperiod},
+         given={Qixiang},
+         giveni={Q\bibinitperiod},
+      }}%
+      {{hash=DD}{%
+         family={Doermann},
+         familyi={D\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TYYQDD1}
+    \strng{fullhash}{TYYQDD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{title}{YOLO12: Attention-Centric Real-Time Object Detectors}
+    \verb{url}
+    \verb https://github.com/sunsmarterjie/yolov12
+    \endverb
+    \field{year}{2025}
+  \endentry
+\enddatalist
+\endinput

@@ -6,13 +6,10 @@ Billiards, especially 9-ball, is a sport that demands a high level of precision,
 
 Game of billiards focuses mainly on two skill sets: the ability to see the correct path of the balls and the physical ability to make the stroke that is needed to shoot the cue ball along that path. New players often have problem with the idea of the "Ghost Ball" \cite{bib:ghost-ball} — the imaginary position where the cue ball must hit the object ball to pocket it.
 
-Billard relies mainly on two skill sets: the ability to see the possible trajectory path of the balls and the physical ability to do the stroke that is needed to shot the cue ball along that path. New players often have problem with the idea of the "Ghost Ball" \cite{bib:ghost-ball} — the imaginary position where the cue ball should hit the object ball to pocket it
-
-
-Additionally, the way a player executes the stroke — including stance, bridge stability, and wrist movement can have a strong effect on the shot result. Even if a player aims correctly, but player introduces unwanted lateral accelarion or English\cite{bib:english} (spin) can result in a miss. With the development of accessible Computer Vision (CV), we are now able to better digitize these physical interactions to provide live feedback. \cite{bib:cv-in-sports}
+Additionally, the way a player executes the stroke — including stance, bridge stability, and wrist movement can have a strong effect on the shot result. Even if a player aims correctly, but player introduces unwanted lateral acceleration or English\cite{bib:english} (spin) can result in a miss. With the development of accessible Computer Vision (CV), we are now able to better digitize these physical interactions to provide live feedback. \cite{bib:cv-in-sports}
 
 \section{Settling of the Problem in the Domain}
-Training methods that we have right now are mostly manual, relying on observastions of coaches or player's own intuition. We do have professional tracking systems, but thye are often prohibitively expensive and need fixed, industrial-grade hardware. When it comes to mobile applications, they often rely solely on 2D video analysis, which doesn't have the depth perception that is needed for accurate table mapping or the high-frequency sampling that would be needed for detailed stroke analysis.
+Training methods that we have right now are mostly manual, relying on observations of coaches or player's own intuition. We do have professional tracking systems, but they are often quite expensive and need fixed, industrial-grade hardware. When it comes to mobile applications, they often rely solely on 2D video analysis, which doesn't have the depth perception that is needed for accurate table mapping or the high-frequency sampling that would be needed for detailed stroke analysis.
 
 \section{Objective of the Thesis}
 
@@ -42,11 +39,11 @@ The thesis is organized as follows:
 
 \textbf{Chapter 2} (Problem analysis) shows the theoretical and mathematical background for the project. It shows the physics behind collision, the geometry of "Ghost Ball" aiming and the mechanics od sensors. It also presents solutions that already exist in sports technology to set the context.  
 
-\textbf{Chapter 3} (Requirements and tools) defined the system's funcitonal and non-functional requirements. It also presents the chosen technology stack. Explains the use of Python, OpenCV, and Android platform.
+\textbf{Chapter 3} (Requirements and tools) defines the system's funcitonal and non-functional requirements. It also presents the chosen technology stack. Explains the use of Python, OpenCV, and Android platform.
 
 \textbf{Chapter 4} (External specification) describes the system from the user's perspective. It shows Android App interface and the visualization of the desktop interface. Also explains how user interacts with the system. 
 
-\textbf{Chapter 5} (Internal specification) details the technical implementation and backend logic. Explains the algorithms that were used to detect objects and predict trajectory, TCP/IP communication protocoolm and sensor data processing.
+\textbf{Chapter 5} (Internal specification) details the technical implementation and backend logic. Explains the algorithms that were used to detect objects, predict trajectory, for TCP/IP communication protocol and sensor data processing.
 
 \textbf{Chapter 6} (Verification and validation) presents testing results. Evaluates the computer vision model accuracy, the latency of live data streaming and how reliable are stroke analysis parameters through unit tests and real-world examples.
 

@@ -1,9 +1,9 @@
 \chapter{Verification and Validation}
 
-This chapter describes the testing methodology adopted to maintain the consistency and accuracy of the developed system. It covers the testing paradigm, the scope of test cases, a detailed analysis of encountered software defects, and the final experimental results.
+This chapter describes the testing methods adopted to maintain the consistency and accuracy of the developed system. It covers the testing paradigm, the scope of test cases, a detailed analysis of encountered software defects, and the final experimental results.
 
 \section{Testing Paradigm}
-To ensure an organized approach to verification, the **V-Model** (Verification and Validation Model) was adopted. This model focuses on the relationship between the design phase and the testing phase. The testing process was divided into three distinct levels:
+To ensure an organized approach to verification, the \textbf{V-Model} (Verification and Validation Model) was adopted. This model focuses on the relationship between the design phase and the testing phase. The testing process was divided into three distinct levels:
 
 \begin{enumerate}
     \item \textbf{Unit Testing:} Individual components were tested in isolation. For the Python server, this involved testing the vector calculation functions (e.g., \texttt{find\_ghost\_ball\_position}) and the impact force formula ($F=ma$) with known static values to ensure mathematical correctness.
@@ -54,7 +54,7 @@ The Ball Detection model, built on the \textbf{YOLOv12} architecture, showed out
 
 \begin{itemize}
     \item \textbf{Training Performance:} As illustrated in the training plots, the box loss and classification loss converged rapidly within the first 50 epochs, stabilizing with no signs of overfitting. The precision and recall metrics consistently improved, plateauing near 1.0.
-    \item \textbf{Confusion Matrix:} The normalized confusion matrix (Figure~\ref{fig:conf_matrix}) confirms the model's accuracy. The model correctly identified \textbf{98\%} of Cue Ball instances and \textbf{99\%} of Object Balls ("other"). Misclassifications (e.g., background detected as a ball) were negligible.
+    \item \textbf{Confusion Matrix:} The confusion matrix (Figure~\ref{fig:conf_matrix}) confirms the model's accuracy on the test set. The model correctly identified \textbf{110} Cue Ball instances and \textbf{1043} Object Balls ("other"). Misclassifications were negligible, with only minimal instances of background falsely detected as balls (False Positives).
     \item \textbf{F1-Score:} The F1-Confidence curve (Figure~\ref{fig:f1_curve}) shows an optimal confidence threshold of \textbf{0.660}, at which the model reaches an F1 score of \textbf{0.99}. This threshold was subsequently used in the production code to filter weak predictions.
 \end{itemize}
 
@@ -67,8 +67,9 @@ The Ball Detection model, built on the \textbf{YOLOv12} architecture, showed out
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{./graf/ball-detection/confusion_matrix_normalized.png}
-    \caption{Normalized Confusion Matrix demonstrating high classification correctness between Cue Ball, Other, and Background.}
+    % Pamiętaj, aby zapisać swój nowy plik jako confusion_matrix.png w folderze graf/ball-detection/
+    \includegraphics[width=0.8\textwidth]{./graf/ball-detection/confusion_matrix.png}
+    \caption{Confusion Matrix demonstrating raw detection counts for Cue Ball, Other, and Background classes.}
     \label{fig:conf_matrix}
 \end{figure}
 

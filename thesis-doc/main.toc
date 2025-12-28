@@ -11,7 +11,7 @@
 \contentsline {section}{\numberline {1.2}Settling of the Problem in the Domain}{1}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Objective of the Thesis}{2}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Scope of the thesis}{2}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Short description of chapters}{3}{section.1.5}%
+\contentsline {section}{\numberline {1.5}Short description of chapters}{2}{section.1.5}%
 \contentsline {chapter}{\numberline {2}Problem analysis}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Problem analysis}{5}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}The Visual Paradox (Ghost Ball)}{5}{subsection.2.1.1}%
@@ -27,7 +27,7 @@
 \contentsline {subsection}{\numberline {2.4.1}Computer Vision Algorithms}{8}{subsection.2.4.1}%
 \contentsline {subsubsection}{Object Detection (Balls)}{8}{section*.10}%
 \contentsline {subsubsection}{Pose Estimation (Cue Stick)}{8}{section*.11}%
-\contentsline {subsection}{\numberline {2.4.2}Peak Detection Algorithm}{8}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.2}Peak Detection Algorithm}{9}{subsection.2.4.2}%
 \contentsline {chapter}{\numberline {3}Requirements and Tools}{11}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Functional and Non-functional Requirements}{11}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Functional Requirements}{11}{subsection.3.1.1}%
@@ -51,8 +51,8 @@
 \contentsline {section}{\numberline {4.4}Types of users}{22}{section.4.4}%
 \contentsline {section}{\numberline {4.5}User manual}{22}{section.4.5}%
 \contentsline {subsection}{\numberline {4.5.1}Main Interface (Desktop)}{22}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Mobile Interface}{22}{subsection.4.5.2}%
-\contentsline {section}{\numberline {4.6}System administration}{22}{section.4.6}%
+\contentsline {subsection}{\numberline {4.5.2}Mobile Interface}{23}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}System administration}{23}{section.4.6}%
 \contentsline {section}{\numberline {4.7}Security issues}{23}{section.4.7}%
 \contentsline {section}{\numberline {4.8}Example of usage}{23}{section.4.8}%
 \contentsline {section}{\numberline {4.9}Working scenarios}{24}{section.4.9}%
@@ -67,7 +67,7 @@
 \contentsline {subsection}{\numberline {5.4.2}Vision Module (Computer Vision)}{29}{subsection.5.4.2}%
 \contentsline {section}{\numberline {5.5}Overview of Key Algorithms}{29}{section.5.5}%
 \contentsline {subsection}{\numberline {5.5.1}Ghost Ball Algorithm}{29}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Impact Force Calculation (Physics)}{29}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.2}Impact Force Calculation (Physics)}{30}{subsection.5.5.2}%
 \contentsline {section}{\numberline {5.6}Implementation Details}{30}{section.5.6}%
 \contentsline {subsection}{\numberline {5.6.1}Thread Synchronization (Python)}{30}{subsection.5.6.1}%
 \contentsline {subsection}{\numberline {5.6.2}Network Handling (Android)}{31}{subsection.5.6.2}%
@@ -91,7 +91,10 @@
 \contentsline {section}{\numberline {7.3}Future Development}{44}{section.7.3}%
 \contentsline {chapter}{Bibliography}{47}{section*.29}%
 \contentsline {chapter}{Index of abbreviations and symbols}{51}{appendix*.31}%
-\contentsline {chapter}{Listings}{53}{appendix*.32}%
-\contentsline {chapter}{List of additional files in~electronic submission (if applicable)}{55}{appendix*.33}%
-\contentsline {chapter}{List of figures}{57}{appendix*.34}%
-\contentsline {chapter}{List of tables}{59}{appendix*.35}%
+\contentsline {chapter}{Listings}{53}{appendix*.34}%
+\contentsline {section}{\numberline {.1}Configuration File (config.json)}{53}{section.1..1}%
+\contentsline {section}{\numberline {.2}Vision Module (bilard.py)}{53}{section.1..2}%
+\contentsline {section}{\numberline {.3}Telemetry Module (sensors.py)}{56}{section.1..3}%
+\contentsline {chapter}{List of additional files in~electronic submission}{65}{appendix*.35}%
+\contentsline {chapter}{List of figures}{67}{appendix*.36}%
+\contentsline {chapter}{List of tables}{69}{appendix*.37}%

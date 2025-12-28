@@ -1,6 +1,6 @@
 \chapter{Requirements and Tools}
 
-This chapter details the functional and non-functional requirements of the "smart pool assistant" and presents the technological stack selected for implementation. It also describes the system's use cases and the method adopted for the design and development process.
+This chapter details the functional and non-functional requirements and presents the technological stack selected for implementation. It also describes the system's use cases and the method adopted for the design and development process.
 
 \section{Functional and Non-functional Requirements}
 
@@ -82,7 +82,7 @@ The project applies a modern technology stack combining computer vision, AI, and
 
 \section{Methodology of design and implementation}
 
-The development followed an iterative **prototyping methodology** \cite{bib:method}, which is suitable for systems that include experimental algorithms (like computer vision) and hardware integration. The process was divided into four phases:
+The development followed an iterative \textbf{prototyping methodology} \cite{bib:method}, which is suitable for systems that include experimental algorithms (like computer vision) and hardware integration. The process was divided into four phases:
 
 \subsection{Phase 1: Data collection and model training}
 The initial phase focused on the preparation of the Computer Vision module. Two separate custom datasets were curated and annotated using the Roboflow platform~\cite{bib:roboflow}: one for billiard balls and one for the cue stick.
@@ -109,4 +109,4 @@ A similar process was followed for the \textbf{Cue Detection model}, where the d
 Once the models were trained, the Python logic was developed to translate raw detections into game state information. This involved implementing the vector algebra for the "ghost ball" \cite{bib:ghost-ball} algorithm and using OpenCV \cite{bib:opencv-library} to render the visual overlays.
 
 \subsection{Phase 3: Sensor module development}
-The Android application was developed to reliably extract linear acceleration and gyroscope data. The focus was on implementing the `type\_linear\_acceleration` \cite{bib:linear} sensor to filter out gravity and developing a stable TCP socket protocol for data transmission.
+The Android application was developed to reliably extract linear acceleration and gyroscope data. The focus was on implementing the \texttt{TYPE\_LINEAR\_ACCELERATION} \cite{bib:linear} sensor to filter out gravity and developing a stable TCP socket protocol for data transmission.

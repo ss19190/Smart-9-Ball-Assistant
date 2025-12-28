@@ -1,0 +1,181 @@
+\chapter{Verification and Validation}
+
+This chapter describes the testing methodology adopted to maintain the consistency and accuracy of the developed system. It covers the testing paradigm, the scope of test cases, a detailed analysis of encountered software defects, and the final experimental results.
+
+\section{Testing Paradigm}
+To ensure an organized approach to verification, the **V-Model** (Verification and Validation Model) was adopted. This model focuses on the relationship between the design phase and the testing phase. The testing process was divided into three distinct levels:
+
+\begin{enumerate}
+    \item \textbf{Unit Testing:} Individual components were tested in isolation. For the Python server, this involved testing the vector calculation functions (e.g., \texttt{find\_ghost\_ball\_position}) and the impact force formula ($F=ma$) with known static values to ensure mathematical correctness.
+    \item \textbf{Integration Testing:} This phase focused on the communication between the Android Client and the PC Server. Key tests included verifying the TCP handshake, the serialization of sensor data into JSON format, and the handling of network latency.
+    \item \textbf{System Testing:} The full system was validated in a real-world environment. This involved a player performing actual shots while the system tracked the game state and visualized the analytics in real-time.
+\end{enumerate}
+
+\section{Testing Scope and Test Cases}
+The testing scope covered both the functional requirements (correct physics calculations, correct object detection) and non-functional requirements (performance, latency). Table~\ref{tab:test_cases} summarizes the key test scenarios.
+
+\begin{table}[h!]
+\centering
+\caption{Summary of Key Test Cases.}
+\label{tab:test_cases}
+\begin{tabular}{|l|p{6cm}|p{5cm}|l|}
+\hline
+\textbf{ID} & \textbf{Test Scenario} & \textbf{Expected Result} & \textbf{Status} \\ \hline
+TC-01 & JSON Packet Transmission & Server receives valid JSON structure without corruption. & Passed \\ \hline
+TC-02 & Ghost Ball Projection & Projector line intersects the target ball center. & Passed \\ \hline
+TC-03 & High-Velocity Shot Detection & Accelerometer detects peak $>$ 20 m/s$^2$. & Passed \\ \hline
+TC-04 & Multi-ball Occlusion & System maintains ID of balls when partially obscured. & Partial \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Detected and Fixed Bugs}
+During the implementation and testing phases, multile significant software defects were identified. Below is a description of the most significant bugs and the solutions applied.
+
+\subsection{Android UI Thread Blocking (UI Lag)}
+\textbf{Problem:} The initial version of the Android application exhibited severe interface lag and unresponsiveness during data recording. The accelerometer sensor was configured to \texttt{SENSOR\_DELAY\_FASTEST}, generating events at approximately 100Hz. The application attempted to update the on-screen \texttt{TextView} elements inside every sensor callback. Since the UI rendering thread operates at a lower frequency (approx. 60Hz), the event queue became overwhelmed, causing the displayed values to "trail" behind reality (e.g., the value would continue rising long after the phone had stopped moving).
+
+\textbf{Solution:} The implementation was modified to decouple data collection from UI updates. A throttling mechanism was introduced to update the UI elements only once every 100ms (10Hz), while the data transmission to the server continued at the full 100Hz rate using a background thread.
+
+\subsection{TCP Stream Fragmentation}
+\textbf{Problem:} Occasionally, the Python server would crash with a \texttt{JSONDecodeError}. This occurred because TCP is a stream-oriented protocol, not a message-oriented one. At high transmission rates, multiple JSON objects were merged into a single buffer read, or a single JSON object was split across two reads.
+
+\textbf{Solution:} A delimiter (newline character \texttt{\textbackslash n}) was appended to every message sent from Android. On the server side, a buffer was implemented to accumulate incoming bytes until a full delimiter was found, making sure that only complete JSON strings were passed to the parser.
+
+\subsection{Ghost Ball Jitter}
+\textbf{Problem:} The detected position of the cue ball and cue tip fluctuated slightly (by 1-2 pixels) due to noise in the camera, even when the objects were stationary. This caused the projected "Ghost Ball" vector to shake rapidly, making it difficult for the user to aim.
+
+\textbf{Solution:} A moving average filter (size $N=5$) was applied to the coordinates of the detected objects. This smoothed out the high-rate noise without losing acceptable responsiveness to intentional movements.
+
+\section{Computer Vision Model Evaluation}
+To ensure the reliability of the system, the trained neural networks were subjected to rigorous assessment a hold-out test set \cite{bib:hold}. This section presents the evaluation metrics for both the Ball Detection (\textbf{YOLOv12}) and Cue Detection (\textbf{YOLOv8-pose}) models.
+
+\subsection{Ball Detection Model Results}
+The Ball Detection model, built on the \textbf{YOLOv12} architecture, showed outstanding performance, obtaining a \textbf{mean Average Precision (mAP@0.5)} of \textbf{0.991}, indicating nearly perfect detection abilities at a standard Intersection over Union (IoU) threshold (see Figure~\ref{fig:pr_curve}).
+
+\begin{itemize}
+    \item \textbf{Training Performance:} As illustrated in the training plots, the box loss and classification loss converged rapidly within the first 50 epochs, stabilizing with no signs of overfitting. The precision and recall metrics consistently improved, plateauing near 1.0.
+    \item \textbf{Confusion Matrix:} The normalized confusion matrix (Figure~\ref{fig:conf_matrix}) confirms the model's accuracy. The model correctly identified \textbf{98\%} of Cue Ball instances and \textbf{99\%} of Object Balls ("other"). Misclassifications (e.g., background detected as a ball) were negligible.
+    \item \textbf{F1-Score:} The F1-Confidence curve (Figure~\ref{fig:f1_curve}) shows an optimal confidence threshold of \textbf{0.660}, at which the model reaches an F1 score of \textbf{0.99}. This threshold was subsequently used in the production code to filter weak predictions.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./graf/ball-detection/PR_curve.png}
+    \caption{Precision-Recall Curve showing mAP@0.5 of 0.991 for the Ball Detection model.}
+    \label{fig:pr_curve}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./graf/ball-detection/confusion_matrix_normalized.png}
+    \caption{Normalized Confusion Matrix demonstrating high classification correctness between Cue Ball, Other, and Background.}
+    \label{fig:conf_matrix}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./graf/ball-detection/F1_curve.png}
+    \caption{F1-Confidence Curve indicating the optimal confidence threshold of 0.660.}
+    \label{fig:f1_curve}
+\end{figure}
+
+\subsection{Cue Detection Model Results}
+The Cue Detection model, utilizing pose estimation (YOLOv8-pose), was evaluated based on both bounding box detection and, more importantly, the accuracy of keypoint localization (Object Keypoint Similarity). Accurate keypoint detection is critical for determining the vector of the cue stick.
+
+\begin{itemize}
+    \item \textbf{Pose Estimation Accuracy:} The model reached a \textbf{Pose mAP@0.5} of \textbf{0.970} (see Figure~\ref{fig:pose_pr_curve}), indicating high precision in locating the cue tip and handle keypoints. The bounding box detection also performed well with a mAP@0.5 of 0.954.
+    \item \textbf{F1-Score Analysis:} The F1-Confidence curve for pose estimation (Figure~\ref{fig:pose_f1_curve}) identifies an optimal confidence threshold of \textbf{0.591}, where the model obtains a peak F1 score of \textbf{0.93}.
+    \item \textbf{Classification Performance:} The confusion matrix (Figure~\ref{fig:cue_conf_matrix}) displays the model's ability to distinguish the cue from the table background. Out of 76 actual cue instances in the validation set, the model correctly identified 70, with only a minor number of background false positives.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./graf/cue-detection/PosePR_curve.png}
+    \caption{Precision-Recall Curve for Pose Estimation showing a high mAP@0.5 of 0.970.}
+    \label{fig:pose_pr_curve}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./graf/cue-detection/PoseF1_curve.png}
+    \caption{F1-Confidence Curve for the cue stick keypoints, peaking at 0.93.}
+    \label{fig:pose_f1_curve}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./graf/cue-detection/confusion_matrix.png}
+    \caption{Confusion Matrix for Cue Detection, showing 70 correct detections against 6 false negatives (background).}
+    \label{fig:cue_conf_matrix}
+\end{figure}
+
+\section{Experimental Results}
+To validate the real-word applicability of the system, an experiment was conducted to verify the consistency and distinctiveness of the impact force estimation algorithm. The test was performed by a female subject with a body weight of 54 kg. Based on the anthropometric configuration described in Chapter 5, the system calculated the effective arm mass as:
+$$ m_{arm} = 54 \text{ kg} \times 4.97\% \approx 2.68 \text{ kg} $$
+
+\subsection{Force Estimation Consistency}
+The test procedure involved performing series of shots categorized by subjective intensity. Initially, three categories were planned: Soft, Medium, and Hard.
+
+However, during the experiment, it was observed that shots categorized as "Soft" (gentle taps for exact positioning) consistently generated acceleration values below the system's triggering threshold ($20 m/s^2$). Consequently, these shots were filtered out by the noise reduction algorithm. This thresholding method corresponds with kinematic analysis methodologies found in clinical literature, where velocity or acceleration thresholds are fundamental for defining discrete movement segments and assessing smoothness \cite{bib:noise}.This confirms that the threshold effectively separates between active gameplay strikes and minor refinements or accidental movements.
+
+Therefore, the assessment was targeted on two distinct categories ($N=20$ total):
+\begin{enumerate}
+    \item \textbf{Medium shots:} Standard shots used during regular gameplay.
+    \item \textbf{Hard shots:} Break-type shots or power shots.
+\end{enumerate}
+
+Table~\ref{tab:raw_data} presents the raw force values recorded for each attempt.
+
+\begin{table}[h!]
+\centering
+\caption{Raw recorded force values (in Newtons) for the experimental session ($m_{arm} = 2.68$ kg).}
+\label{tab:raw_data}
+\begin{tabular}{crr}
+\toprule
+\textbf{Attempt \#} & \textbf{Medium Shot (N)} & \textbf{Hard Shot (N)} \\
+\midrule
+1  &  63.4 & 109.7 \\
+2  &  65.7 & 115.4 \\
+3  &  74.4 & 107.4 \\
+4  & 83.1 & 126.6 \\
+5  &  54.9 & 114.9 \\
+6  &  56.5 & 128.0 \\
+7  &  76.9 & 124.9 \\
+8  &  68.9 & 110.2 \\
+9  &  63.2 & 92.8 \\
+10 & 60.4 & 118.1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Based on the raw data, a statistical analysis was performed to calculate the Mean Force ($F_{avg}$) and Standard Deviation ($\sigma$) for each category\cite{bib:stapor}. The results are summarized in Table~\ref{tab:force_results}.
+
+\begin{table}[h!]
+\centering
+\caption{Statistical analysis of impact force measurements ($N=20$).}
+\label{tab:force_results}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Shot Category} & \textbf{Min (N)} & \textbf{Max (N)} & \textbf{Mean $\pm$ Std Dev (N)} \\
+\midrule
+Medium Shot &  60.4 & 83.1 & \textbf{66.74 $\pm$ 8.6} \\
+Hard Shot   &  92.8 & 128.0 & \textbf{114.8 $\pm$ 10.1} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Interpretation:}
+The outcomes indicate a clear separation between the "Medium" and "Hard" categories. As shown in the statistical summary, the maximum force recorded for a medium shot (83.1 N) is significantly lower than the minimum force for a hard shot (92.8 N). This lack of overlap confirms that the system reliably distinguishes between different levels of player intent.
+
+The calculated forces are proportional to the subject's arm mass ($2.68~\mathrm{kg}$). For example, a hard shot of $178~\mathrm{N}$ corresponds to an acceleration of approximately $66~\mathrm{m/s^2}$ ($\approx 6.7g$), which is a realistic value for a dynamic arm movement \cite{bib:arm}.
+
+\subsection{System Latency and Performance}
+A secondary test was conducted to evaluate the real-time capabilities of the system. The total latency was measured as the time difference between the sensor event timestamp (on Android) and the visualization update on the PC.
+
+\begin{itemize}
+    \item \textbf{Network Latency:} Average 15ms (local Wi-Fi network).
+    \item \textbf{Processing Time:} Average 25ms (Vision Module inference per frame).
+    \item \textbf{Frame Rate:} The vision module maintained a stable 30 FPS on the test workstation.
+\end{itemize}
+
+These efficiency measures confirm that the system acts in "near real-time," providing feedback instant enough for the user to relate the data to the just-performed action.

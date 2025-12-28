@@ -89,9 +89,9 @@ This module utilizes two separate neural network models hosted on the Roboflow p
 \section{Overview of Key Algorithms}
 
 \subsection{Ghost Ball Algorithm}
-The algorithm calculates the "Ghost Ball" position (the point of collision). It works by projecting the aim vector onto the vector connecting the balls.
+The implementation translates the vector mathematics and geometric rules defined in Section 2.3.1 into Python code using the \texttt{NumPy} library. The function \texttt{find\_ghost\_ball\_position} calculates the projection vector and validates the perpendicular distance to render the visual aid.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \begin{lstlisting}[
     language=Python,
@@ -118,21 +118,11 @@ def find_ghost_ball_position(cue_ball_pos, aim_vector, target_ball_pos):
 \end{figure}
 
 \subsection{Impact Force Calculation (Physics)}
-In the \texttt{sensors.py} module, the impact force estimation is implemented based on Newton's Second Law of Motion ($F=ma$). System dynamically calculates the effective mass ($m_{arm}$) based on anthropometric data derived from Plagenhoef et al. \cite{bib:anatomical}.
+The \texttt{sensors.py} module implements the force estimation model derived in Section 2.3.2. To ensure flexibility, the system does not use hard-coded anthropometric constants in the source code. Instead, it dynamically loads the user's attributes (weight and gender) from a \texttt{config.json} file.
 
-The effective arm mass is determined by summing the percentages of total body weight for the hand, forearm, and upper arm. According to the tables presented in \cite{bib:anatomical}, these values are:
-\begin{itemize}
-    \item \textbf{Male:} $0.65\% + 1.87\% + 3.25\% = 5.77\%$ of the total body weight.
-    \item \textbf{Female:} $0.50\% + 1.57\% + 2.90\% = 4.97\%$ of the total body weight.
-\end{itemize}
+Based on these attributes, the system selects the appropriate effective mass coefficient ($\mu_{gender}$)—as detailed in the theoretical analysis (see Section 2.3.2)—and computes the personalized arm mass ($m_{arm}$). The final impact force is then derived by applying the calculated mass to the linear acceleration vector received from the mobile device.
 
-The system reads the user's attributes (weight and gender) from a configuration file (\texttt{config.json}) to compute the personalized arm mass. The force is calculated as follows:
-
-\begin{equation}
-    F_{hit} = a_{total} \cdot m_{arm}
-\end{equation}
-
-Additionally, the algorithm implements a peak detection mechanism that identifies the second peak in the acceleration signal, distinguishing the actual strike from the backswing phase.
+Additionally, the algorithm implements a peak detection logic (refer to Section 2.4.2) that specifically identifies the \textit{second} significant peak in the signal buffer. This implementation detail allows the system to distinguish the actual forward strike from the preparatory backswing movement.
 \section{Implementation Details}
 
 \subsection{Thread Synchronization (Python)}

@@ -69,6 +69,15 @@ The installation process is twofold, involving the desktop server and the mobile
     \begin{lstlisting}
     API_KEY=your_copied_key_here
     \end{lstlisting}
+
+    \item \textbf{Configure Player Metrics:} To ensure accurate impact force estimations ($F=ma$), the system requires the player's anthropometric data to calculate the effective arm mass. Open the \texttt{config.json} file in the root directory and update the values:
+    \begin{lstlisting}
+    {
+        "body_weight_kg": 54,
+        "gender": "female"
+    }
+    \end{lstlisting}
+    \textit{Note: The \texttt{gender} field accepts "male" or "female" (case-insensitive). This setting adjusts the arm mass coefficient used in the biomechanical calculations.}
 \end{enumerate}
 
 \subsection{Mobile Installation}
@@ -234,6 +243,6 @@ This section illustrates the system in action with screenshots from the prototyp
     \end{subfigure}
 
     % Główny podpis dla całego rysunku
-    \caption{Scenario B: Stroke Analysis workflow. The top row shows the PC application analyzing the stroke data, where (a) is pre-hit and (b) is post-hit showing impact metrics. The bottom row shows the corresponding state of the mobile sensor app (c, d).}
+    \caption{Scenario B: Stroke Analysis workflow. The top row shows the PC application analyzing the stroke data, where (a) is pre-hit and (b) is post-hit showing impact metrics. The bottom row shows two possible states of the mobile sensor app (c, d).}
     \label{fig:scenario_b_full}
 \end{figure}

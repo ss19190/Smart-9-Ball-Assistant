@@ -1,0 +1,112 @@
+\chapter{Requirements and Tools}
+
+This chapter details the functional and non-functional requirements of the "smart pool assistant" and presents the technological stack selected for implementation. It also describes the system's use cases and the method adopted for the design and development process.
+
+\section{Functional and Non-functional Requirements}
+
+The system requirements were defined to address the problems identified in the previous chapter, specifically the "ghost ball" visualization and the biomechanical analysis of the stroke.
+
+\subsection{Functional Requirements}
+The functional requirements define the specific behaviors and functions the system must support. They are categorized by module:
+
+\textbf{Vision Module (Desktop):}
+\begin{itemize}
+    \item \textbf{FR-01 Video acquisition:} The system must capture a real-time video stream from a webcam positioned above the billiard table.
+    \item \textbf{FR-02 Object detection:} The system must detect and classify the cue ball and object balls using a convolutional neural network (yolo).
+    \item \textbf{FR-03 Pose estimation:} The system must identify keypoints of the cue stick (tip and handle) to determine the aiming vector.
+    \item \textbf{FR-04 Trajectory prediction:} The system must calculate the "ghost ball" position and predict the trajectories of the cue ball and target ball based on geometric rules.
+    \item \textbf{FR-05 AR visualization:} The system must overlay the predicted paths and the ghost ball indicator onto the video feed in real-time.
+\end{itemize}
+
+\textbf{Sensor Module (Mobile):}
+\begin{itemize}
+    \item \textbf{FR-06 Data acquisition:} The mobile application must read data from the accelerometer (linear acceleration) and gyroscope at a frequency of at least 50 Hz.
+    \item \textbf{FR-07 Data transmission:} The mobile app must transmit sensor data to the desktop server via a TCP/IP socket connection (USB tethering).
+    \item \textbf{FR-08 Stroke analysis:} The system must detect the moment of impact (peak acceleration) and calculate the impact force ($f=ma$) and wrist rotation stability.
+\end{itemize}
+
+\subsection{Non-functional Requirements}
+The non-functional requirements define the quality attributes of the system:
+
+\begin{itemize}
+    \item \textbf{NFR-01 Real-time performance:} The vision processing pipeline must maintain a frame rate of at least 20 fps (frames per second) to provide smooth visual feedback.
+    \item \textbf{NFR-02 Latency:} The latency between the physical cue movement and the AR update should be less than 150 ms to ensure the user perceives the lines as responsive.
+    \item \textbf{NFR-03 Accuracy:} The "ghost ball" projection error should be less than 5\% of the ball diameter to be practically useful for aiming.
+    \item \textbf{NFR-04 Sensor synchronization:} The time drift between the video impact detection and sensor peak detection must be handled to correctly associate the physical stroke with the visual event.
+    \item \textbf{NFR-05 Usability:} The setup process (camera alignment, phone connection) should be performable by a single user within 5 minutes.
+\end{itemize}
+
+\section{Use Cases}
+
+The interaction between the user (player) and the system is shown by a number of essential use cases. The primary actor is the player, who interacts with both the physical equipment (phone, cue) and the software (desktop app).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{./graf/usecase.png}
+\caption{Use case diagram}
+\label{fig:label}
+\end{figure}
+
+The main use cases are defined as follows:
+
+\begin{enumerate}
+    \item \textbf{UC-1 System setup:} The player connects the Android phone to the PC (via USB/ADB), starts the server script, and launches the mobile app. The connection is established if the "connected" status appears.
+    \item \textbf{UC-2 Aiming assistance:} The player addresses the cue ball. The system detects the cue stick, calculates the trajectory, and projects the "ghost ball" and aiming lines. The player adjusts their stance based on this visual feedback.
+    \item \textbf{UC-3 Stroke execution \& analysis:} The player executes the shot. The system automatically detects the impact via the sensor stream, captures a snapshot of the metrics (force, rotation), and saves the data to a history log.
+    \item \textbf{UC-4 Review history:} The player views the saved "hit history" (csv/images) to analyze their consistency over the training session.
+\end{enumerate}
+
+\section{Description of Tools}
+The project applies a modern technology stack combining computer vision, AI, and mobile development.
+
+\subsection{Hardware tools}
+\begin{itemize}
+    \item \textbf{Webcam:} A standard HD webcam is used for video input. It is mounted in a "top-down" configuration to minimize perspective distortion.
+    \item \textbf{Android smartphone:} A device equipped with an inertial measurement unit (IMU). It works as the telemetry unit attached to the player's cue.
+    \item \textbf{Workstation (PC):} A computer with access to the internet and with installed Python 3.x environment to run the vision server and process data.
+\end{itemize}
+
+\subsection{Software tools}
+\begin{itemize}
+    \item \textbf{Python 3.x:} The main programming language for the backend server and vision processing. \cite{bib:python}
+    \item \textbf{OpenCV (open source computer vision library):} Used for image pre-processing, drawing the AR visualization (lines, circles), and rendering the live telemetry graphs. \cite{bib:opencv-library}
+    \item \textbf{Ultralytics YOLO (You Only Look Once):} A state-of-the-art framework for object detection.
+    \begin{itemize}
+        \item \textit{yolov12 (detection):} Used for robust detection of billiard balls under different lighting conditions. \cite{bib:yolo12}
+        \item \textit{yolov8-pose (keypoint estimation):} Specifically used to detect the \texttt{tip} and \texttt{handle} of the cue stick, allowing accurate vector calculation. \cite{bib:yolov8-ultralytics}
+    \end{itemize}
+    \item \textbf{Roboflow:} A platform used for dataset management, image annotation, and versioning. It facilitated the preparation of the training data for the custom billiard model. \cite{bib:roboflow}
+    \item \textbf{Android Studio \& Java:} The development environment for the mobile sensor application. Java was chosen for its native support of Android sensor APIs. \cite{bib:android}
+    \item \textbf{ADB (Android Debug Bridge):} Utilized for establishing a low-latency reverse TCP connection (\texttt{adb reverse}) between the Android device and the localhost server. \cite{bib:adb}
+\end{itemize}
+
+\section{Methodology of design and implementation}
+
+The development followed an iterative **prototyping methodology** \cite{bib:method}, which is suitable for systems that include experimental algorithms (like computer vision) and hardware integration. The process was divided into four phases:
+
+\subsection{Phase 1: Data collection and model training}
+The initial phase focused on the preparation of the Computer Vision module. Two separate custom datasets were curated and annotated using the Roboflow platform~\cite{bib:roboflow}: one for billiard balls and one for the cue stick.
+
+For the \textbf{Ball Detection model}, a dataset of overhead table images was collected. As shown in the class distribution analysis (see Figure~\ref{fig:labels_ball}), the dataset reflects the natural disproportion of the game: the "other" class (object balls 1--15) is significantly more frequent than the "cue ball" class. To reduce possible overfitting as weel as improve model dependability under different lighting conditions, image augmentation procedures (including rotation, brightness adjustment, and noise augmentation) were applied during the preprocessing stage.
+
+A similar process was followed for the \textbf{Cue Detection model}, where the dataset was annotated with keypoints (skeleton) to define the tip and handle positions for the pose estimation task. The class distribution for this dataset (see Figure~\ref{fig:labels_cue}) focuses on a single class, "cue", with corresponding bounding box dimensions and instance counts showing the nature of cue stick detection.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./graf/ball-detection/labels.jpg}
+    \caption{Class distribution in the ball detection training dataset, highlighting the imbalance between the single 'cue ball' and multiple 'other' balls.}
+    \label{fig:labels_ball}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./graf/cue-detection/labels.jpg}
+    \caption{Class distribution and instance analysis in the cue detection training dataset.}
+    \label{fig:labels_cue}
+\end{figure}
+
+\subsection{Phase 2: Vision logic implementation}
+Once the models were trained, the Python logic was developed to translate raw detections into game state information. This involved implementing the vector algebra for the "ghost ball" \cite{bib:ghost-ball} algorithm and using OpenCV \cite{bib:opencv-library} to render the visual overlays.
+
+\subsection{Phase 3: Sensor module development}
+The Android application was developed to reliably extract linear acceleration and gyroscope data. The focus was on implementing the `type\_linear\_acceleration` \cite{bib:linear} sensor to filter out gravity and developing a stable TCP socket protocol for data transmission.
