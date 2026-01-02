@@ -270,10 +270,11 @@
     \field{labeltitlesource}{title}
     \field{sortinit}{C}
     \field{sortinithash}{C}
-    \field{pages}{1 \bibrangedash  8}
+    \field{issn}{2624 -- 9367}
     \field{title}{Quantitative analysis and evaluation of research on the
   application of computer vision in sports since the 21st century}
-    \field{journaltitle}{frontiers}
+    \field{volume}{7}
+    \field{journaltitle}{Frontiers in Sports and Active Living}
     \field{year}{2025}
   \endentry
 
@@ -316,13 +317,13 @@
     \field{labeltitlesource}{title}
     \field{sortinit}{D}
     \field{sortinithash}{D}
+    \field{issn}{2349 -- 5170}
     \field{number}{2}
-    \field{pages}{1 \bibrangedash  7}
     \field{title}{Hawk Eye Technology}
     \field{volume}{1}
     \field{journaltitle}{Journal of Global Research Computer Science \&
   Technology}
-    \field{year}{2024}
+    \field{year}{2014}
   \endentry
 
   \entry{bib:roboflow}{online}{}
@@ -354,6 +355,31 @@
     \field{urlday}{16}
     \field{urlmonth}{03}
     \field{urlyear}{2023}
+  \endentry
+
+  \entry{bib:calc-app}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=FD}{%
+         family={Frommelt},
+         familyi={F\bibinitperiod},
+         given={Dominik},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FD1}
+    \strng{fullhash}{FD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{howpublished}{Aplikacja mobilna}
+    \field{note}{Wersja 1.2.1}
+    \field{title}{Billard Aiming Calculator Pro}
+    \verb{url}
+    \verb https://apps.apple.com/id/app/billard-aiming-calculator-pro/id6598760
+    \verb 65
+    \endverb
+    \field{year}{2015}
   \endentry
 
   \entry{bib:sensors}{article}{}
@@ -618,6 +644,49 @@
     \field{volume}{54}
     \field{journaltitle}{RESEARCH QUARTERLY FOR EXERCISE AND SPORT}
     \field{year}{1983}
+  \endentry
+
+  \entry{bib:yolo}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=RJ}{%
+         family={Redmon},
+         familyi={R\bibinitperiod},
+         given={Joseph},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=DS}{%
+         family={Divvala},
+         familyi={D\bibinitperiod},
+         given={Santosh},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=GR}{%
+         family={Girshick},
+         familyi={G\bibinitperiod},
+         given={Ross},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=FA}{%
+         family={Farhadi},
+         familyi={F\bibinitperiod},
+         given={Ali},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RJ+1}
+    \strng{fullhash}{RJDSGRFA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{booktitle}{2016 IEEE Conference on Computer Vision and Pattern
+  Recognition (CVPR)}
+    \verb{doi}
+    \verb 10.1109/CVPR.2016.91
+    \endverb
+    \field{pages}{779\bibrangedash 788}
+    \field{title}{You Only Look Once: Unified, Real-Time Object Detection}
+    \field{year}{2016}
   \endentry
 
   \entry{bib:android}{book}{}

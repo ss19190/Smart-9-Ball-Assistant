@@ -1,29 +1,29 @@
 \chapter{Introduction}
 
-Billiards, especially 9-ball, is a sport that demands a high level of precision, spatial awareness, and consistent motor control. Unlike many other sports where physical part is the most important, billiards is fundamentally a game that uses geometry and physics executed through trained muscle memory.
+Billiards, especially 9-ball, is a sport that demands a high level of precision, spatial awareness, and consistent motor control. Unlike many other sports where physical part is the most important, billiards is fundamentally a game that uses geometry and physics executed through the trained muscle memory.
 
-\section{Introduction to the problem domain}
+\section{Introduction to the Problem Domain}
 
-Game of billiards focuses mainly on two skill sets: the ability to see the correct path of the balls and the physical ability to make the stroke that is needed to shoot the cue ball along that path. New players often have problem with the idea of the "Ghost Ball" \cite{bib:ghost-ball} — the imaginary position where the cue ball must hit the object ball to pocket it.
+Game of billiards focuses mainly on two skill sets: the ability to see the correct path of the balls and the physical ability to make the stroke that is needed to shoot the cue ball along that path. New players often have problem with the idea of the ``Ghost Ball"~\cite{bib:ghost-ball} --- the imaginary position where the cue ball must hit the object ball to pocket it.
 
-Additionally, the way a player executes the stroke — including stance, bridge stability, and wrist movement can have a strong effect on the shot result. Even if a player aims correctly, but player introduces unwanted lateral acceleration or English\cite{bib:english} (spin) can result in a miss. With the development of accessible Computer Vision (CV), we are now able to better digitize these physical interactions to provide live feedback. \cite{bib:cv-in-sports}
+Additionally, the way a player executes the stroke --- including stance, bridge stability, and wrist movement can have a strong effect on the shot result. Even if a player aims correctly, but she introduces unwanted lateral acceleration or English (spin)~\cite{bib:english} can result in a miss. With the development of accessible Computer Vision (CV), we are now able to better digitize these physical interactions to provide live feedback~\cite{bib:cv-in-sports}.
 
 \section{Settling of the Problem in the Domain}
-Training methods that we have right now are mostly manual, relying on observations of coaches or player's own intuition. We do have professional tracking systems, but they are often quite expensive and need fixed, industrial-grade hardware. When it comes to mobile applications, they often rely solely on 2D video analysis, which doesn't have the depth perception that is needed for accurate table mapping or the high-frequency sampling that would be needed for detailed stroke analysis.
+Training methods that we have right now are mostly manual, relying on observations of coaches or player's own intuition. We do have professional tracking systems, but they are often quite expensive and need fixed, industrial-grade hardware. Like hawk-eye~\cite{bib:hawk-eye} technology for example. When it comes to mobile applications, they often rely solely on 2D video analysis, which does not have the depth perception that is needed for accurate table mapping or the high-frequency sampling that would be needed for detailed stroke analysis. One of those applications would be ``Billard Aiming Calculator"~\cite{bib:calc-app}.
 
 \section{Objective of the Thesis}
 
-The main goal of this thesis is to design, implement, and test a "Smart Pool Assistant and Stroke Analyzer" The system would aim to assist player in real-time by visualizing shot outcomes and showing the analysis of the their cue strokes.
+The main goal of this thesis is to design, implement, and test a ``Smart Pool Assistant and Stroke Analyzer". The system would aim to assist a player in real-time by visualizing shot outcomes and showing the analysis of the their cue strokes.
 
 The primary objectives are defined as follows:
 \begin{itemize}
     \item To develop a Computer Vision module that is able to detect billiard balls and the cue stick in a live video feed.
-    \item To implement a physics engine that calculates and visualizes the predicted trajectory of the cue ball (Tangent and Normal lines) based on the "Ghost Ball" principle.
+    \item To implement a physics engine that calculates and visualizes the predicted trajectory of the cue ball (Tangent and Normal lines) based on the ``Ghost Ball" principle.
     \item To create a mobile telemetry system that captures high-frequency accelerometer and gyroscope data from the player's phone.
-    \item To derive important biomechanical metrics, such as impact force ($F=ma$) and wrist stability, to provide insight on the player's technique.
+    \item To derive important biomechanical metrics, such as the impact force $F=ma$ (where $F$, $m$, and $a$ denote force, mass, and acceleration, respectively) and wrist stability, to provide insights on the player's technique.
 \end{itemize}
 
-\section{Scope of the thesis}
+\section{Scope of the Thesis}
 
 This project covers the software and hardware needed to build a working prototype for the game of 9-ball.
 
@@ -33,18 +33,18 @@ This project covers the software and hardware needed to build a working prototyp
     \item \textbf{Hardware:} The phone is connected to the computer via USB tethering. The mobile app is developed in Java using Android Studio. 
 \end{itemize}
 
-\section{Short description of chapters}
+\section{Short Description of Chapters}
 
 The thesis is organized as follows:
 
-\textbf{Chapter 2} (Problem analysis) shows the theoretical and mathematical background for the project. It shows the physics behind collision, the geometry of "Ghost Ball" aiming and the mechanics od sensors. It also presents solutions that already exist in sports technology to set the context.  
+\textbf{Chapter 2} (Problem Analysis) shows the theoretical and mathematical background for the project. It shows the physics behind collisions, the geometry of ``Ghost Ball" aiming and the mechanics of sensors. It also presents solutions that already exist in sports technology to set the context.  
 
-\textbf{Chapter 3} (Requirements and tools) defines the system's funcitonal and non-functional requirements. It also presents the chosen technology stack. Explains the use of Python, OpenCV, and Android platform.
+\textbf{Chapter 3} (Requirements and Tools) defines the system's functional and non-functional requirements. It also presents the chosen technology stack, and motivates the use of Python, OpenCV, and Android platform.
 
-\textbf{Chapter 4} (External specification) describes the system from the user's perspective. It shows Android App interface and the visualization of the desktop interface. Also explains how user interacts with the system. 
+\textbf{Chapter 4} (External Specification) describes the system from the user's perspective. It shows the Android App interface and the visualization of the desktop interface. It also explains how the user interacts with the system. 
 
-\textbf{Chapter 5} (Internal specification) details the technical implementation and backend logic. Explains the algorithms that were used to detect objects, predict trajectory, for TCP/IP communication protocol and sensor data processing.
+\textbf{Chapter 5} (Internal Specification) details the technical implementation and backend logic. It explains the algorithms that were used for object detection, trajectories prediction, TCP/IP communication, and sensor data processing.
 
-\textbf{Chapter 6} (Verification and validation) presents testing results. Evaluates the computer vision model accuracy, the latency of live data streaming and how reliable are stroke analysis parameters through unit tests and real-world examples.
+\textbf{Chapter 6} (Verification and Validation) presents testing results. Evaluates the computer vision model accuracy, the latency of live data streaming and how reliable are stroke analysis parameters through unit tests and real-world examples.
 
 \textbf{Chapter 7} (Conclusions) summarizes the thesis, discussing the achieved objectives and suggesting future improvements. 

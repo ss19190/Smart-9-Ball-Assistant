@@ -5,7 +5,7 @@ This chapter presents the technical details of the solution, including the syste
 \section{System Concept}
 The system concept is based on the fusion of sensory and visual data to assist in playing billiards. The system consists of:
 \begin{enumerate}
-    \item \textbf{Vision Module (AI):} Analyzes the camera feed, detects billiard balls and the cue, and subsequently calculates the "Ghost Ball"—the predicted position of the cue ball at the moment of impact.
+    \item \textbf{Vision Module (AI):} Analyzes the camera feed, detects billiard balls and the cue, and subsequently calculates the "Ghost Ball" --- the predicted position of the cue ball at the moment of impact.
     \item \textbf{Telemetry Module:} Analyzes the force of the impact and the smoothness of the player's movement based on IMU sensor data (accelerometer, gyroscope) transmitted via USB cable from a smartphone.
 \end{enumerate}
 
@@ -120,7 +120,7 @@ def find_ghost_ball_position(cue_ball_pos, aim_vector, target_ball_pos):
 \subsection{Impact Force Calculation (Physics)}
 The \texttt{sensors.py} module implements the force estimation model derived in Section 2.3.2. To ensure flexibility, the system does not use hard-coded anthropometric constants in the source code. Instead, it dynamically loads the user's attributes (weight and gender) from a \texttt{config.json} file.
 
-Based on these attributes, the system selects the appropriate effective mass coefficient ($\mu_{gender}$)—as detailed in the theoretical analysis (see Section 2.3.2)—and computes the personalized arm mass ($m_{arm}$). The final impact force is then derived by applying the calculated mass to the linear acceleration vector received from the mobile device.
+Based on these attributes, the system selects the appropriate effective mass coefficient ($\mu_{gender}$) --- as detailed in the theoretical analysis (see Section 2.3.2) --- and computes the personalized arm mass ($m_{arm}$). The final impact force is then derived by applying the calculated mass to the linear acceleration vector received from the mobile device.
 
 Additionally, the algorithm implements a peak detection logic (refer to Section 2.4.2) that specifically identifies the \textit{second} significant peak in the signal buffer. This implementation detail allows the system to distinguish the actual forward strike from the preparatory backswing movement.
 \section{Implementation Details}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.12.25)  28 DEC 2025 18:04
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.12.25)  2 JAN 2026 18:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1608,28 +1608,28 @@ g=tex-text;"
 
 File: graf/politechnika_sl_logo_bw_pion_en.pdf Graphic file (type pdf)
 <use graf/politechnika_sl_logo_bw_pion_en.pdf>
-LaTeX Font Info:    Trying to load font information for U+msa on input line 37.
-
-
-(C:\Users\saras\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 37.
-
-
-(C:\Users\saras\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-[1
+ [1
 
 
 
 ]) [2
 
 
-] (chapters/00.tex) [3] [4
+] (chapters/00.tex) [3] [4] (main.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
 
-] (main.toc [5] [6])
+(C:\Users\saras\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
+
+
+(C:\Users\saras\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+[5
+
+] [6])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
@@ -1637,18 +1637,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] (chapters/01.tex
 Chapter 1.
-
-Underfull \vbox (badness 1454) has occurred while \output is active []
-
- [1
+[1
 
 
 ]
-Overfull \hbox (5.15994pt too wide) in paragraph at lines 42--43
-[]\TU/lmr/bx/n/12 Chapter 3 \TU/lmr/m/n/12 (Requirements and tools) defines the
- system’s funcitonal and non-functional
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1656,7 +1648,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[2]) (chapters/02.tex
+[2]
+Overfull \hbox (8.08794pt too wide) in paragraph at lines 42--43
+[]\TU/lmr/bx/n/12 Chapter 3 \TU/lmr/m/n/12 (Requirements and Tools) defines the
+ system’s functional and non-functional
+ []
+
+) (chapters/02.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1685,11 +1683,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [6]
-Overfull \hbox (14.39464pt too wide) in paragraph at lines 71--72
-[]\TU/lmr/m/n/12 The Android \TU/lmtt/m/n/12 TYPE_LINEAR_ACCELERATION \TU/lmr/m
-/n/12 sensor is used instead of \TU/lmtt/m/n/12 TYPE_ACCELEROMETER
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1698,6 +1691,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7]
+Overfull \hbox (30.52527pt too wide) in paragraph at lines 102--103
+[]\TU/lmr/m/n/12 To identify the game elements, a standard object detection mod
+el based on the YOLOv12 [[]25[]]
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1754,6 +1752,12 @@ Used for image pre-processing,
  []
 
 
+Overfull \hbox (14.52129pt too wide) in paragraph at lines 72--73
+\TU/lmr/m/n/12 drawing the AR visualization (lines, circles), and rendering the
+ live telemetry graphs [[]8[]]. 
+ []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1761,12 +1765,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [14]
-File: ./graf/ball-detection/labels.jpg Graphic file (type bmp)
-<./graf/ball-detection/labels.jpg>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1775,12 +1773,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [15]
+File: ./graf/ball-detection/labels - ball.jpg Graphic file (type bmp)
+<./graf/ball-detection/labels - ball.jpg>
 File: ./graf/cue-detection/labels.jpg Graphic file (type bmp)
 <./graf/cue-detection/labels.jpg>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
+) (chapters/04.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1788,7 +1785,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[16]) (chapters/04.tex
+[16]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2340,17 +2337,17 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 504ABC92BD9A5B1BD88939E4035F67CE;15963.
+(rerunfilecheck)             Checksum: F438A10E3789C07C9928698F9D0E404F;15956.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51540 strings out of 409616
- 1135115 string characters out of 5773991
- 2350373 words of memory out of 5000000
- 72857 multiletter control sequences out of 15000+600000
- 569392 words of font info for 117 fonts, out of 8000000 for 9000
+ 51535 strings out of 409616
+ 1135273 string characters out of 5773991
+ 2351798 words of memory out of 5000000
+ 72853 multiletter control sequences out of 15000+600000
+ 566785 words of font info for 105 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,12n,96p,1925b,5663s stack positions out of 10000i,1000n,20000p,200000b,200000s
 

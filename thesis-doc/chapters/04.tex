@@ -1,10 +1,10 @@
-\chapter{External specification}
+\chapter{External Specification}
 
 This chapter provides a detailed description of the system from the user's perspective. It covers the installation requirements, setup procedures, and a walkthrough of typical usage scenarios, including the user interface (UI) and system output.
 
-\section{Hardware and software requirements}
+\section{Hardware and Software Requirements}
 
-To ensure the correct operation of the "Smart Pool Assistant", the following minimum requirements must be met.
+To ensure the correct operation of the ``Smart Pool Assistant", the following minimum requirements must be met.
 
 \subsection{Hardware Requirements}
 \begin{itemize}
@@ -31,17 +31,17 @@ To ensure the correct operation of the "Smart Pool Assistant", the following min
 \begin{itemize}
     \item \textbf{PC Operating System:} Windows 10/11 or Linux.
     \item \textbf{Python Environment:} Python 3.8 or newer.
-    \item \textbf{Android Environment:} Android device with "Developer Options" and "USB Debugging" enabled.
+    \item \textbf{Android Environment:} Android device with ``Developer Options" and ``USB Debugging" enabled.
     \item \textbf{Dependencies:} The required Python libraries are listed in the \texttt{req.txt} file (e.g., \texttt{ultralytics}, \texttt{opencv-python}, \texttt{inference}, \texttt{supervision}).
 \end{itemize}
 
-\section{Installation procedure}
+\section{Installation Procedure}
 
 The installation process is twofold, involving the desktop server and the mobile client.
 
 \subsection{Desktop Installation}
 \begin{enumerate}
-    \item \textbf{Clone the Repository:} Download the project source code from the official GitHub repository. You can download the ZIP file directly:
+    \item \textbf{Clone the Repository:} Download the project source code from the official GitHub repository. One can download the ZIP file directly:
     
     \begin{center}
         \url{https://github.com/ss19190/Smart-9-Ball-Assistant}
@@ -59,7 +59,7 @@ The installation process is twofold, involving the desktop server and the mobile
 
     \item \textbf{Install ADB:} Ensure the Android Debug Bridge (ADB) is installed and added to the system PATH variables.
 
-    \item \textbf{Configure API Keys:} You need a valid API Key to access the trained models.
+    \item \textbf{Configure API Keys:} One needs a valid API Key to access the trained models.
     \begin{itemize}
         \item Create a free account at \url{https://roboflow.com}.
         \item Navigate to \textbf{Settings} $\rightarrow$ \textbf{API} (or your Workspace Settings).
@@ -77,12 +77,12 @@ The installation process is twofold, involving the desktop server and the mobile
         "gender": "female"
     }
     \end{lstlisting}
-    \textit{Note: The \texttt{gender} field accepts "male" or "female" (case-insensitive). This setting adjusts the arm mass coefficient used in the biomechanical calculations.}
+    \textit{Note: The \texttt{gender} field accepts ``male" or ``female" (case-insensitive). This setting adjusts the arm mass coefficient used in the biomechanical calculations.}
 \end{enumerate}
 
 \subsection{Mobile Installation}
 \begin{enumerate}
-    \item \textbf{Enable Developer Mode:} On the Android phone, go to \textbf{Settings} $\rightarrow$ \textbf{About Phone}. Find the "Build Number" entry and tap it 7 times repeatedly until you see a message "You are now a developer!".
+    \item \textbf{Enable Developer Mode:} On the Android phone, go to \textbf{Settings} $\rightarrow$ \textbf{About Phone}. Find the ``Build Number" entry and tap it 7 times repeatedly until you see a message ``You are now a developer!".
 
     \item \textbf{Enable USB Debugging:} Go back to the main Settings menu (or System $\rightarrow$ Advanced), open \textbf{Developer Options}, and turn on the switch for \textbf{USB Debugging} to ON. Confirm the security prompt if requested.
     
@@ -95,7 +95,7 @@ The installation process is twofold, involving the desktop server and the mobile
     Ensure you allow installation from unknown sources if prompted on the device.
 \end{enumerate}
 
-\section{Activation procedure}
+\section{Activation Procedure}
 
 To start a training session, the user must follow a specific sequence of steps to establish the client-server connection.
 
@@ -113,10 +113,10 @@ To start a training session, the user must follow a specific sequence of steps t
     \begin{lstlisting}[language=bash]
     python bilard.py
     \end{lstlisting}
-    \item \textbf{Connect the App:} Launch the app on the phone and tap the "CONNECT" button. The status should change to green "CONNECTED".
+    \item \textbf{Connect the App:} Launch the app on the phone and tap the ``CONNECT" button. The status should change to green ``CONNECTED".
 \end{enumerate}
 
-\section{Types of users}
+\section{Types of Users}
 
 The system is designed for a single type of user, although the roles can be conceptually divided:
 \begin{itemize}
@@ -124,7 +124,7 @@ The system is designed for a single type of user, although the roles can be conc
     \item \textbf{The Operator (Optional):} A second person (e.g., a coach) who manages the software, starts/stops the scripts, and analyzes the history logs, though the Player can perform these tasks themselves.
 \end{itemize}
 
-\section{User manual}
+\section{User Manual}
 
 \subsection{Main Interface (Desktop)}
 The desktop window displays the live camera feed overlaid with augmented reality elements.
@@ -146,22 +146,22 @@ The mobile app interface is minimal to avoid distraction.
     \item \textbf{Connect Button:} Toggles the TCP connection.
 \end{itemize}
 
-\section{System administration}
+\section{System Administration}
 
 Since this is a standalone prototype, system administration tasks are limited to:
 \begin{itemize}
     \item \textbf{Log Management:} The system generates CSV files (\texttt{hit\_history.csv}) and image snapshots in the \texttt{saved\_graphs/} folder. The user should periodically archive or delete old files to save disk space.
-    \item \textbf{Calibration:} If the "Ghost Ball" accuracy drifts, the user may need to verify the \texttt{BALL\_DIAMETER\_PX} constant in \texttt{bilard.py} to match the current camera height.
+    \item \textbf{Calibration:} If the ``Ghost Ball" accuracy drifts, the user may need to verify the \texttt{BALL\_DIAMETER\_PX} constant in \texttt{bilard.py} to match the current camera height.
 \end{itemize}
 
-\section{Security issues}
+\section{Security Issues}
 
 \begin{itemize}
     \item \textbf{Network Security:} The communication uses unencrypted TCP sockets. This is acceptable for a local USB connection (ADB forwarding), but if ever was implemented and used over public Wi-Fi, the data stream could be intercepted.
     \item \textbf{API Keys:} The Roboflow API key is stored in a \texttt{.env} file. This file should not be shared or committed to public version control repositories.
 \end{itemize}
 
-\section{Example of usage}
+\section{Example of Usage}
 
 \textbf{Scenario: Practicing the Cut Shot}
 The player wants to practice a difficult cut shot into the corner pocket.
@@ -169,7 +169,7 @@ The player wants to practice a difficult cut shot into the corner pocket.
 \begin{enumerate}
     \item The player sets up the white ball and the target ball.
     \item The system detects the balls and waits for the cue stick.
-    \item The player addresses the cue ball. The system detects the cue pose and renders the "Ghost Ball" slightly to the left of the target ball.
+    \item The player addresses the cue ball. The system detects the cue pose and renders the ``Ghost Ball" slightly to the left of the target ball.
     \item The AR lines show that the current aim will cause the target ball to miss the pocket (hit the rail).
     \item The player adjusts their stance until the Green Line points directly into the pocket.
     \item The player executes the stroke.
@@ -177,7 +177,7 @@ The player wants to practice a difficult cut shot into the corner pocket.
     \item The system saves a snapshot of the stroke metrics, allowing the player to see if they maintained wrist steadiness during the shot.
 \end{enumerate}
 
-\section{Working scenarios}
+\section{Working Scenarios}
 
 This section illustrates the system in action with screenshots from the prototype.
 

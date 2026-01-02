@@ -1,123 +1,130 @@
-\chapter{Problem analysis}
+\chapter{Problem Analysis}
 
-This chapter presents the theoretical and mathematical basis of the system. It explains the geometric challenges of aiming that were implemented in the vision module and shows the biomechanical rules principles behind the sensor analysis. It also reviews solutions that already exist.
-\section{Problem analysis}
+This chapter presents the theoretical and mathematical basis of the system. It explains the geometric challenges of aiming that were implemented in the vision module and shows the biomechanical principles behind the sensor analysis. It also reviews the solutions to these challenges that already exist.
+\section{Problem Analysis}
 
-The games of 9-ball billiards provides a singular challenge in which a player must convert a 3D intention into a 2D geometric action. The main problems that are addressed by this project are divided into visual perception and biomechanical execution.
+The game of 9-ball billiards provides a singular challenge in which a player must convert a 3D intention into a 2D geometric action. The main problems that are addressed by this project are divided into visual perception and biomechanical execution.
 
 \subsection{The Visual Paradox (Ghost Ball)}
-According to Alciatore, the "Ghost Ball" concept is fundamental to understanding how to aim in billiards \cite{bib:ghost-ball}. The player must visualize an imaginary position where the cue ball must contact the object ball to send it into the pocket. It's often hard to visualize it, because the aiming line, which passes through the ghost ball's center, is not the same as the actual contact point on the object ball. This mismatch requires players to aim at an invisible target, which creates a "visual paradox", that is especially hard for new players without any visual feedback. 
+According to Alciatore, the ``Ghost Ball" concept is fundamental to understanding how to aim in billiards~\cite{bib:ghost-ball}. The player must visualize an imaginary position where the cue ball must contact the object ball to send it into the pocket. It is often hard to visualize it, because the aiming line, which passes through the ghost ball's center, is not the same as the actual contact point on the object ball. This mismatch requires players to aim at an invisible target, which creates a ``visual paradox", that is especially hard for new players without any visual feedback. 
 
 \subsection{Biomechanical Inconsistency}
-Even if an aiming line is correctly visualized, if the stroke is poorly executed, it can cause the shot to miss. So mechanics of the cue stroke are also really important. 
+Even if an aiming line is correctly visualized, if the stroke is poorly executed, it can cause the shot to miss. Therefore, the mechanics of the cue stroke are also really important. 
 
 \textbf{Ballistic vs. Tetanic Stroke:}
-According to Moore \cite{bib:moore}, there are two main types of strokes in billiards. Amateur players usually use "ballistic" strokes, which are marked by a sudden pull at the start of the movement. It makes the speed control at impact unreliable. In contrast, professional players aim for a "tetanic" stroke, which characterizes by maintaining a continous muscle contraction that produces smooth, steady accelarion throught the cue delivery. \cite{bib:moore}
+According to Moore~\cite{bib:moore}, there are two main types of strokes in billiards. Amateur players usually use ``ballistic" strokes, which are marked by a sudden pull at the start of the movement. It makes the speed control at impact unreliable. In contrast, professional players aim for a ``tetanic" stroke, which is characterized by maintaining a continuous muscle contraction that produces smooth, steady acceleration throughout the cue delivery~\cite{bib:moore}.
 
 \textbf{Lateral Deviation:}
-Another important thing is wrist stability during the stroke. If the player is not able to maintain a vertical "pendulum swing" by keeping the elbow fixed, the cue tip can move away from the intented aiming line \cite{bib:moore}. The most common errors are sideways wrist movement and inconsistent impact force.
+Another important thing is the wrist stability during the stroke. If the player is not able to maintain a vertical ``pendulum swing" by keeping the elbow fixed, the cue tip can move away from the intented aiming line~\cite{bib:moore}. The most common errors are sideways wrist movement and inconsistent impact force.
 
-\section{State of the art}
+\section{State of the Art}
 
-The field of "Smart Sports" has significantly advanced in the past decades, with the use of Convolutional Neural Networks (CNN) and Wearable Sensors. \cite{bib:sensors}
+The field of ``Smart Sports" has significantly advanced in the past decades, with the use of Convolutional Neural Networks (CNN) and Wearable Sensors~\cite{bib:sensors}.
 
-\subsection{Existing Solutions}
+\section{Existing Solutions}
 \begin{itemize}
-    \item \textbf{Hawk-Eye (Computer Vision):} Widely used in sports like snoorker or tennis, this system uses multiple calibrated high-speed cameras to determine 3D ball positions. While being highly accurate (< 3mm error), it requires expensive, fixed infrastructure and it doesn't analyze player biomechanics, but only ball trajectories. \cite{bib:hawk-eye}
+    \item \textbf{Hawk-Eye (Computer Vision):} Widely used in sports like snooker or tennis, this system uses multiple calibrated high-speed cameras to determine 3D ball positions. While being highly accurate (< 3 mm error), it requires expensive, fixed infrastructure and it does not analyze player biomechanics, but only ball trajectories~\cite{bib:hawk-eye}.
     
-    \item \textbf{Projection AR Systems:} Solutions such as \textit{PoolLiveAid} use overhead projectors to overlay aiming lines directly onto the table. Even tho it offers a really nice user experience it requires expensive hardware and complex calibration. \cite{bib:pool-live}
+    \item \textbf{Projection AR (Augmented Reality) Systems:} Solutions such as \textit{PoolLiveAid} use overhead projectors to overlay aiming lines directly onto the table. Even though it offers a really nice user experience, it requires expensive hardware and complex calibration~\cite{bib:pool-live}.
     
-    \item \textbf{Wearable IMU Analyzers:} There are devices such as \textit{Blast Motion}, that are used in golf or baseball. They use inertial sensors to measure swing parameters. However, they do not analyze anything beside the swing. They monitor the movement, but they do not care about the game environment. For example, they don't know the position of the balls. \cite{bib:blast}
+    \item \textbf{Wearable IMU (Inertial Measurement Unit) Analyzers:} There are devices such as \textit{Blast Motion}, that are used in golf or baseball. They use inertial sensors to measure swing parameters. However, they do not analyze anything besides the swing. They monitor the movement, but they do not care about the game environment. For example, they do not analyze the position of the balls~\cite{bib:blast}.
 \end{itemize}
 
 \section{Mathematical Models}
 
-The implementation of the system is based on mathematical models derived from vector algebra and Newtonian mechanics.
+The implementation of the system is based on mathematical models derived from vector algebra and Newtonian mechanics. These models help describe how objects move and interact with each other. Thanks to this approach, the system can estimate object trajectories and basic physical behavior in a clear and understandable way.
 \subsection{Ghost Ball Vector Math}
-The vision module calculates where the aiming vector would likely intersect the target's vall collision zone. 
+The vision module calculates where the aiming vector would likely intersect the target's ball collision zone. 
 
 Let $P_{cue}$ and $P_{target}$ denote the centers of the cue ball and the target ball, and let $\vec{v}_{aim}$ be the normalized direction vector of the cue stick. The projection length $L_{proj}$ of the target vector onto the aiming direction is computed using the dot product:
 
 \begin{equation}
-    L_{proj} = (P_{target} - P_{cue}) \cdot \vec{v}_{aim}
+    L_{proj} = (P_{target} - P_{cue}) \cdot \vec{v}_{aim}.
 \end{equation}
 
 The point on the aiming line closest to the target ball, denoted as $P_{close}$, is given by:
 
 \begin{equation}
-    P_{close} = P_{cue} + \vec{v}_{aim} \cdot L_{proj}
+    P_{close} = P_{cue} + \vec{v}_{aim} \cdot L_{proj}.
 \end{equation}
 
 A collision is valid only if the perpendicular distance $d_{\perp}$ is smaller than the ball diameter $D$:
 
 \begin{equation}
-    d_{\perp} = || P_{target} - P_{close} ||
+    d_{\perp} = || P_{target} - P_{close} ||.
 \end{equation}
 
 If $d_{\perp} < D$, the Ghost Ball position $P_{ghost}$ is obtained by moving back from $P_{close}$ by an offset computed using the Pythagorean theorem:
 
 \begin{equation}
-    P_{ghost} = P_{close} - \vec{v}_{aim} \cdot \sqrt{D^2 - d_{\perp}^2}
+    P_{ghost} = P_{close} - \vec{v}_{aim} \cdot \sqrt{D^2 - d_{\perp}^2}.
 \end{equation}
 
-Thanks to this formula system draws the "Ghost Ball" circle at the exact position that the cue ball will be at the moment of impact.
+Thanks to this formula, the system draws the ``Ghost Ball" circle at the exact position that the cue ball will be at the moment of impact.
 
 \subsection{Physics of the Stroke (Sensor Fusion)}
 
-The sensor module processes raw data to estimate the force of the shot.
+The sensor module processes raw data to estimate the force of the shot. Smartphone sensor data is processed using essential physical principles to transform raw motion into a tangible measure of impact force. This ensures that the representation of stroke strength remains intuitive and reliable, irrespective of individual variations in technique.
 
 \subsubsection{Linear Acceleration}
 
-The Android \texttt{TYPE\_LINEAR\_ACCELERATION} sensor is used instead of \texttt{TYPE\_ACCELEROMETER} to avoid the influence of gravity on user's movement. The resulting acceleration vector $\vec{a} = [a_x, a_y, a_z]$ represents the cue stick's actual acceleration. Its magnitude is given by:
+The Android \texttt{TYPE\_LINEAR\_ACCELERATION} sensor is used instead of \texttt{TYPE\_ACCELE-}\allowbreak\texttt{ROMETER} to avoid the influence of gravity on user's movement. The resulting acceleration vector $\vec{a} = [a_x, a_y, a_z]$ represents the cue stick's actual acceleration. Its magnitude is given by:
 
 \begin{equation}
-    ||\vec{a}|| = \sqrt{a_x^2 + a_y^2 + a_z^2}
+    ||\vec{a}|| = \sqrt{a_x^2 + a_y^2 + a_z^2}.
 \end{equation}
 
 \subsubsection{Force Estimation}
-To provide the player with a metric of "Shot Power" in Newtons, the system applies Newton's Second Law. Instead of relying on a fixed constant for the arm mass, the system dynamically calculates the effective mass of the player's arm ($m_{arm}$) based on the user's body weight and gender defined in the \texttt{config.json} file.
+To provide the player with a metric of ``Shot Power" in Newtons, the system applies Newton's Second Law. Instead of relying on a fixed constant for the arm mass, the system dynamically calculates the effective mass of the player's arm ($m_{arm}$) based on the user's body weight and gender defined in the \texttt{config.json} file.
 
-The effective mass is derived by summing the segmental weights of the hand, forearm, and upper arm using anthropometric coefficients from Plagenhoef et al.~\cite{bib:anatomical}. Consequently, the impact force $F$ is calculated as:
+The effective mass is derived by summing the segmental weights of the hand, forearm, and upper arm using anthropometric coefficients from Plagenhoef et al.~\cite{bib:anatomical}. Consequently, the impact force $F$ is determined by substituting the personalized mass into the motion equation:
 
 \begin{equation}
-    F = (W_{body} \cdot \mu_{gender}) \cdot ||\vec{a}_{impact}||
+    F = m_{arm} \cdot ||\vec{a}_{impact}|| = (W_{body} \cdot \mu_{gender}) \cdot ||\vec{a}_{impact}||
 \end{equation}
 
-Where $W_{body}$ is the player's weight, and $\mu_{gender}$ is the effective arm mass coefficient ($5.77\%$ for males, $4.97\%$ for females).
-\begin{equation}
-    F = m_{arm} \cdot ||\vec{a}_{impact}||
-\end{equation}
+\noindent Where:
+\begin{itemize}
+    \item $m_{arm}$ denotes the calculated effective arm mass,
+    \item $W_{body}$ is the player's total body weight,
+    \item $\mu_{gender}$ is the effective arm mass coefficient ($5.77\%$ for males, $4.97\%$ for females) derived from anthropometric data~\cite{bib:anatomical},
+    \item $||\vec{a}_{impact}||$ represents the magnitude of the acceleration vector at the moment of impact.
+\end{itemize}
 
 \section{Algorithms}
 
-Two primary algorithmic domains are utilized to interpret the raw data streams: Computer Vision for game state analysis and Signal Processing for biomechanical analysis.
+Two primary algorithmic domains are utilized to interpret the raw data streams: Computer Vision for game state analysis and Signal Processing for biomechanical analysis. Computer Vision is responsible for analyzing the game state by processing the video feed and identifying key objects such as the balls, and the cue stick. Signal Processing is applied to sensor data to detect important physical events, especially the moment of impact.
 
 \subsection{Computer Vision Algorithms}
-The vision module utilizes the YOLO (You Only Look Once) architecture, deployed in two distinct configurations to handle different tracking requirements.
+The vision module utilizes the YOLO (You Only Look Once)~\cite{bib:yolo} architecture, deployed in two distinct configurations to handle different tracking requirements.
 
 \subsubsection{Object Detection (Balls)}
-To identify the game elements, a standard object detection model is employed. It classifies objects into categories such as \texttt{cue-ball} and \texttt{other} (object balls). The inference function $f_{det}$ transforms the input image $I$ into a set of bounding boxes $B$:
+To identify the game elements, a standard object detection model based on the YOLOv12~\cite{bib:yolo12} architecture is employed. It classifies objects into categories such as \texttt{cue-ball} and \texttt{other} (object balls). The inference function $f_{det}$ transforms the input image $I$ into a set of bounding boxes $B$:
 
 \begin{equation}
-    f_{det}(I) \rightarrow \{ (x, y, w, h, class, conf)_i \}
+    f_{det}(I) \rightarrow \{ (x, y, w, h, class, conf)_i \},
 \end{equation}
 
-where $(x, y)$ is the center of the ball, used as the input for the "Ghost Ball" geometric calculation.
+\noindent where $(x, y)$ is the center of the ball, used as the input for the ``Ghost Ball" geometric calculation.
 
 \subsubsection{Pose Estimation (Cue Stick)}
-Determining the aiming line requires more precision than a bounding box can provide. Therefore, a \textbf{Pose Estimation} model (specifically \texttt{yolov8-pose}) is used to detect the cue stick. Instead of a box, this model detects exact semantic keypoints: the \texttt{tip} (cue tip) and the \texttt{handle} (grip point). The output is a set of coordinates $K$:
+Determining the aiming line requires more precision than a bounding box can provide. Therefore, a \textbf{Pose Estimation} model (specifically \texttt{yolov8-pose}~\cite{bib:yolov8-ultralytics}) is used to detect the cue stick. Instead of a box, this model detects exact semantic keypoints: the \texttt{tip} (cue tip) and the \texttt{handle} (grip point). The output is a set of coordinates $K$:
 
 \begin{equation}
     f_{pose}(I) \rightarrow \{ (x_{tip}, y_{tip}), (x_{handle}, y_{handle}) \}
 \end{equation}
 
-The aiming vector $\vec{v}_{aim}$ is then derived directly from these keypoints: $\vec{v}_{aim} = (x_{tip} - x_{handle}, y_{tip} - y_{handle})$.
+The aiming vector $\vec{v}_{aim}$ is then derived directly from these keypoints: 
+
+\begin{equation}
+    \vec{v}_{aim} = {(x_{tip} - x_{handle}, y_{tip} - y_{handle})}.
+\end{equation}
 
 \subsection{Peak Detection Algorithm}
 To automatically detect the moment of contact without external triggers, the system implements a real-time peak detection algorithm on the linear acceleration data stream. A hit is registered at time $t$ if the acceleration magnitude $a(t)$ satisfies both a threshold condition and a local maximum condition:
 
 \begin{equation}
-    a(t) > T_{peak} \quad \land \quad a(t) \geq a(t-1) \quad \land \quad a(t) \geq a(t+1)
+    a(t) > T_{peak} \quad \land \quad a(t) \geq a(t-1) \quad \land \quad a(t) \geq a(t+1),
 \end{equation}
 
-where $T_{peak}$ is the noise gate threshold (set to $15.0 m/s^2$ in the implementation). This makes sure that the system captures the exact moment of maximum force exertion ($F_{max}$) for the biomechanical analysis.
+\noindent where $T_{peak}$ is the noise gate threshold (set to 15.0 $m/s^2$ in the implementation). This makes sure that the system captures the exact moment of maximum force exertion ($F_{max}$) for the biomechanical analysis.

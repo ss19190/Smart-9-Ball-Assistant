@@ -8,9 +8,9 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Use case diagram}}{13}{figure.caption.12}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Class distribution in the ball detection training dataset, highlighting the imbalance between the single 'cue ball' and multiple 'other' balls.}}{16}{figure.caption.13}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Class distribution and instance analysis in the cue detection training dataset.}}{17}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Use case diagram.}}{13}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Analysis of the ball detection dataset: (a) Class distribution showing the massive disproportion between ``other" balls and the single ``cue ball"; (b) Bounding box density map; (c) Spatial distribution of object centers; (d) Correlation of bounding box width and height.}}{16}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Analysis of the cue detection dataset: (a) Single-class distribution; (b) Bounding box density map; (c) Spatial distribution of cue centers; (d) Correlation of bounding box width and height.}}{17}{figure.caption.14}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Scenario A: The Vision Assistant interface visualizing a valid collision. The system calculates and displays the predicted outcome in real-time.}}{25}{figure.caption.15}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Scenario B: Stroke Analysis workflow. The top row shows the PC application analyzing the stroke data, where (a) is pre-hit and (b) is post-hit showing impact metrics. The bottom row shows two possible states of the mobile sensor app (c, d).}}{26}{figure.caption.16}%
