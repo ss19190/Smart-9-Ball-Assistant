@@ -12,19 +12,23 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Analysis of the ball detection dataset: (a) Class distribution showing the massive disproportion between ``other" balls and the single ``cue ball"; (b) Bounding box density map; (c) Spatial distribution of object centers; (d) Correlation of bounding box width and height.}}{16}{figure.caption.13}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Analysis of the cue detection dataset: (a) Single-class distribution; (b) Bounding box density map; (c) Spatial distribution of cue centers; (d) Correlation of bounding box width and height.}}{17}{figure.caption.14}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Scenario A: The Vision Assistant interface visualizing a valid collision. The system calculates and displays the predicted outcome in real-time.}}{25}{figure.caption.15}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Scenario B: Stroke Analysis workflow. The top row shows the PC application analyzing the stroke data, where (a) is pre-hit and (b) is post-hit showing impact metrics. The bottom row shows two possible states of the mobile sensor app (c, d).}}{26}{figure.caption.16}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Scenario A: The Vision Assistant interface visualizing a valid collision. The system calculates and displays the predicted outcome in real-time.}}{25}{figure.caption.16}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Scenario B: Stroke Analysis workflow. The top row shows the PC application analyzing the stroke data, where (a) is pre-hit and (b) is post-hit showing impact metrics. The bottom row shows two possible states of the mobile sensor app (c, d).}}{26}{figure.caption.18}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces System Architecture Diagram and logic flow.}}{28}{figure.caption.17}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces JSON structure creation in Java (Android).}}{28}{figure.caption.18}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Vector-based Ghost Ball calculation implementation.}}{30}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces System Architecture Diagram and logic flow.}}{28}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces JSON structure creation in Java (Android).}}{28}{figure.caption.20}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces NumPy vector initialization for cue ball and aiming direction.}}{29}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Initialization of the Linear Acceleration sensor in Android.}}{29}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Vector-based Ghost Ball calculation implementation.}}{30}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Implementation of the separate thread for TCP communication.}}{31}{figure.caption.24}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Precision-Recall Curve showing mAP@0.5 of 0.991 for the Ball Detection model.}}{36}{figure.caption.21}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Confusion Matrix demonstrating raw detection counts for Cue Ball, Other, and Background classes.}}{36}{figure.caption.22}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces F1-Confidence Curve indicating the optimal confidence threshold of 0.660.}}{37}{figure.caption.23}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Precision-Recall Curve for Pose Estimation showing a high mAP@0.5 of 0.970.}}{38}{figure.caption.24}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces F1-Confidence Curve for the cue stick keypoints, peaking at 0.93.}}{38}{figure.caption.25}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Confusion Matrix for Cue Detection, showing 70 correct detections against 6 false negatives (background).}}{39}{figure.caption.26}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Training performance metrics over 150 epochs. The graphs display the convergence of Box and Classification losses (left) and the improvement of Precision, Recall, and mAP metrics (right).}}{36}{figure.caption.26}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Precision-Recall Curve showing mAP@0.5 of 0.991 for the Ball Detection model.}}{37}{figure.caption.27}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Confusion Matrix demonstrating raw detection counts for Cue Ball, Other, and Background classes.}}{37}{figure.caption.28}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces F1-Confidence Curve indicating the optimal confidence threshold of 0.660.}}{38}{figure.caption.29}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Precision-Recall Curve for Pose Estimation showing a high mAP@0.5 of 0.970.}}{39}{figure.caption.30}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces F1-Confidence Curve for the cue stick keypoints, peaking at 0.93.}}{39}{figure.caption.31}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Confusion Matrix for Cue Detection, showing 70 correct detections against 6 false negatives (background).}}{40}{figure.caption.32}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

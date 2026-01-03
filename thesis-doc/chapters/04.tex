@@ -179,7 +179,16 @@ The player wants to practice a difficult cut shot into the corner pocket.
 
 \section{Working Scenarios}
 
-This section illustrates the system in action with screenshots from the prototype.
+This section illustrates the system in action with screenshots from the prototype, demonstrating the two primary use cases: visual aiming assistance and biomechanical stroke analysis.
+
+\subsection*{Scenario A: Aiming Assistance}
+Figure~\ref{fig:scenario_a_full} demonstrates the vision module in action. The system successfully detects the game state regardless of table size.
+\begin{itemize}
+    \item In both subfigures (a) and (b), the system identifies object balls (red bounding boxes) and the cue ball (purple/blue box).
+    \item The white line represents the aiming vector derived from the cue stick.
+    \item The ``Ghost Ball'' is visualized as a white circle at the predicted point of impact.
+    \item The predicted post-collision paths are rendered as a yellow line (Tangent Line for the cue ball) and a green line (path of the object ball), providing immediate feedback on whether the shot will be successful.
+\end{itemize}
 
 \begin{figure}[H]
     \centering
@@ -206,6 +215,15 @@ This section illustrates the system in action with screenshots from the prototyp
     \label{fig:scenario_a_full}
 \end{figure}
 
+\subsection*{Scenario B: Stroke Analysis}
+The second scenario, depicted in Figure~\ref{fig:scenario_b_full}, illustrates the telemetry part. This sequence shows how the system captures and processes the player's movement.
+
+\begin{itemize}
+    \item Subfigure (a) shows the desktop dashboard in an \textit{Idle} state. The graphs are flat, and the "Max Force" indicator is reset to zero.
+    \item Subfigure (b) captures the state immediately \textit{after} a shot. The system has detected a peak acceleration ($22.3~m/s^2$) and calculated an impact force of \textbf{89 N}. The graphs visualize the stroke profile, allowing the player to check for smoothness.
+    \item The bottom row shows the mobile client acting as the controller. It transitions from a disconnected state (c) to an active streaming state (d).
+\end{itemize}
+
 \begin{figure}[H]
     \centering
     % --- Rząd 1: Widok Desktop ---
@@ -226,8 +244,6 @@ This section illustrates the system in action with screenshots from the prototyp
     \vspace{0.5cm} % Odstęp między rzędami
 
     % --- Rząd 2: Widok Mobile ---
-    % Uwaga: Dla screenshotów z telefonu lepiej sterować wysokością [height=], 
-    % żeby nie były za wielkie w pionie.
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[height=5.5cm]{./graf/phone1.png}

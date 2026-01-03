@@ -1,18 +1,19 @@
 \chapter{Internal Specification}
 
 This chapter presents the technical details of the solution, including the system architecture, key data structures, and a description of the implementation of the most critical modules in Python and Java.
+It outlines the data flow and communication protocols established between the mobile telemetry client and the desktop vision server. It also covers the algorithmic logic behind the ``Ghost Ball" trajectory prediction and the physics-based impact force estimation.
 
 \section{System Concept}
 The system concept is based on the fusion of sensory and visual data to assist in playing billiards. The system consists of:
 \begin{enumerate}
-    \item \textbf{Vision Module (AI):} Analyzes the camera feed, detects billiard balls and the cue, and subsequently calculates the "Ghost Ball" --- the predicted position of the cue ball at the moment of impact.
-    \item \textbf{Telemetry Module:} Analyzes the force of the impact and the smoothness of the player's movement based on IMU sensor data (accelerometer, gyroscope) transmitted via USB cable from a smartphone.
+    \item \textbf{Vision Module (AI):} It analyzes the camera feed, detects billiard balls and the cue, and subsequently calculates the ``Ghost Ball" --- the predicted position of the cue ball at the moment of impact.
+    \item \textbf{Telemetry Module:} It analyzes the force of the impact and the smoothness of the player's movement based on IMU sensor data (accelerometer, gyroscope) transmitted via an USB cable from a smartphone.
 \end{enumerate}
 
 \section{System Architecture}
-The system operates on a client-server architecture. The smartphone (Client) collects data and transmits it via TCP to the workstation (Server), which processes the camera image in parallel.
+The system operates in a client-server architecture, as illustrated in Figure~\ref{fig:sys_arch}. The smartphone (Client) collects data and transmits it via TCP to the workstation (Server), which processes the camera image in parallel to the transmission.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     % Ensure the path exists or remove the line below to compile without the image
     \includegraphics[width=0.9\textwidth]{./graf/arch.png}
@@ -22,14 +23,14 @@ The system operates on a client-server architecture. The smartphone (Client) col
 
 The main unit (PC) runs two independent processes (Python scripts):
 \begin{itemize}
-    \item \textbf{Vision Process (\texttt{bilard.py}):} Utilizes the \texttt{inference} and \texttt{supervision} libraries for object detection and vector calculations.
+    \item \textbf{Vision Process (\texttt{bilard.py}):} It utilizes the \texttt{inference} and \texttt{supervision} libraries for object detection and vector calculations.
     \item \textbf{Sensor Server (\texttt{sensors.py}):} A multi-threaded TCP server that receives JSON data, parses it, and visualizes graphs using the \texttt{OpenCV} library.
 \end{itemize}
 
 \section{Description of Data Structures}
 
 \subsection{Network Payload (JSON)}
-Communication between the Android device and the PC is handled using the JSON format. A main feature is the transmission of linear acceleration (gravity excluded) and angular velocity.
+Communication between the Android device and the PC is handled using the JSON format. A main feature is the transmission of linear acceleration (gravity excluded) and angular velocity, organized as shown in Figure~\ref{fig:code:json_payload}.
 
 \begin{figure}[htbp]
 \centering
@@ -50,46 +51,60 @@ String json = String.format(Locale.US,
 \end{figure}
 
 \subsection{Physics Vectors (Python)}
-The vision module operates on vectors from the \texttt{NumPy} library to compute trajectories.
+The vision module operates on vectors from the \texttt{NumPy} library to compute trajectories. Figure~\ref{fig:code:vectors} illustrates how the cue ball position and the aiming vector are initialized within the Python script.
 
+\begin{figure}[htbp]
+\centering
 \begin{lstlisting}[
     language=Python,
     basicstyle=\ttfamily\small,
-    breaklines=true
+    breaklines=true,
+    captionpos=b
 ]
 # Position representation in bilard.py
 cue_ball_center = np.array([x, y], dtype=np.float32)
 aim_vector = normalize_vector(tip_pos - handle_pos)
 \end{lstlisting}
+\caption{NumPy vector initialization for cue ball and aiming direction.}
+\label{fig:code:vectors}
+\end{figure}
 
 \section{Components and Modules}
 
 \subsection{Mobile Module (Android)}
-The mobile application was developed in Java. The key component is the \texttt{SensorManager}. The \texttt{TYPE\_LINEAR\_ACCELERATION} sensor was utilized instead of the standard accelerometer to eliminate the influence of gravity on the impact force measurement.
+The mobile application was developed in Java. The key component is the \texttt{SensorManager}. The \texttt{TYPE\_LINEAR\_ACCELERATION} sensor was utilized instead of the standard accelerometer to eliminate the influence of gravity on the impact force measurement, as demonstrated in Figure~\ref{fig:code:android_sensor}.
 
+\begin{figure}[H]
+\centering
 \begin{lstlisting}[
     language=Java,
     basicstyle=\ttfamily\small,
-    breaklines=true
+    breaklines=true,
+    captionpos=b
 ]
 // MainActivity.java - sensor initialization
 linearAcceleration = sensorManager.getDefaultSensor(
     Sensor.TYPE_LINEAR_ACCELERATION
 );
 \end{lstlisting}
+\caption{Initialization of the Linear Acceleration sensor in Android.}
+\label{fig:code:android_sensor}
+\end{figure}
 
 \subsection{Vision Module (Computer Vision)}
 This module utilizes two separate neural network models hosted on the Roboflow platform, optimized for instant inference:
 
 \begin{itemize}
-    \item \textbf{Ball Detection:} A generic object detection model (version \texttt{ball-detection-bzirz/3}) based on the state-of-the-art \textbf{YOLOv12} \cite{bib:yolo12} architecture. It is trained to localize billiard balls and classifies objects into two distinct classes: \texttt{cue ball} and \texttt{other}. The model works on a standard input resolution ($640 \times 640$) and outputs bounding box coordinates.
-    \item \textbf{Cue Detection:} A pose estimation model (version \texttt{cue-detection-ciazj/3}) utilizing the \textbf{YOLOv8-pose} \cite{bib:yolov8-ultralytics} architecture. Unlike the ball detector, this model outputs semantic keypoints representing the \texttt{tip} and \texttt{handle}, necessary for calculating the aiming vector.
+    \item \textbf{Ball Detection:} A generic object detection model (version \path{ball-detection-bzirz/3}) based on the state-of-the-art \textbf{YOLOv12} \cite{bib:yolo12} architecture. It is trained to localize billiard balls and classifies objects into two distinct classes: \texttt{cue ball} and \texttt{other}. The model works on a standard input resolution ($640 \times 640$) and outputs bounding box coordinates.
+    YOLOv12 was chosen over its predecessors for its superior extraction capabilities and bounding box stability, which are critical for maintaing a steady line.
+    \item \textbf{Cue Detection:} A pose estimation model (version \texttt{cue-detection-ciazj/3}) utilizing the \textbf{YOLOv8-pose} \cite{bib:yolov8-ultralytics} architecture. Unlike the ball detector, this model outputs semantic keypoints representing the \texttt{tip} and \texttt{handle}, necessary for calculating the aiming vector. 
+    YOLOv8-pose was selected for its lightweight architecture and inference speed. Studies indicate that while established frameworks like OpenPose provide valuable insights, their high computational complexity makes it harder for real-time integration~\cite{bib:unified_dl}. In contrast, YOLOv8-based architectures have been demonstrated to outperform such models in efficiency, achieving higher Object Keypoint Similarity (OKS) scores (e.g., 76.1\% vs 75.2\% for OpenPose) while maintaining the low latency ($< 30~ms$) required for a smooth Augmented Reality experience.
 \end{itemize}
 
 \section{Overview of Key Algorithms}
 
 \subsection{Ghost Ball Algorithm}
-The implementation translates the vector mathematics and geometric rules defined in Section 2.3.1 into Python code using the \texttt{NumPy} library. The function \texttt{find\_ghost\_ball\_position} calculates the projection vector and validates the perpendicular distance to render the visual aid.
+The implementation translates the vector mathematics and geometric rules defined in Section 2.3.1 into Python code using the \texttt{NumPy} library. The function \path{find_ghost_ball_position} calculates the projection vector and validates the perpendicular distance to render the visual aid, as presented in Figure~\ref{fig:code:ghost_ball}.
 
 \begin{figure}[H]
 \centering
@@ -126,12 +141,15 @@ Additionally, the algorithm implements a peak detection logic (refer to Section 
 \section{Implementation Details}
 
 \subsection{Thread Synchronization (Python)}
-The TCP server in \texttt{sensors.py} operates in a separate thread (\texttt{daemon=True}) to avoid blocking the interface drawing loop (GUI) in the OpenCV library, if someone would like to run both moduls at the same time.
+The TCP server in \texttt{sensors.py} operates in a separate thread (\texttt{daemon=True}) to avoid blocking the interface drawing loop (GUI) in the OpenCV library, if one would like to run both moduls at the same time, as illustrated in Figure~\ref{fig:code:threading}.
 
+\begin{figure}[htbp]
+\centering
 \begin{lstlisting}[
     language=Python,
     basicstyle=\ttfamily\small,
-    breaklines=true
+    breaklines=true,
+    captionpos=b
 ]
 # sensors.py - Threading implementation
 threading.Thread(target=tcp_server_thread, daemon=True).start()
@@ -141,12 +159,15 @@ while True:
     cv2.imshow("Hit Analysis", window)
     if cv2.waitKey(20) & 0xFF == ord('q'): break
 \end{lstlisting}
+\caption{Implementation of the separate thread for TCP communication.}
+\label{fig:code:threading}
+\end{figure}
 
 \subsection{Network Handling (Android)}
-In the Android application, a separate thread was employed for network operations to avoid the \texttt{NetworkOnMainThreadException}. Data is transmitted at a frequency of approximately 100Hz (every 10ms), ensuring smooth physics representation.
+In the Android application, a separate thread was employed for network operations to avoid the \texttt{NetworkOnMainThreadException}. Data is transmitted at a frequency of approximately $100~Hz$ (every $10~ms$), ensuring smooth physics representation.
 
 \section{Applied Design Patterns}
 \begin{itemize}
-    \item \textbf{Listener Pattern (Android):} The implementation if the \texttt{SensorEventListener} interface enables reactive handling of sensor value changes only when they occur. \cite{bib:patterns}
-    \item \textbf{Producer-Consumer:} The TCP thread (Producer) receives data and updates the global \texttt{sensor\_data} structure, which is subsequently consumed by the main visualization loop.\cite{bib:patterns}
+    \item \textbf{Listener Pattern (Android):} The implementation if the \texttt{SensorEventListener} interface enables reactive handling of sensor value changes only when they occur~\cite{bib:patterns}.
+    \item \textbf{Producer-Consumer:} The TCP thread (Producer) receives data and updates the global \texttt{sensor\_data} structure, which is subsequently consumed by the main visualization loop~\cite{bib:patterns}.
 \end{itemize}

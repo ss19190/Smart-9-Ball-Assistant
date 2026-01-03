@@ -382,6 +382,42 @@
     \field{year}{2015}
   \endentry
 
+  \entry{bib:unified_dl}{article}{}
+    \name{author}{3}{}{%
+      {{hash=GU}{%
+         family={Gawande},
+         familyi={G\bibinitperiod},
+         given={Ujwalla},
+         giveni={U\bibinitperiod},
+      }}%
+      {{hash=HK}{%
+         family={Hajari},
+         familyi={H\bibinitperiod},
+         given={Kamal},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=GY}{%
+         family={Golhar},
+         familyi={G\bibinitperiod},
+         given={Yogesh},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GUHKGY1}
+    \strng{fullhash}{GUHKGY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{issn}{1877-0509}
+    \field{pages}{2438\bibrangedash 2447}
+    \field{title}{Real-Time Deep Learning Approach for Pedestrian Detection and
+  Suspicious Activity Recognition}
+    \field{volume}{218}
+    \field{journaltitle}{Procedia Computer Science}
+    \field{year}{2023}
+  \endentry
+
   \entry{bib:sensors}{article}{}
     \name{author}{4}{}{%
       {{hash=HB}{%

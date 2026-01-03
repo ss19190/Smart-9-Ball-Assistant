@@ -6,7 +6,7 @@ This chapter describes the testing methods adopted to maintain the consistency a
 To ensure an organized approach to verification, the \textbf{V-Model} (Verification and Validation Model) was adopted. This model focuses on the relationship between the design phase and the testing phase. The testing process was divided into three distinct levels:
 
 \begin{enumerate}
-    \item \textbf{Unit Testing:} Individual components were tested in isolation. For the Python server, this involved testing the vector calculation functions (e.g., \texttt{find\_ghost\_ball\_position}) and the impact force formula ($F=ma$) with known static values to ensure mathematical correctness.
+    \item \textbf{Unit Testing:} Individual components were tested in isolation. For the Python server, this involved testing the vector calculation functions (e.g., \path{find_ghost_ball_position}) and the impact force formula ($F=ma$) with known static values to ensure mathematical correctness.
     \item \textbf{Integration Testing:} This phase focused on the communication between the Android Client and the PC Server. Key tests included verifying the TCP handshake, the serialization of sensor data into JSON format, and the handling of network latency.
     \item \textbf{System Testing:} The full system was validated in a real-world environment. This involved a player performing actual shots while the system tracked the game state and visualized the analytics in real-time.
 \end{enumerate}
@@ -28,13 +28,15 @@ TC-04 & Multi-ball Occlusion & System maintains ID of balls when partially obscu
 \end{tabular}
 \end{table}
 
+\noindent The status ``Partial'' for TC-04 means that the tracking algorithm can handle minor occlusions (e.g., when balls momentarily touch). However, during full occlusion --- for example when a ball is completely covered by the player's hand --- the tracking ID may occasionally reset. 
+
 \section{Detected and Fixed Bugs}
 During the implementation and testing phases, multile significant software defects were identified. Below is a description of the most significant bugs and the solutions applied.
 
 \subsection{Android UI Thread Blocking (UI Lag)}
-\textbf{Problem:} The initial version of the Android application exhibited severe interface lag and unresponsiveness during data recording. The accelerometer sensor was configured to \texttt{SENSOR\_DELAY\_FASTEST}, generating events at approximately 100Hz. The application attempted to update the on-screen \texttt{TextView} elements inside every sensor callback. Since the UI rendering thread operates at a lower frequency (approx. 60Hz), the event queue became overwhelmed, causing the displayed values to "trail" behind reality (e.g., the value would continue rising long after the phone had stopped moving).
+\textbf{Problem:} The initial version of the Android application exhibited severe interface lag and unresponsiveness during data recording. The accelerometer sensor was configured to \texttt{SENSOR\_DELAY\_FASTEST}, generating events at approximately $100~Hz$. The application attempted to update the on-screen \texttt{TextView} elements inside every sensor callback. Since the UI rendering thread operates at a lower frequency (approx. $60~Hz$), the event queue became overwhelmed, causing the displayed values to "trail" behind reality (e.g., the value would continue rising long after the phone had stopped moving).
 
-\textbf{Solution:} The implementation was modified to decouple data collection from UI updates. A throttling mechanism was introduced to update the UI elements only once every 100ms (10Hz), while the data transmission to the server continued at the full 100Hz rate using a background thread.
+\textbf{Solution:} The implementation was modified to decouple data collection from UI updates. A throttling mechanism was introduced to update the UI elements only once every $100~ms$ (10Hz), while the data transmission to the server continued at the full $100~Hz$ rate using a background thread.
 
 \subsection{TCP Stream Fragmentation}
 \textbf{Problem:} Occasionally, the Python server would crash with a \texttt{JSONDecodeError}. This occurred because TCP is a stream-oriented protocol, not a message-oriented one. At high transmission rates, multiple JSON objects were merged into a single buffer read, or a single JSON object was split across two reads.
@@ -42,21 +44,43 @@ During the implementation and testing phases, multile significant software defec
 \textbf{Solution:} A delimiter (newline character \texttt{\textbackslash n}) was appended to every message sent from Android. On the server side, a buffer was implemented to accumulate incoming bytes until a full delimiter was found, making sure that only complete JSON strings were passed to the parser.
 
 \subsection{Ghost Ball Jitter}
-\textbf{Problem:} The detected position of the cue ball and cue tip fluctuated slightly (by 1-2 pixels) due to noise in the camera, even when the objects were stationary. This caused the projected "Ghost Ball" vector to shake rapidly, making it difficult for the user to aim.
+\textbf{Problem:} The detected position of the cue ball and cue tip fluctuated slightly (by 1-2 pixels) due to noise in the camera, even when the objects were stationary. This caused the projected ``Ghost Ball" vector to shake rapidly, making it difficult for the user to aim.
 
 \textbf{Solution:} A moving average filter (size $N=5$) was applied to the coordinates of the detected objects. This smoothed out the high-rate noise without losing acceptable responsiveness to intentional movements.
 
 \section{Computer Vision Model Evaluation}
-To ensure the reliability of the system, the trained neural networks were subjected to rigorous assessment a hold-out test set \cite{bib:hold}. This section presents the evaluation metrics for both the Ball Detection (\textbf{YOLOv12}) and Cue Detection (\textbf{YOLOv8-pose}) models.
+To ensure the reliability of the system, the trained neural networks were subjected to rigorous assessment using a hold-out test set methodology~\cite{bib:hold}. 
 
+According to Bishop, this approach involves partitioning the available data into disjoint subsets: a training set, used to determine the model coefficients (weights), and a separate hold-out set, used to optimize model complexity and evaluate generalization error. 
 \subsection{Ball Detection Model Results}
-The Ball Detection model, built on the \textbf{YOLOv12} architecture, showed outstanding performance, obtaining a \textbf{mean Average Precision (mAP@0.5)} of \textbf{0.991}, indicating nearly perfect detection abilities at a standard Intersection over Union (IoU) threshold (see Figure~\ref{fig:pr_curve}).
+The Ball Detection model, built on the YOLOv12 architecture, showed outstanding performance, obtaining a \textbf{mean Average Precision (mAP@0.5)} of \textbf{0.991}.
+
+The mAP metric acts as the mean of the Average Precision (AP) calculated across all $C$ classes. The AP itself represents the area under the Precision-Recall curve $p(r)$:
+
+\begin{equation}
+    mAP = \frac{1}{|C|} \sum_{i=1}^{|C|} AP_i = \frac{1}{|C|} \sum_{i=1}^{|C|} \int_{0}^{1} p_i(r) dr
+\end{equation}
+
+where Precision ($P$) and Recall ($R$) are derived from True Positives ($TP$), False Positives ($FP$), and False Negatives ($FN$) calculated at a fixed Intersection over Union (IoU) threshold (specifically IoU $\geq 0.5$ for mAP@0.5):
+
+\begin{equation}
+    P = \frac{TP}{TP + FP}, \quad R = \frac{TP}{TP + FN}
+\end{equation}
+
+This result indicates nearly perfect detection abilities at the standard threshold (Figure~\ref{fig:pr_curve}).
 
 \begin{itemize}
-    \item \textbf{Training Performance:} As illustrated in the training plots, the box loss and classification loss converged rapidly within the first 50 epochs, stabilizing with no signs of overfitting. The precision and recall metrics consistently improved, plateauing near 1.0.
+    \item \textbf{Training Performance:} As illustrated in the training plots (see Figure~\ref{fig:ball_training_plots}), the box loss and classification loss converged rapidly within the first 50 epochs, stabilizing with no signs of overfitting. The precision and recall metrics consistently improved, plateauing near 1.0.
     \item \textbf{Confusion Matrix:} The confusion matrix (Figure~\ref{fig:conf_matrix}) confirms the model's accuracy on the test set. The model correctly identified \textbf{110} Cue Ball instances and \textbf{1043} Object Balls ("other"). Misclassifications were negligible, with only minimal instances of background falsely detected as balls (False Positives).
-    \item \textbf{F1-Score:} The F1-Confidence curve (Figure~\ref{fig:f1_curve}) shows an optimal confidence threshold of \textbf{0.660}, at which the model reaches an F1 score of \textbf{0.99}. This threshold was subsequently used in the production code to filter weak predictions.
+    \item \textbf{F1-Score and Threshold Selection:} The optimal confidence threshold was determined based on the F1-Confidence curve generated from the validation set (Figure~\ref{fig:f1_curve}). To follow the hold-out methodology and avoid data leakage, the threshold was determined using only the validation data. Once selected, it was fixed and then used unchanged in the production code.
 \end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{./graf/ball-detection/results.png}
+    \caption{Training performance metrics over 150 epochs. The graphs display the convergence of Box and Classification losses (left) and the improvement of Precision, Recall, and mAP metrics (right).}
+    \label{fig:ball_training_plots}
+\end{figure}
 
 \begin{figure}[H]
     \centering
