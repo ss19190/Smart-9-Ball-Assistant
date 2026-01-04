@@ -85,9 +85,17 @@ The project applies a modern technology stack combining computer vision, AI (Art
 The development followed an iterative prototyping methodology~\cite{bib:method}, which is suitable for systems that include experimental algorithms (like computer vision) and hardware integration. The process was divided into four phases:
 
 \subsection{Phase 1: Data Collection and Model Training}
-The initial phase focused on the preparation of the Computer Vision module. Two separate custom datasets were curated and annotated using the Roboflow platform~\cite{bib:roboflow}: one for billiard balls and one for the cue stick.
+The initial phase focused on the preparation of the Computer Vision module. To ensure the model's reliability and ability to generalize across different environments three datasets were used. One was a collection of private images captured on both standard club-size table and smaller home table and two were open-source datasets available via Roboflow Universe.
 
-For the \textbf{Ball Detection model}, a dataset of overhead table images was collected. As shown in the dataset analysis (see Figure~\ref{fig:labels_ball}), the data reflects the natural logic of the game. Specifically, chart (a) highlights the significant class imbalance: the ``other" class (object balls 1--15) is approximately 15 times more frequent than the ``cue ball" class. The bounding box analysis (b) and spatial distribution (c) confirm that balls are clustered within the table area, while the size correlation (d) indicates consistent object dimensions across the dataset.
+For the \textbf{Ball Detection} model, the custom dataset was augmented with the ``8-pool Dataset" \cite{bib:8-pool_dataset}. Similarly, the \textbf{Cue Detection} model combined images with the ``cue detection Dataset" \cite{bib:cue-detection_dataset}. Both external datasets are licensed under the Creative Commons 4.0 (CC BY 4.0) license.
+
+To strictly follow machine learning best practices, the final aggregated datasets were partitioned using a fixed split ratio:
+\begin{itemize}
+    \item \textbf{70\% Training Set:} Used for model learning and weight adjustment.
+    \item \textbf{20\% Validation Set:} Used for hyperparameter tuning and threshold selection (as described in Chapter 6).
+    \item \textbf{10\% Test Set:} Held out completely to evaluate the final performance metrics.
+\end{itemize}
+As shown in the dataset analysis (see Figure~\ref{fig:labels_ball}), the data reflects the natural logic of the game. Specifically, chart (a) highlights the significant class imbalance: the ``other" class (object balls 1--15) is approximately 15 times more frequent than the ``cue ball" class. The bounding box analysis (b) and spatial distribution (c) confirm that balls are clustered within the table area, while the size correlation (d) indicates consistent object dimensions across the dataset.
 
 To reduce possible overfitting as well as improve model dependability under different lighting conditions, image augmentation procedures (including rotation, brightness adjustment, and noise augmentation) were applied during the preprocessing stage.
 
@@ -110,7 +118,7 @@ Furthermore, a stable TCP socket protocol was established for data transmission.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{./graf/cue-detection/labels.jpg}
+    \includegraphics[width=0.8\textwidth]{./graf/cue-detection/labels - cue.jpg}
     \caption{Analysis of the cue detection dataset: (a) Single-class distribution; (b) Bounding box density map; (c) Spatial distribution of cue centers; (d) Correlation of bounding box width and height.}
     \label{fig:labels_cue}
 \end{figure}

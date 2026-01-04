@@ -302,6 +302,37 @@
     \field{year}{2018}
   \endentry
 
+  \entry{bib:cue-detection_dataset}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=DPB}{%
+         family={Detection},
+         familyi={D\bibinitperiod},
+         given={Pool\bibnamedelima Ball},
+         giveni={P\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Roboflow}%
+    }
+    \strng{namehash}{DPB1}
+    \strng{fullhash}{DPB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{howpublished}{\url{
+  https://universe.roboflow.com/pool-ball-detection/pool-cue-tracking }}
+    \field{note}{visited on 2026-01-04}
+    \field{title}{Pool Cue Tracking Dataset}
+    \verb{url}
+    \verb https://universe.roboflow.com/pool-ball-detection/pool-cue-tracking
+    \endverb
+    \field{type}{Open Source Dataset}
+    \field{journaltitle}{Roboflow Universe}
+    \field{year}{2024}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{bib:hawk-eye}{article}{}
     \name{author}{1}{}{%
       {{hash=DM}{%
@@ -416,6 +447,35 @@
     \field{volume}{218}
     \field{journaltitle}{Procedia Computer Science}
     \field{year}{2023}
+  \endentry
+
+  \entry{bib:8-pool_dataset}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=g}{%
+         family={george},
+         familyi={g\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Roboflow}%
+    }
+    \strng{namehash}{g1}
+    \strng{fullhash}{g1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{howpublished}{\url{
+  https://universe.roboflow.com/george-zqkys/8-pool }}
+    \field{note}{visited on 2026-01-04}
+    \field{title}{8-pool Dataset}
+    \verb{url}
+    \verb https://universe.roboflow.com/george-zqkys/8-pool
+    \endverb
+    \field{type}{Open Source Dataset}
+    \field{journaltitle}{Roboflow Universe}
+    \field{year}{2025}
+    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{bib:sensors}{article}{}

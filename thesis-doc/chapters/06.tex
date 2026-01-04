@@ -71,77 +71,89 @@ This result indicates nearly perfect detection abilities at the standard thresho
 
 \begin{itemize}
     \item \textbf{Training Performance:} As illustrated in the training plots (see Figure~\ref{fig:ball_training_plots}), the box loss and classification loss converged rapidly within the first 50 epochs, stabilizing with no signs of overfitting. The precision and recall metrics consistently improved, plateauing near 1.0.
-    \item \textbf{Confusion Matrix:} The confusion matrix (Figure~\ref{fig:conf_matrix}) confirms the model's accuracy on the test set. The model correctly identified \textbf{110} Cue Ball instances and \textbf{1043} Object Balls ("other"). Misclassifications were negligible, with only minimal instances of background falsely detected as balls (False Positives).
     \item \textbf{F1-Score and Threshold Selection:} The optimal confidence threshold was determined based on the F1-Confidence curve generated from the validation set (Figure~\ref{fig:f1_curve}). To follow the hold-out methodology and avoid data leakage, the threshold was determined using only the validation data. Once selected, it was fixed and then used unchanged in the production code.
+    \item \textbf{Classification Performance:} The confusion matrix (Figure~\ref{fig:conf_matrix}) confirms the model's accuracy on the test set. The model correctly identified \textbf{110} Cue Ball instances and \textbf{1043} Object Balls ("other"). Misclassifications were negligible, with only minimal instances of background falsely detected as balls (False Positives).
 \end{itemize}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{./graf/ball-detection/results.png}
+    \includegraphics[width=1.0\textwidth]{./graf/ball-detection/results.pdf}
     \caption{Training performance metrics over 150 epochs. The graphs display the convergence of Box and Classification losses (left) and the improvement of Precision, Recall, and mAP metrics (right).}
     \label{fig:ball_training_plots}
 \end{figure}
 
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{./graf/ball-detection/PR_curve.png}
-    \caption{Precision-Recall Curve showing mAP@0.5 of 0.991 for the Ball Detection model.}
+    \includegraphics[width=0.8\textwidth]{./graf/ball-detection/PR_curve.pdf}
+    \caption{Precision-Recall Curve showing mAP@0.5 of 0.985 for the Ball Detection model.}
     \label{fig:pr_curve}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    % Pamiętaj, aby zapisać swój nowy plik jako confusion_matrix.png w folderze graf/ball-detection/
-    \includegraphics[width=0.8\textwidth]{./graf/ball-detection/confusion_matrix.png}
-    \caption{Confusion Matrix demonstrating raw detection counts for Cue Ball, Other, and Background classes.}
-    \label{fig:conf_matrix}
+    \includegraphics[width=0.8\textwidth]{./graf/ball-detection/F1_curve.pdf}
+    \caption{F1-Confidence Curve indicating the optimal confidence threshold of 0.59.}
+    \label{fig:f1_curve}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{./graf/ball-detection/F1_curve.png}
-    \caption{F1-Confidence Curve indicating the optimal confidence threshold of 0.660.}
-    \label{fig:f1_curve}
+    % Pamiętaj, aby zapisać swój nowy plik jako confusion_matrix.png w folderze graf/ball-detection/
+    \includegraphics[width=0.8\textwidth]{./graf/ball-detection/confusion_matrix.pdf}
+    \caption{Confusion Matrix demonstrating raw detection counts for Cue Ball, Other, and Background classes.}
+    \label{fig:conf_matrix}
 \end{figure}
 
 \subsection{Cue Detection Model Results}
-The Cue Detection model, utilizing pose estimation (YOLOv8-pose), was evaluated based on both bounding box detection and, more importantly, the accuracy of keypoint localization (Object Keypoint Similarity). Accurate keypoint detection is critical for determining the vector of the cue stick.
+The Cue Detection model, utilizing pose estimation (YOLOv8-pose), was evaluated based on both bounding box detection and, more importantly, the accuracy of keypoint localization (Object Keypoint Similarity). Accurate keypoint detection is critical for determining the aiming vector of the cue stick.
 
 \begin{itemize}
-    \item \textbf{Pose Estimation Accuracy:} The model reached a \textbf{Pose mAP@0.5} of \textbf{0.970} (see Figure~\ref{fig:pose_pr_curve}), indicating high precision in locating the cue tip and handle keypoints. The bounding box detection also performed well with a mAP@0.5 of 0.954.
-    \item \textbf{F1-Score Analysis:} The F1-Confidence curve for pose estimation (Figure~\ref{fig:pose_f1_curve}) identifies an optimal confidence threshold of \textbf{0.591}, where the model obtains a peak F1 score of \textbf{0.93}.
+    \item \textbf{Training Performance:} Similar to the ball detection model, the training metrics (Figure~\ref{fig:cue_training_plots}) demonstrated stable convergence. The box loss and pose loss decreased steadily over the epochs, while precision and recall metrics improved consistently, indicating that the model effectively learned the spatial features of the cue stick without significant overfitting.
+    
+    \item \textbf{Pose Estimation Accuracy:} The model reached a \textbf{Pose mAP@0.5} of \textbf{0.954} (Figure~\ref{fig:pose_pr_curve}), indicating high precision in locating the cue tip and handle keypoints. 
+    
+    \item \textbf{F1-Score Analysis:} The F1-Confidence curve for pose estimation (Figure~\ref{fig:pose_f1_curve}) identifies an optimal confidence threshold of \textbf{0.48}, where the model obtains a peak F1 score of \textbf{0.93}.
+    
     \item \textbf{Classification Performance:} The confusion matrix (Figure~\ref{fig:cue_conf_matrix}) displays the model's ability to distinguish the cue from the table background. Out of 76 actual cue instances in the validation set, the model correctly identified 70, with only a minor number of background false positives.
 \end{itemize}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{./graf/cue-detection/PosePR_curve.png}
-    \caption{Precision-Recall Curve for Pose Estimation showing a high mAP@0.5 of 0.970.}
+    \includegraphics[width=1.0\textwidth]{./graf/cue-detection/results.pdf}
+    \caption{Training performance metrics for the Cue Detection model. The graphs illustrate the convergence of Box and Pose losses, confirming stable learning.}
+    \label{fig:cue_training_plots}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./graf/cue-detection/PR_curve.pdf}
+    \caption{Precision-Recall Curve for Pose Estimation showing a high mAP@0.5 of 0.954.}
     \label{fig:pose_pr_curve}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{./graf/cue-detection/PoseF1_curve.png}
+    \includegraphics[width=0.8\textwidth]{./graf/cue-detection/F1_curve.pdf}
     \caption{F1-Confidence Curve for the cue stick keypoints, peaking at 0.93.}
     \label{fig:pose_f1_curve}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{./graf/cue-detection/confusion_matrix.png}
+    \includegraphics[width=0.8\textwidth]{./graf/cue-detection/confusion_matrix.pdf}
     \caption{Confusion Matrix for Cue Detection, showing 70 correct detections against 6 false negatives (background).}
     \label{fig:cue_conf_matrix}
 \end{figure}
 
-\section{Experimental Results}
+\section{System Validation}
 To validate the real-word applicability of the system, an experiment was conducted to verify the consistency and distinctiveness of the impact force estimation algorithm. The test was performed by a female subject with a body weight of 54 kg. Based on the anthropometric configuration described in Chapter 5, the system calculated the effective arm mass as:
-$$ m_{arm} = 54 \text{ kg} \times 4.97\% \approx 2.68 \text{ kg} $$
+$$ m_{arm} = 54 \text{ kg} \times 4.97\% \approx 2.68 \text{ kg} $$.
 
 \subsection{Force Estimation Consistency}
-The test procedure involved performing series of shots categorized by subjective intensity. Initially, three categories were planned: Soft, Medium, and Hard.
+The test procedure involved performing a series of shots categorized by subjective intensity. Initially, three categories were planned: Soft, Medium, and Hard.
 
-However, during the experiment, it was observed that shots categorized as "Soft" (gentle taps for exact positioning) consistently generated acceleration values below the system's triggering threshold ($20 m/s^2$). Consequently, these shots were filtered out by the noise reduction algorithm. This thresholding method corresponds with kinematic analysis methodologies found in clinical literature, where velocity or acceleration thresholds are fundamental for defining discrete movement segments and assessing smoothness \cite{bib:noise}.This confirms that the threshold effectively separates between active gameplay strikes and minor refinements or accidental movements.
+However, during the experiment, it was observed that shots categorized as ``Soft" (gentle taps for exact positioning) consistently generated acceleration values below the system's triggering threshold ($20~m/s^2$). Consequently, these shots were filtered out by the noise reduction algorithm. This thresholding method corresponds to methodologies found in kinematic research, where velocity or acceleration thresholds are fundamental for defining discrete movement segments and assessing smoothness \cite{bib:noise}. This confirms that the threshold effectively separates between active gameplay strikes and minor refinements or accidental movements.
 
 Therefore, the assessment was targeted on two distinct categories ($N=20$ total):
 \begin{enumerate}
@@ -155,7 +167,7 @@ Table~\ref{tab:raw_data} presents the raw force values recorded for each attempt
 \centering
 \caption{Raw recorded force values (in Newtons) for the experimental session ($m_{arm} = 2.68$ kg).}
 \label{tab:raw_data}
-\begin{tabular}{crr}
+\begin{tabular}{rcc}
 \toprule
 \textbf{Attempt \#} & \textbf{Medium Shot (N)} & \textbf{Hard Shot (N)} \\
 \midrule
@@ -173,13 +185,13 @@ Table~\ref{tab:raw_data} presents the raw force values recorded for each attempt
 \end{tabular}
 \end{table}
 
-Based on the raw data, a statistical analysis was performed to calculate the Mean Force ($F_{avg}$) and Standard Deviation ($\sigma$) for each category\cite{bib:stapor}. The results are summarized in Table~\ref{tab:force_results}.
+Based on the raw data, a statistical analysis was performed to calculate the Mean Force ($F_{avg}$) and Standard Deviation ($\sigma$) for each category~\cite{bib:stapor}. The results are summarized in Table~\ref{tab:force_results}.
 
 \begin{table}[h!]
 \centering
 \caption{Statistical analysis of impact force measurements ($N=20$).}
 \label{tab:force_results}
-\begin{tabular}{lrrr}
+\begin{tabular}{rccc}
 \toprule
 \textbf{Shot Category} & \textbf{Min (N)} & \textbf{Max (N)} & \textbf{Mean $\pm$ Std Dev (N)} \\
 \midrule
@@ -190,7 +202,7 @@ Hard Shot   &  92.8 & 128.0 & \textbf{114.8 $\pm$ 10.1} \\
 \end{table}
 
 \textbf{Interpretation:}
-The outcomes indicate a clear separation between the "Medium" and "Hard" categories. As shown in the statistical summary, the maximum force recorded for a medium shot (83.1 N) is significantly lower than the minimum force for a hard shot (92.8 N). This lack of overlap confirms that the system reliably distinguishes between different levels of player intent.
+The outcomes indicate a clear separation between the ``Medium" and ``Hard" categories. As shown in the statistical summary, the maximum force recorded for a medium shot (83.1 N) is significantly lower than the minimum force for a hard shot (92.8 N). This lack of overlap confirms that the system reliably distinguishes between different levels of player intent.
 
 The calculated forces are proportional to the subject's arm mass ($2.68~\mathrm{kg}$). For example, a hard shot of $178~\mathrm{N}$ corresponds to an acceleration of approximately $66~\mathrm{m/s^2}$ ($\approx 6.7g$), which is a realistic value for a dynamic arm movement \cite{bib:arm}.
 
@@ -198,9 +210,9 @@ The calculated forces are proportional to the subject's arm mass ($2.68~\mathrm{
 A secondary test was conducted to evaluate the real-time capabilities of the system. The total latency was measured as the time difference between the sensor event timestamp (on Android) and the visualization update on the PC.
 
 \begin{itemize}
-    \item \textbf{Network Latency:} Average 15ms (local Wi-Fi network).
-    \item \textbf{Processing Time:} Average 25ms (Vision Module inference per frame).
+    \item \textbf{Network Latency:} Average $15~ms$ (local Wi-Fi network).
+    \item \textbf{Processing Time:} Average $25~ms$ (Vision Module inference per frame).
     \item \textbf{Frame Rate:} The vision module maintained a stable 30 FPS on the test workstation.
 \end{itemize}
 
-These efficiency measures confirm that the system acts in "near real-time," providing feedback instant enough for the user to relate the data to the just-performed action.
+These efficiency measures confirm that the system can provide a fluid visual feedback. Thanks to this user can relate the data to the just-performed action.

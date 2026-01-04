@@ -135,22 +135,25 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Description of Tools}{14}{section.3.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Hardware Tools}{14}{subsection.3.3.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Software Tools}{14}{subsection.3.3.2}\protected@file@percent }
-\citation{bib:roboflow}
-\abx@aux@cite{0}{bib:roboflow}
-\abx@aux@segm{0}{0}{bib:roboflow}
+\citation{bib:8-pool_dataset}
+\abx@aux@cite{0}{bib:8-pool_dataset}
+\abx@aux@segm{0}{0}{bib:8-pool_dataset}
+\citation{bib:cue-detection_dataset}
+\abx@aux@cite{0}{bib:cue-detection_dataset}
+\abx@aux@segm{0}{0}{bib:cue-detection_dataset}
 \citation{bib:ghost-ball}
 \abx@aux@cite{0}{bib:ghost-ball}
 \abx@aux@segm{0}{0}{bib:ghost-ball}
 \citation{bib:opencv-library}
 \abx@aux@cite{0}{bib:opencv-library}
 \abx@aux@segm{0}{0}{bib:opencv-library}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Methodology of Design and Implementation}{15}{section.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Phase 1: Data Collection and Model Training}{15}{subsection.3.4.1}\protected@file@percent }
 \citation{bib:linear}
 \abx@aux@cite{0}{bib:linear}
 \abx@aux@segm{0}{0}{bib:linear}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Methodology of Design and Implementation}{15}{section.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Phase 1: Data Collection and Model Training}{15}{subsection.3.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Phase 2: Vision Logic Implementation}{15}{subsection.3.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Phase 3: Sensor Module Development}{15}{subsection.3.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Phase 2: Vision Logic Implementation}{16}{subsection.3.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Phase 3: Sensor Module Development}{16}{subsection.3.4.3}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Analysis of the ball detection dataset: (a) Class distribution showing the massive disproportion between ``other" balls and the single ``cue ball"; (b) Bounding box density map; (c) Spatial distribution of object centers; (d) Correlation of bounding box width and height.}}{16}{figure.caption.13}\protected@file@percent }
 \newlabel{fig:labels_ball}{{3.2}{16}{Analysis of the ball detection dataset: (a) Class distribution showing the massive disproportion between ``other" balls and the single ``cue ball"; (b) Bounding box density map; (c) Spatial distribution of object centers; (d) Correlation of bounding box width and height}{figure.caption.13}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Analysis of the cue detection dataset: (a) Single-class distribution; (b) Bounding box density map; (c) Spatial distribution of cue centers; (d) Correlation of bounding box width and height.}}{17}{figure.caption.14}\protected@file@percent }
@@ -252,63 +255,68 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.4.1}Ball Detection Model Results}{35}{subsection.6.4.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Training performance metrics over 150 epochs. The graphs display the convergence of Box and Classification losses (left) and the improvement of Precision, Recall, and mAP metrics (right).}}{36}{figure.caption.26}\protected@file@percent }
 \newlabel{fig:ball_training_plots}{{6.1}{36}{Training performance metrics over 150 epochs. The graphs display the convergence of Box and Classification losses (left) and the improvement of Precision, Recall, and mAP metrics (right)}{figure.caption.26}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Precision-Recall Curve showing mAP@0.5 of 0.991 for the Ball Detection model.}}{37}{figure.caption.27}\protected@file@percent }
-\newlabel{fig:pr_curve}{{6.2}{37}{Precision-Recall Curve showing mAP@0.5 of 0.991 for the Ball Detection model}{figure.caption.27}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Confusion Matrix demonstrating raw detection counts for Cue Ball, Other, and Background classes.}}{37}{figure.caption.28}\protected@file@percent }
-\newlabel{fig:conf_matrix}{{6.3}{37}{Confusion Matrix demonstrating raw detection counts for Cue Ball, Other, and Background classes}{figure.caption.28}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces F1-Confidence Curve indicating the optimal confidence threshold of 0.660.}}{38}{figure.caption.29}\protected@file@percent }
-\newlabel{fig:f1_curve}{{6.4}{38}{F1-Confidence Curve indicating the optimal confidence threshold of 0.660}{figure.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Precision-Recall Curve showing mAP@0.5 of 0.985 for the Ball Detection model.}}{37}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:pr_curve}{{6.2}{37}{Precision-Recall Curve showing mAP@0.5 of 0.985 for the Ball Detection model}{figure.caption.27}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces F1-Confidence Curve indicating the optimal confidence threshold of 0.59.}}{37}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:f1_curve}{{6.3}{37}{F1-Confidence Curve indicating the optimal confidence threshold of 0.59}{figure.caption.28}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Confusion Matrix demonstrating raw detection counts for Cue Ball, Other, and Background classes.}}{38}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:conf_matrix}{{6.4}{38}{Confusion Matrix demonstrating raw detection counts for Cue Ball, Other, and Background classes}{figure.caption.29}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.4.2}Cue Detection Model Results}{38}{subsection.6.4.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Precision-Recall Curve for Pose Estimation showing a high mAP@0.5 of 0.970.}}{39}{figure.caption.30}\protected@file@percent }
-\newlabel{fig:pose_pr_curve}{{6.5}{39}{Precision-Recall Curve for Pose Estimation showing a high mAP@0.5 of 0.970}{figure.caption.30}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces F1-Confidence Curve for the cue stick keypoints, peaking at 0.93.}}{39}{figure.caption.31}\protected@file@percent }
-\newlabel{fig:pose_f1_curve}{{6.6}{39}{F1-Confidence Curve for the cue stick keypoints, peaking at 0.93}{figure.caption.31}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Training performance metrics for the Cue Detection model. The graphs illustrate the convergence of Box and Pose losses, confirming stable learning.}}{39}{figure.caption.30}\protected@file@percent }
+\newlabel{fig:cue_training_plots}{{6.5}{39}{Training performance metrics for the Cue Detection model. The graphs illustrate the convergence of Box and Pose losses, confirming stable learning}{figure.caption.30}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Precision-Recall Curve for Pose Estimation showing a high mAP@0.5 of 0.954.}}{39}{figure.caption.31}\protected@file@percent }
+\newlabel{fig:pose_pr_curve}{{6.6}{39}{Precision-Recall Curve for Pose Estimation showing a high mAP@0.5 of 0.954}{figure.caption.31}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces F1-Confidence Curve for the cue stick keypoints, peaking at 0.93.}}{40}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:pose_f1_curve}{{6.7}{40}{F1-Confidence Curve for the cue stick keypoints, peaking at 0.93}{figure.caption.32}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces Confusion Matrix for Cue Detection, showing 70 correct detections against 6 false negatives (background).}}{40}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:cue_conf_matrix}{{6.8}{40}{Confusion Matrix for Cue Detection, showing 70 correct detections against 6 false negatives (background)}{figure.caption.33}{}}
 \citation{bib:noise}
 \abx@aux@cite{0}{bib:noise}
 \abx@aux@segm{0}{0}{bib:noise}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Confusion Matrix for Cue Detection, showing 70 correct detections against 6 false negatives (background).}}{40}{figure.caption.32}\protected@file@percent }
-\newlabel{fig:cue_conf_matrix}{{6.7}{40}{Confusion Matrix for Cue Detection, showing 70 correct detections against 6 false negatives (background)}{figure.caption.32}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.5}Experimental Results}{40}{section.6.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.1}Force Estimation Consistency}{40}{subsection.6.5.1}\protected@file@percent }
 \citation{bib:stapor}
 \abx@aux@cite{0}{bib:stapor}
 \abx@aux@segm{0}{0}{bib:stapor}
 \citation{bib:arm}
 \abx@aux@cite{0}{bib:arm}
 \abx@aux@segm{0}{0}{bib:arm}
-\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Raw recorded force values (in Newtons) for the experimental session ($m_{arm} = 2.68$ kg).}}{41}{table.caption.33}\protected@file@percent }
-\newlabel{tab:raw_data}{{6.2}{41}{Raw recorded force values (in Newtons) for the experimental session ($m_{arm} = 2.68$ kg)}{table.caption.33}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces Statistical analysis of impact force measurements ($N=20$).}}{41}{table.caption.34}\protected@file@percent }
-\newlabel{tab:force_results}{{6.3}{41}{Statistical analysis of impact force measurements ($N=20$)}{table.caption.34}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.2}System Latency and Performance}{41}{subsection.6.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.5}System Validation}{41}{section.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.1}Force Estimation Consistency}{41}{subsection.6.5.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Raw recorded force values (in Newtons) for the experimental session ($m_{arm} = 2.68$ kg).}}{42}{table.caption.34}\protected@file@percent }
+\newlabel{tab:raw_data}{{6.2}{42}{Raw recorded force values (in Newtons) for the experimental session ($m_{arm} = 2.68$ kg)}{table.caption.34}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces Statistical analysis of impact force measurements ($N=20$).}}{42}{table.caption.35}\protected@file@percent }
+\newlabel{tab:force_results}{{6.3}{42}{Statistical analysis of impact force measurements ($N=20$)}{table.caption.35}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.2}System Latency and Performance}{42}{subsection.6.5.2}\protected@file@percent }
+\citation{bib:anatomical}
+\abx@aux@cite{0}{bib:anatomical}
+\abx@aux@segm{0}{0}{bib:anatomical}
 \@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{43}{chapter.7}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {7.1}Achievement of Objectives}{43}{section.7.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {7.2}Difficulties Experienced}{44}{section.7.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {7.3}Future Development}{44}{section.7.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{47}{section*.35}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Index of abbreviations and symbols}{53}{appendix*.37}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{47}{section*.36}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Index of abbreviations and symbols}{53}{appendix*.38}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{Listings}{55}{appendix*.40}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Listings}{55}{appendix*.41}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {.1}Configuration File (config.json)}{55}{section.1..1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.}Configuration File (config.json)}{55}{section.1..1}\protected@file@percent }
 \newlabel{lst:config_json}{{1}{55}{Content of config.json}{lstlisting.1..1}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {1}{\ignorespaces Content of config.json}}{55}{lstlisting.1..1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {.2}Vision Module (bilard.py)}{55}{section.1..2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.}Vision Module (bilard.py)}{55}{section.1..2}\protected@file@percent }
 \newlabel{lst:bilard_py}{{2}{55}{Vision Module implementation}{lstlisting.1..2}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {2}{\ignorespaces Vision Module implementation}}{55}{lstlisting.1..2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {.3}Telemetry Module (sensors.py)}{58}{section.1..3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.}Telemetry Module (sensors.py)}{58}{section.1..3}\protected@file@percent }
 \newlabel{lst:sensors_py}{{3}{58}{Telemetry Module implementation}{lstlisting.1..3}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {3}{\ignorespaces Telemetry Module implementation}}{58}{lstlisting.1..3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{List of additional files in~electronic submission}{67}{appendix*.41}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{List of additional files in~electronic submission}{67}{appendix*.42}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{List of figures}{70}{appendix*.42}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{List of tables}{71}{appendix*.43}\protected@file@percent }
-\abx@aux@read@bbl@mdfivesum{2ECB04FFC53F5C233883753481A227E3}
+\@writefile{toc}{\contentsline {chapter}{List of figures}{70}{appendix*.43}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{List of tables}{71}{appendix*.44}\protected@file@percent }
+\abx@aux@read@bbl@mdfivesum{9D6ADD8F0531C547A5FD409CBF950FA5}
 \abx@aux@defaultrefcontext{0}{bib:ghost-ball}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:english}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:pool-live}{nty/global//global/global}
@@ -319,10 +327,12 @@
 \abx@aux@defaultrefcontext{0}{bib:opencv-library}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:cv-in-sports}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:python}{nty/global//global/global}
+\abx@aux@defaultrefcontext{0}{bib:cue-detection_dataset}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:hawk-eye}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:roboflow}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:calc-app}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:unified_dl}{nty/global//global/global}
+\abx@aux@defaultrefcontext{0}{bib:8-pool_dataset}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:sensors}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:noise}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:yolov8-ultralytics}{nty/global//global/global}
@@ -345,10 +355,12 @@
 \abx@aux@defaultlabelprefix{0}{bib:opencv-library}{}
 \abx@aux@defaultlabelprefix{0}{bib:cv-in-sports}{}
 \abx@aux@defaultlabelprefix{0}{bib:python}{}
+\abx@aux@defaultlabelprefix{0}{bib:cue-detection_dataset}{}
 \abx@aux@defaultlabelprefix{0}{bib:hawk-eye}{}
 \abx@aux@defaultlabelprefix{0}{bib:roboflow}{}
 \abx@aux@defaultlabelprefix{0}{bib:calc-app}{}
 \abx@aux@defaultlabelprefix{0}{bib:unified_dl}{}
+\abx@aux@defaultlabelprefix{0}{bib:8-pool_dataset}{}
 \abx@aux@defaultlabelprefix{0}{bib:sensors}{}
 \abx@aux@defaultlabelprefix{0}{bib:noise}{}
 \abx@aux@defaultlabelprefix{0}{bib:yolov8-ultralytics}{}

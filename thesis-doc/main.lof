@@ -23,12 +23,13 @@
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Implementation of the separate thread for TCP communication.}}{31}{figure.caption.24}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Training performance metrics over 150 epochs. The graphs display the convergence of Box and Classification losses (left) and the improvement of Precision, Recall, and mAP metrics (right).}}{36}{figure.caption.26}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Precision-Recall Curve showing mAP@0.5 of 0.991 for the Ball Detection model.}}{37}{figure.caption.27}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Confusion Matrix demonstrating raw detection counts for Cue Ball, Other, and Background classes.}}{37}{figure.caption.28}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces F1-Confidence Curve indicating the optimal confidence threshold of 0.660.}}{38}{figure.caption.29}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Precision-Recall Curve for Pose Estimation showing a high mAP@0.5 of 0.970.}}{39}{figure.caption.30}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces F1-Confidence Curve for the cue stick keypoints, peaking at 0.93.}}{39}{figure.caption.31}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Confusion Matrix for Cue Detection, showing 70 correct detections against 6 false negatives (background).}}{40}{figure.caption.32}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Precision-Recall Curve showing mAP@0.5 of 0.985 for the Ball Detection model.}}{37}{figure.caption.27}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces F1-Confidence Curve indicating the optimal confidence threshold of 0.59.}}{37}{figure.caption.28}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Confusion Matrix demonstrating raw detection counts for Cue Ball, Other, and Background classes.}}{38}{figure.caption.29}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Training performance metrics for the Cue Detection model. The graphs illustrate the convergence of Box and Pose losses, confirming stable learning.}}{39}{figure.caption.30}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Precision-Recall Curve for Pose Estimation showing a high mAP@0.5 of 0.954.}}{39}{figure.caption.31}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces F1-Confidence Curve for the cue stick keypoints, peaking at 0.93.}}{40}{figure.caption.32}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Confusion Matrix for Cue Detection, showing 70 correct detections against 6 false negatives (background).}}{40}{figure.caption.33}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
