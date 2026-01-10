@@ -24,11 +24,18 @@ The testing scope covered both the functional requirements (correct physics calc
 TC-01 & JSON Packet Transmission & Server receives valid JSON structure without corruption. & Passed \\ \hline
 TC-02 & Ghost Ball Projection & Projector line intersects the target ball center. & Passed \\ \hline
 TC-03 & High-Velocity Shot Detection & Accelerometer detects peak $>$ 20 m/s$^2$. & Passed \\ \hline
-TC-04 & Multi-ball Occlusion & System maintains ID of balls when partially obscured. & Partial \\ \hline
+TC-04 & Occlusion Handling & System maintains ID of balls when partially obscured. & Partial \\ \hline
 \end{tabular}
 \end{table}
 
-\noindent The status ``Partial'' for TC-04 means that the tracking algorithm can handle minor occlusions (e.g., when balls momentarily touch). However, during full occlusion --- for example when a ball is completely covered by the player's hand --- the tracking ID may occasionally reset. 
+\noindent The status ``Partial'' for TC-04 means that the tracking algorithm can handle minor occlusions (e.g., when balls momentarily touch). However, during significant occlusion --- for example when a ball is covered by the player's hand --- the detection logic may fail, as illustrated in Figure~\ref{fig:partial_occlusion}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{./graf/partial.png}
+    \caption{Visualization of the occlusion limitation (Test Case TC-04). The system successfully detects visible balls, but fails to identify the orange ball (top right) which is partially covered by the player's hand.}
+    \label{fig:partial_occlusion}
+\end{figure}
 
 \section{Detected and Fixed Bugs}
 During the implementation and testing phases, multile significant software defects were identified. Below is a description of the most significant bugs and the solutions applied.
@@ -153,9 +160,36 @@ $$ m_{arm} = 54 \text{ kg} \times 4.97\% \approx 2.68 \text{ kg} $$.
 \subsection{Force Estimation Consistency}
 The test procedure involved performing a series of shots categorized by subjective intensity. Initially, three categories were planned: Soft, Medium, and Hard.
 
-However, during the experiment, it was observed that shots categorized as ``Soft" (gentle taps for exact positioning) consistently generated acceleration values below the system's triggering threshold ($20~m/s^2$). Consequently, these shots were filtered out by the noise reduction algorithm. This thresholding method corresponds to methodologies found in kinematic research, where velocity or acceleration thresholds are fundamental for defining discrete movement segments and assessing smoothness \cite{bib:noise}. This confirms that the threshold effectively separates between active gameplay strikes and minor refinements or accidental movements.
+However, during the experiment, it was observed that shots categorized as ``Soft'' (gentle taps for exact positioning) consistently generated acceleration values below the system's triggering threshold ($20~m/s^2$). Consequently, these shots were filtered out by the noise reduction algorithm.
 
-Therefore, the assessment was targeted on two distinct categories ($N=20$ total):
+This distinct behavior is visually demonstrated in Figure~\ref{fig:shot_soft}. As shown, the ``Soft'' tap did not breach the threshold, resulting in the system correctly ignoring the event. 
+
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[width=0.85\textwidth]{./graf/soft.png}
+    \caption{Soft Shot analysis: Acceleration $< 20~m/s^2$. The system treats this as noise/preparation and does not register a shot.}
+    \label{fig:shot_soft}
+\end{figure}
+
+In contrast, ``Medium'' and ``Hard'' shots successfully triggered the recording logic, capturing distinct force profiles. The Medium shot, presented in Figure~\ref{fig:shot_medium}, shows a clear peak typical for standard gameplay. Figure~\ref{fig:shot_hard} illustrates a Hard shot, characterized by high intensity and a much larger force value.
+
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[width=0.85\textwidth]{./graf/medium.png}
+    \caption{Medium Shot analysis: Distinct peak detected. Calculated Force = 54 N.}
+    \label{fig:shot_medium}
+\end{figure}
+
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[width=0.85\textwidth]{./graf/hard.png}
+    \caption{Hard Shot analysis: High-intensity peak. Calculated Force = 97 N.}
+    \label{fig:shot_hard}
+\end{figure}
+
+This thresholding method corresponds to methodologies found in kinematic research, where velocity or acceleration thresholds are fundamental for defining discrete movement segments and assessing smoothness \cite{bib:noise}. This confirms that the threshold effectively separates between active gameplay strikes and minor refinements or accidental movements.
+
+Therefore, the assessment was targeted on the two distinct categories ($N=20$ total):
 \begin{enumerate}
     \item \textbf{Medium shots:} Standard shots used during regular gameplay.
     \item \textbf{Hard shots:} Break-type shots or power shots.
@@ -174,13 +208,13 @@ Table~\ref{tab:raw_data} presents the raw force values recorded for each attempt
 1  &  63.4 & 109.7 \\
 2  &  65.7 & 115.4 \\
 3  &  74.4 & 107.4 \\
-4  & 83.1 & 126.6 \\
+4  &  83.1 & 126.6 \\
 5  &  54.9 & 114.9 \\
 6  &  56.5 & 128.0 \\
 7  &  76.9 & 124.9 \\
 8  &  68.9 & 110.2 \\
 9  &  63.2 & 92.8 \\
-10 & 60.4 & 118.1 \\
+10 &  54.0 & 96.7 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -195,16 +229,11 @@ Based on the raw data, a statistical analysis was performed to calculate the Mea
 \toprule
 \textbf{Shot Category} & \textbf{Min (N)} & \textbf{Max (N)} & \textbf{Mean $\pm$ Std Dev (N)} \\
 \midrule
-Medium Shot &  60.4 & 83.1 & \textbf{66.74 $\pm$ 8.6} \\
-Hard Shot   &  92.8 & 128.0 & \textbf{114.8 $\pm$ 10.1} \\
+Medium Shot &  54.0 & 83.1 & \textbf{66.1 $\pm$ 9.3} \\
+Hard Shot   &  92.8 & 128.0 & \textbf{112.66 $\pm$ 11.33} \\
 \bottomrule
 \end{tabular}
 \end{table}
-
-\textbf{Interpretation:}
-The outcomes indicate a clear separation between the ``Medium" and ``Hard" categories. As shown in the statistical summary, the maximum force recorded for a medium shot (83.1 N) is significantly lower than the minimum force for a hard shot (92.8 N). This lack of overlap confirms that the system reliably distinguishes between different levels of player intent.
-
-The calculated forces are proportional to the subject's arm mass ($2.68~\mathrm{kg}$). For example, a hard shot of $178~\mathrm{N}$ corresponds to an acceleration of approximately $66~\mathrm{m/s^2}$ ($\approx 6.7g$), which is a realistic value for a dynamic arm movement \cite{bib:arm}.
 
 \subsection{System Latency and Performance}
 A secondary test was conducted to evaluate the real-time capabilities of the system. The total latency was measured as the time difference between the sensor event timestamp (on Android) and the visualization update on the PC.

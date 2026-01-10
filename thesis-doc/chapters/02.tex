@@ -80,10 +80,10 @@ To provide the player with a metric of ``Shot Power" in Newtons, the system appl
 The effective mass is derived by summing the segmental weights of the hand, forearm, and upper arm using anthropometric coefficients from Plagenhoef et al.~\cite{bib:anatomical}. Consequently, the impact force $F$ is determined by substituting the personalized mass into the motion equation:
 
 \begin{equation}
-    F = m_{arm} \cdot ||\vec{a}_{impact}|| = (W_{body} \cdot \mu_{gender}) \cdot ||\vec{a}_{impact}||
+    F = m_{arm} \cdot ||\vec{a}_{impact}|| = (W_{body} \cdot \mu_{gender}) \cdot ||\vec{a}_{impact}||,
 \end{equation}
 
-\noindent Where:
+\noindent where:
 \begin{itemize}
     \item $m_{arm}$ denotes the calculated effective arm mass,
     \item $W_{body}$ is the player's total body weight,
@@ -111,7 +111,7 @@ To identify the game elements, a standard object detection model based on the YO
 Determining the aiming line requires more precision than a bounding box can provide. Therefore, a \textbf{Pose Estimation} model (specifically \texttt{yolov8-pose}~\cite{bib:yolov8-ultralytics}) is used to detect the cue stick. Instead of a box, this model detects exact semantic keypoints: the \texttt{tip} (cue tip) and the \texttt{handle} (grip point). The output is a set of coordinates $K$:
 
 \begin{equation}
-    f_{pose}(I) \rightarrow \{ (x_{tip}, y_{tip}), (x_{handle}, y_{handle}) \}
+    f_{pose}(I) \rightarrow \{ (x_{tip}, y_{tip}), (x_{handle}, y_{handle}) \}.
 \end{equation}
 
 The aiming vector $\vec{v}_{aim}$ is then derived directly from these keypoints: 

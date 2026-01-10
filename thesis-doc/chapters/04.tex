@@ -77,7 +77,7 @@ The installation process is twofold, involving the desktop server and the mobile
         "gender": "female"
     }
     \end{lstlisting}
-    \textit{Note: The \texttt{gender} field accepts ``male" or ``female" (case-insensitive). This setting adjusts the arm mass coefficient used in the biomechanical calculations.}
+    \textit{Note: The \texttt{gender} field accepts ``male" or ``female" (case-sensitive). This setting adjusts the arm mass coefficient used in the biomechanical calculations.}
 \end{enumerate}
 
 \subsection{Mobile Installation}
@@ -164,18 +164,86 @@ Since this is a standalone prototype, system administration tasks are limited to
 \section{Example of Usage}
 
 \textbf{Scenario: Practicing the Cut Shot}
-The player wants to practice a difficult cut shot into the corner pocket.
+The player wants to practice a cut shot into the corner pocket.
 
+% --- KROKI 1-2: Setup i Detekcja ---
 \begin{enumerate}
-    \item The player sets up the white ball and the target ball.
-    \item The system detects the balls and waits for the cue stick.
-    \item The player addresses the cue ball. The system detects the cue pose and renders the ``Ghost Ball" slightly to the left of the target ball.
-    \item The AR lines show that the current aim will cause the target ball to miss the pocket (hit the rail).
-    \item The player adjusts their stance until the Green Line points directly into the pocket.
-    \item The player executes the stroke.
-    \item The \texttt{sensors.py} script detects a peak acceleration of $25 m/s^2$.
-    \item The system saves a snapshot of the stroke metrics, allowing the player to see if they maintained wrist steadiness during the shot.
+    \item The player sets up the white ball and the target ball (Figure~\ref{fig:usage_setup}).
+    \item The system detects the balls and waits for the cue stick (Figure~\ref{fig:usage_detection}).
 \end{enumerate}
+
+\begin{figure}[hbpt]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{./graf/setup_ball.jpg}
+        \caption{Step 1: Initial arrangement of the balls.}
+        \label{fig:usage_setup}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{./graf/ball_detection.png}
+        \caption{Step 2: System detects the object ball (red box) and cue ball (purple box).}
+        \label{fig:usage_detection}
+    \end{subfigure}
+    \caption{Initialization phase.}
+    \label{fig:usage_phase1}
+\end{figure}
+
+% --- KROKI 3-5: Celowanie (Miss / Good) ---
+\begin{enumerate}
+    \setcounter{enumi}{2} % Wznawiamy numerację od 3
+    \item The player addresses the cue ball. The system detects the cue pose and renders the ``Ghost Ball" next to the target ball.
+    \item The AR lines show that the current aim will cause the target ball to miss the pocket (hit the rail), as shown in Figure~\ref{fig:usage_miss}.
+    \item The player adjusts their stance until the Green Line points directly into the pocket (Figure~\ref{fig:usage_good}).
+\end{enumerate}
+
+\begin{figure}[hbpt]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{./graf/miss.png}
+        \caption{Step 4: Visual feedback indicating a miss (target ball hitting the rail).}
+        \label{fig:usage_miss}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{./graf/good.png}
+        \caption{Step 5: Player corrects the aim. The green line now leads into the pocket.}
+        \label{fig:usage_good}
+    \end{subfigure}
+    \caption{Aiming assistance phase: Real-time correction.}
+    \label{fig:usage_phase2}
+\end{figure}
+
+% --- KROKI 6-7: Strzał i App Shot ---
+\begin{enumerate}
+    \setcounter{enumi}{5} % Wznawiamy numerację od 6
+    \item The player executes the stroke.
+    \item The \texttt{sensors.py} script detects a peak acceleration of $33.0~m/s^2$ (Figure~\ref{fig:app_shot}).
+\end{enumerate}
+
+\begin{figure}[hbpt]
+    \centering
+    \includegraphics[width=0.85\textwidth]{./graf/app_shot.png}
+    \caption{Step 7: The system detects the peak acceleration moment corresponding to the impact.}
+    \label{fig:app_shot}
+\end{figure}
+
+% --- KROK 8: Screen Shot (Wynik końcowy) ---
+\begin{enumerate}
+    \setcounter{enumi}{7} % Wznawiamy numerację od 8
+    \item The system saves a snapshot of the stroke metrics, allowing the player to see if they maintained wrist steadiness during the shot (Figure~\ref{fig:screen_shot}).
+\end{enumerate}
+
+\begin{figure}[hbpt]
+    \centering
+    \includegraphics[width=0.85\textwidth]{./graf/screen_shot.png}
+    \caption{Step 8: Final post-shot analysis saved by the system, showing force (89 N) and stability metrics.}
+    \label{fig:screen_shot}
+\end{figure}
 
 \section{Working Scenarios}
 
@@ -190,7 +258,7 @@ Figure~\ref{fig:scenario_a_full} demonstrates the vision module in action. The s
     \item The predicted post-collision paths are rendered as a yellow line (Tangent Line for the cue ball) and a green line (path of the object ball), providing immediate feedback on whether the shot will be successful.
 \end{itemize}
 
-\begin{figure}[H]
+\begin{figure}[hbpt]
     \centering
     % Pierwszy obrazek
     \begin{subfigure}[b]{0.8\textwidth}

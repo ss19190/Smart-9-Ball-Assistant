@@ -69,7 +69,7 @@ The project applies a modern technology stack combining computer vision, AI (Art
 \subsection{Software Tools}
 \begin{itemize}
     \item \textbf{Python 3.x:} The main programming language for the backend server and vision processing~\cite{bib:python}.
-    \item \textbf{OpenCV (open source computer vision library):} Used for image pre-processing, drawing the AR visualization (lines, circles), and rendering the live telemetry graphs~\cite{bib:opencv-library}.
+    \item \textbf{OpenCV (Open Source Computer Vision Library):} Used for image pre-processing, drawing the AR visualization (lines, circles), and rendering the live telemetry graphs~\cite{bib:opencv-library}.
     \item \textbf{Ultralytics YOLO (You Only Look Once):} A state-of-the-art framework for object detection.
     \begin{itemize}
         \item \textit{yolov12 (detection):} It is used for robust detection of billiard balls under different lighting conditions~\cite{bib:yolo12}.
@@ -111,14 +111,14 @@ Furthermore, a stable TCP socket protocol was established for data transmission.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{./graf/ball-detection/labels - ball.jpg}
+    \includegraphics[width=0.8\textwidth]{./graf/ball-detection/labels-ball.pdf}
     \caption{Analysis of the ball detection dataset: (a) Class distribution showing the massive disproportion between ``other" balls and the single ``cue ball"; (b) Bounding box density map; (c) Spatial distribution of object centers; (d) Correlation of bounding box width and height.}
     \label{fig:labels_ball}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{./graf/cue-detection/labels - cue.jpg}
+    \includegraphics[width=0.8\textwidth]{./graf/cue-detection/labels-cue.pdf}
     \caption{Analysis of the cue detection dataset: (a) Single-class distribution; (b) Bounding box density map; (c) Spatial distribution of cue centers; (d) Correlation of bounding box width and height.}
     \label{fig:labels_cue}
 \end{figure}

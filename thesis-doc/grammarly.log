@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.10.25)  4 JAN 2026 13:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.10.25)  10 JAN 2026 13:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -321,7 +321,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 chapters/03.tex:121: Undefined control sequence.
 l.121     \includegraphics
-                          [width=0.8\textwidth]{./graf/cue-detection/labels ...
+                          [width=0.8\textwidth]{./graf/cue-detection/labels-...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -332,7 +332,7 @@ chapters/03.tex:121: Missing number, treated as zero.
 <to be read again> 
                    ]
 l.121     \includegraphics[width=0.8\textwidth]
-                                               {./graf/cue-detection/labels ...
+                                               {./graf/cue-detection/labels-...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -341,7 +341,7 @@ chapters/03.tex:121: Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
 l.121     \includegraphics[width=0.8\textwidth]
-                                               {./graf/cue-detection/labels ...
+                                               {./graf/cue-detection/labels-...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -657,45 +657,564 @@ or  <return>  to continue without it.
 
 [14] [15]
 
-LaTeX Warning: Reference `fig:scenario_a_full' on page 16 undefined on input line 185.
+LaTeX Warning: Reference `fig:usage_setup' on page 16 undefined on input line 171.
 
 
-chapters/04.tex:193: LaTeX Error: Unknown float option `H'.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.193 \begin{figure}[H]
-                       
-Option `H' ignored and `p' used.
+LaTeX Warning: Reference `fig:usage_detection' on page 16 undefined on input line 172.
 
 
-chapters/04.tex:196: LaTeX Error: Environment subfigure undefined.
+chapters/04.tex:177: LaTeX Error: Environment subfigure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.196     \begin{subfigure}
+l.177     \begin{subfigure}
+                           [b]{0.48\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+chapters/04.tex:177: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.177     \begin{subfigure}[b]{0.48\textwidth}
+                                              
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+chapters/04.tex:177: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.177     \begin{subfigure}[b]{0.48\textwidth}
+                                              
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+chapters/04.tex:179: Undefined control sequence.
+l.179         \includegraphics
+                              [width=\linewidth]{./graf/setup_ball.jpg}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/04.tex:179: Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.179         \includegraphics[width=\linewidth]
+                                                {./graf/setup_ball.jpg}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+chapters/04.tex:179: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.179         \includegraphics[width=\linewidth]
+                                                {./graf/setup_ball.jpg}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+chapters/04.tex:179: Missing $ inserted.
+<inserted text> 
+                $
+l.179 ...egraphics[width=\linewidth]{./graf/setup_
+                                                  ball.jpg}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+chapters/04.tex:179: Extra }, or forgotten $.
+l.179 ...[width=\linewidth]{./graf/setup_ball.jpg}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+chapters/04.tex:180: Missing $ inserted.
+<inserted text> 
+                $
+l.180 ...tep 1: Initial arrangement of the balls.}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+chapters/04.tex:182: LaTeX Error: \begin{figure} on input line 175 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.182     \end{subfigure}
+                         
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+chapters/04.tex:182: Missing } inserted.
+<inserted text> 
+                }
+l.182     \end{subfigure}
+                         
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+chapters/04.tex:184: LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.184     \begin{subfigure}
+                           [b]{0.48\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+chapters/04.tex:184: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.184     \begin{subfigure}[b]{0.48\textwidth}
+                                              
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+chapters/04.tex:184: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.184     \begin{subfigure}[b]{0.48\textwidth}
+                                              
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+chapters/04.tex:186: Undefined control sequence.
+l.186         \includegraphics
+                              [width=\linewidth]{./graf/ball_detection.png}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/04.tex:186: Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.186         \includegraphics[width=\linewidth]
+                                                {./graf/ball_detection.png}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+chapters/04.tex:186: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.186         \includegraphics[width=\linewidth]
+                                                {./graf/ball_detection.png}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+chapters/04.tex:186: Missing $ inserted.
+<inserted text> 
+                $
+l.186 ...degraphics[width=\linewidth]{./graf/ball_
+                                                  detection.png}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+chapters/04.tex:186: Extra }, or forgotten $.
+l.186 ...th=\linewidth]{./graf/ball_detection.png}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+chapters/04.tex:187: Missing $ inserted.
+<inserted text> 
+                $
+l.187 ...all (red box) and cue ball (purple box).}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+chapters/04.tex:189: LaTeX Error: \begin{figure} on input line 175 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.189     \end{subfigure}
+                         
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+chapters/04.tex:189: Missing } inserted.
+<inserted text> 
+                }
+l.189     \end{subfigure}
+                         
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Reference `fig:usage_miss' on page 16 undefined on input line 198.
+
+
+LaTeX Warning: Reference `fig:usage_good' on page 16 undefined on input line 199.
+
+
+chapters/04.tex:204: LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.204     \begin{subfigure}
+                           [b]{0.48\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+chapters/04.tex:204: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.204     \begin{subfigure}[b]{0.48\textwidth}
+                                              
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+chapters/04.tex:204: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.204     \begin{subfigure}[b]{0.48\textwidth}
+                                              
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+chapters/04.tex:206: Undefined control sequence.
+l.206         \includegraphics
+                              [width=\linewidth]{./graf/miss.png}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/04.tex:206: Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.206         \includegraphics[width=\linewidth]
+                                                {./graf/miss.png}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+chapters/04.tex:206: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.206         \includegraphics[width=\linewidth]
+                                                {./graf/miss.png}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+chapters/04.tex:209: LaTeX Error: \begin{figure} on input line 202 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.209     \end{subfigure}
+                         
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+chapters/04.tex:211: LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.211     \begin{subfigure}
+                           [b]{0.48\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+chapters/04.tex:211: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.211     \begin{subfigure}[b]{0.48\textwidth}
+                                              
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+chapters/04.tex:211: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.211     \begin{subfigure}[b]{0.48\textwidth}
+                                              
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+chapters/04.tex:213: Undefined control sequence.
+l.213         \includegraphics
+                              [width=\linewidth]{./graf/good.png}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/04.tex:213: Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.213         \includegraphics[width=\linewidth]
+                                                {./graf/good.png}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+chapters/04.tex:213: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.213         \includegraphics[width=\linewidth]
+                                                {./graf/good.png}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+chapters/04.tex:216: LaTeX Error: \begin{figure} on input line 202 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.216     \end{subfigure}
+                         
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+LaTeX Warning: Reference `fig:app_shot' on page 16 undefined on input line 225.
+
+chapters/04.tex:230: Undefined control sequence.
+l.230     \includegraphics
+                          [width=0.85\textwidth]{./graf/app_shot.png}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/04.tex:230: Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.230     \includegraphics[width=0.85\textwidth]
+                                                {./graf/app_shot.png}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+chapters/04.tex:230: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.230     \includegraphics[width=0.85\textwidth]
+                                                {./graf/app_shot.png}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+chapters/04.tex:230: Missing $ inserted.
+<inserted text> 
+                $
+l.230 ...raphics[width=0.85\textwidth]{./graf/app_
+                                                  shot.png}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+chapters/04.tex:230: Extra }, or forgotten $.
+l.230 ...idth=0.85\textwidth]{./graf/app_shot.png}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+chapters/04.tex:231: Missing $ inserted.
+<inserted text> 
+                $
+l.231 ...tion moment corresponding to the impact.}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+chapters/04.tex:233: Missing } inserted.
+<inserted text> 
+                }
+l.233 \end{figure}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Reference `fig:screen_shot' on page 16 undefined on input line 238.
+
+chapters/04.tex:243: Undefined control sequence.
+l.243     \includegraphics
+                          [width=0.85\textwidth]{./graf/screen_shot.png}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/04.tex:243: Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.243     \includegraphics[width=0.85\textwidth]
+                                                {./graf/screen_shot.png}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+chapters/04.tex:243: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.243     \includegraphics[width=0.85\textwidth]
+                                                {./graf/screen_shot.png}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+chapters/04.tex:243: Missing $ inserted.
+<inserted text> 
+                $
+l.243 ...hics[width=0.85\textwidth]{./graf/screen_
+                                                  shot.png}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+chapters/04.tex:243: Extra }, or forgotten $.
+l.243 ...h=0.85\textwidth]{./graf/screen_shot.png}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+chapters/04.tex:244: Missing $ inserted.
+<inserted text> 
+                $
+l.244 ...wing force (89 N) and stability metrics.}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+chapters/04.tex:246: Missing } inserted.
+<inserted text> 
+                }
+l.246 \end{figure}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Reference `fig:scenario_a_full' on page 16 undefined on input line 253.
+
+
+chapters/04.tex:264: LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.264     \begin{subfigure}
                            [b]{0.8\textwidth}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-chapters/04.tex:196: Missing number, treated as zero.
+chapters/04.tex:264: Missing number, treated as zero.
 <to be read again> 
                    }
-l.196     \begin{subfigure}[b]{0.8\textwidth}
+l.264     \begin{subfigure}[b]{0.8\textwidth}
                                              
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-chapters/04.tex:196: Illegal unit of measure (pt inserted).
+chapters/04.tex:264: Illegal unit of measure (pt inserted).
 <to be read again> 
                    }
-l.196     \begin{subfigure}[b]{0.8\textwidth}
+l.264     \begin{subfigure}[b]{0.8\textwidth}
                                              
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -704,8 +1223,8 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-chapters/04.tex:198: Undefined control sequence.
-l.198         \includegraphics
+chapters/04.tex:266: Undefined control sequence.
+l.266         \includegraphics
                               [width=\linewidth]{./graf/example.png}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -713,19 +1232,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-chapters/04.tex:198: Missing number, treated as zero.
+chapters/04.tex:266: Missing number, treated as zero.
 <to be read again> 
                    ]
-l.198         \includegraphics[width=\linewidth]
+l.266         \includegraphics[width=\linewidth]
                                                 {./graf/example.png}
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-chapters/04.tex:198: Illegal unit of measure (pt inserted).
+chapters/04.tex:266: Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
-l.198         \includegraphics[width=\linewidth]
+l.266         \includegraphics[width=\linewidth]
                                                 {./graf/example.png}
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -735,44 +1254,44 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-chapters/04.tex:201: LaTeX Error: \begin{figure} on input line 193 ended by \end{subfigure}.
+chapters/04.tex:269: LaTeX Error: \begin{figure} on input line 261 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.201     \end{subfigure}
+l.269     \end{subfigure}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-chapters/04.tex:206: LaTeX Error: Environment subfigure undefined.
+chapters/04.tex:274: LaTeX Error: Environment subfigure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.206     \begin{subfigure}
+l.274     \begin{subfigure}
                            [b]{0.8\textwidth}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-chapters/04.tex:206: Missing number, treated as zero.
+chapters/04.tex:274: Missing number, treated as zero.
 <to be read again> 
                    }
-l.206     \begin{subfigure}[b]{0.8\textwidth}
+l.274     \begin{subfigure}[b]{0.8\textwidth}
                                              
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-chapters/04.tex:206: Illegal unit of measure (pt inserted).
+chapters/04.tex:274: Illegal unit of measure (pt inserted).
 <to be read again> 
                    }
-l.206     \begin{subfigure}[b]{0.8\textwidth}
+l.274     \begin{subfigure}[b]{0.8\textwidth}
                                              
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -781,8 +1300,8 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-chapters/04.tex:208: Undefined control sequence.
-l.208         \includegraphics
+chapters/04.tex:276: Undefined control sequence.
+l.276         \includegraphics
                               [width=\linewidth]{./graf/example2.png}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -790,19 +1309,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-chapters/04.tex:208: Missing number, treated as zero.
+chapters/04.tex:276: Missing number, treated as zero.
 <to be read again> 
                    ]
-l.208         \includegraphics[width=\linewidth]
+l.276         \includegraphics[width=\linewidth]
                                                 {./graf/example2.png}
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-chapters/04.tex:208: Illegal unit of measure (pt inserted).
+chapters/04.tex:276: Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
-l.208         \includegraphics[width=\linewidth]
+l.276         \includegraphics[width=\linewidth]
                                                 {./graf/example2.png}
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -812,59 +1331,59 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-chapters/04.tex:211: LaTeX Error: \begin{figure} on input line 193 ended by \end{subfigure}.
+chapters/04.tex:279: LaTeX Error: \begin{figure} on input line 261 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.211     \end{subfigure}
+l.279     \end{subfigure}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Reference `fig:scenario_b_full' on page 16 undefined on input line 219.
+LaTeX Warning: Reference `fig:scenario_b_full' on page 16 undefined on input line 287.
 
 [16] [17]
 
-chapters/04.tex:227: LaTeX Error: Unknown float option `H'.
+chapters/04.tex:295: LaTeX Error: Unknown float option `H'.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.227 \begin{figure}[H]
+l.295 \begin{figure}[H]
                        
 Option `H' ignored and `p' used.
 
 
-chapters/04.tex:230: LaTeX Error: Environment subfigure undefined.
+chapters/04.tex:298: LaTeX Error: Environment subfigure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.230     \begin{subfigure}
+l.298     \begin{subfigure}
                            [b]{0.48\textwidth}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-chapters/04.tex:230: Missing number, treated as zero.
+chapters/04.tex:298: Missing number, treated as zero.
 <to be read again> 
                    }
-l.230     \begin{subfigure}[b]{0.48\textwidth}
+l.298     \begin{subfigure}[b]{0.48\textwidth}
                                               
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-chapters/04.tex:230: Illegal unit of measure (pt inserted).
+chapters/04.tex:298: Illegal unit of measure (pt inserted).
 <to be read again> 
                    }
-l.230     \begin{subfigure}[b]{0.48\textwidth}
+l.298     \begin{subfigure}[b]{0.48\textwidth}
                                               
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -873,8 +1392,8 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-chapters/04.tex:232: Undefined control sequence.
-l.232         \includegraphics
+chapters/04.tex:300: Undefined control sequence.
+l.300         \includegraphics
                               [width=\linewidth]{./graf/sensorExample.png}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -882,19 +1401,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-chapters/04.tex:232: Missing number, treated as zero.
+chapters/04.tex:300: Missing number, treated as zero.
 <to be read again> 
                    ]
-l.232         \includegraphics[width=\linewidth]
+l.300         \includegraphics[width=\linewidth]
                                                 {./graf/sensorExample.png}
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-chapters/04.tex:232: Illegal unit of measure (pt inserted).
+chapters/04.tex:300: Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
-l.232         \includegraphics[width=\linewidth]
+l.300         \includegraphics[width=\linewidth]
                                                 {./graf/sensorExample.png}
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -904,44 +1423,44 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-chapters/04.tex:235: LaTeX Error: \begin{figure} on input line 227 ended by \end{subfigure}.
+chapters/04.tex:303: LaTeX Error: \begin{figure} on input line 295 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.235     \end{subfigure}
+l.303     \end{subfigure}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-chapters/04.tex:237: LaTeX Error: Environment subfigure undefined.
+chapters/04.tex:305: LaTeX Error: Environment subfigure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.237     \begin{subfigure}
+l.305     \begin{subfigure}
                            [b]{0.48\textwidth}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-chapters/04.tex:237: Missing number, treated as zero.
+chapters/04.tex:305: Missing number, treated as zero.
 <to be read again> 
                    }
-l.237     \begin{subfigure}[b]{0.48\textwidth}
+l.305     \begin{subfigure}[b]{0.48\textwidth}
                                               
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-chapters/04.tex:237: Illegal unit of measure (pt inserted).
+chapters/04.tex:305: Illegal unit of measure (pt inserted).
 <to be read again> 
                    }
-l.237     \begin{subfigure}[b]{0.48\textwidth}
+l.305     \begin{subfigure}[b]{0.48\textwidth}
                                               
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -950,8 +1469,8 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-chapters/04.tex:239: Undefined control sequence.
-l.239         \includegraphics
+chapters/04.tex:307: Undefined control sequence.
+l.307         \includegraphics
                               [width=\linewidth]{./graf/strokeExample.png}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -959,19 +1478,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-chapters/04.tex:239: Missing number, treated as zero.
+chapters/04.tex:307: Missing number, treated as zero.
 <to be read again> 
                    ]
-l.239         \includegraphics[width=\linewidth]
+l.307         \includegraphics[width=\linewidth]
                                                 {./graf/strokeExample.png}
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-chapters/04.tex:239: Illegal unit of measure (pt inserted).
+chapters/04.tex:307: Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
-l.239         \includegraphics[width=\linewidth]
+l.307         \includegraphics[width=\linewidth]
                                                 {./graf/strokeExample.png}
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -981,44 +1500,44 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-chapters/04.tex:242: LaTeX Error: \begin{figure} on input line 227 ended by \end{subfigure}.
+chapters/04.tex:310: LaTeX Error: \begin{figure} on input line 295 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.242     \end{subfigure}
+l.310     \end{subfigure}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-chapters/04.tex:247: LaTeX Error: Environment subfigure undefined.
+chapters/04.tex:315: LaTeX Error: Environment subfigure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.247     \begin{subfigure}
+l.315     \begin{subfigure}
                            [b]{0.48\textwidth}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-chapters/04.tex:247: Missing number, treated as zero.
+chapters/04.tex:315: Missing number, treated as zero.
 <to be read again> 
                    }
-l.247     \begin{subfigure}[b]{0.48\textwidth}
+l.315     \begin{subfigure}[b]{0.48\textwidth}
                                               
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-chapters/04.tex:247: Illegal unit of measure (pt inserted).
+chapters/04.tex:315: Illegal unit of measure (pt inserted).
 <to be read again> 
                    }
-l.247     \begin{subfigure}[b]{0.48\textwidth}
+l.315     \begin{subfigure}[b]{0.48\textwidth}
                                               
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1027,8 +1546,8 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-chapters/04.tex:249: Undefined control sequence.
-l.249         \includegraphics
+chapters/04.tex:317: Undefined control sequence.
+l.317         \includegraphics
                               [height=5.5cm]{./graf/phone1.png}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1037,44 +1556,44 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-chapters/04.tex:252: LaTeX Error: \begin{figure} on input line 227 ended by \end{subfigure}.
+chapters/04.tex:320: LaTeX Error: \begin{figure} on input line 295 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.252     \end{subfigure}
+l.320     \end{subfigure}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-chapters/04.tex:254: LaTeX Error: Environment subfigure undefined.
+chapters/04.tex:322: LaTeX Error: Environment subfigure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.254     \begin{subfigure}
+l.322     \begin{subfigure}
                            [b]{0.48\textwidth}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-chapters/04.tex:254: Missing number, treated as zero.
+chapters/04.tex:322: Missing number, treated as zero.
 <to be read again> 
                    }
-l.254     \begin{subfigure}[b]{0.48\textwidth}
+l.322     \begin{subfigure}[b]{0.48\textwidth}
                                               
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-chapters/04.tex:254: Illegal unit of measure (pt inserted).
+chapters/04.tex:322: Illegal unit of measure (pt inserted).
 <to be read again> 
                    }
-l.254     \begin{subfigure}[b]{0.48\textwidth}
+l.322     \begin{subfigure}[b]{0.48\textwidth}
                                               
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1083,8 +1602,8 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-chapters/04.tex:256: Undefined control sequence.
-l.256         \includegraphics
+chapters/04.tex:324: Undefined control sequence.
+l.324         \includegraphics
                               [height=5.5cm]{./graf/phone2.png}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1093,13 +1612,13 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-chapters/04.tex:259: LaTeX Error: \begin{figure} on input line 227 ended by \end{subfigure}.
+chapters/04.tex:327: LaTeX Error: \begin{figure} on input line 295 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.259     \end{subfigure}
+l.327     \end{subfigure}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1118,6 +1637,7 @@ and I'll forget about whatever was undefined.
 
 LaTeX Warning: Reference `fig:sys_arch' on page 18 undefined on input line 14.
 
+[18]
 
 chapters/05.tex:16: LaTeX Error: Unknown float option `H'.
 
@@ -1166,7 +1686,6 @@ Overfull \hbox (2.41158pt too wide) in paragraph at lines 26--27
 []\T1/cmr/bx/n/10 Vision Pro-cess (\T1/cmtt/m/n/10 bilard.py\T1/cmr/bx/n/10 ): \T1/cmr/m/n/10 It uti-lizes the \T1/cmtt/m/n/10 inference \T1/cmr/m/n/10 and \T1/cmtt/m/n/10 supervision
  []
 
-[18]
 
 LaTeX Warning: Reference `fig:code:json_payload' on page 19 undefined on input line 33.
 
@@ -1395,18 +1914,18 @@ Overfull \hbox (0.52483pt too wide) in paragraph at lines 98--100
 []\T1/cmr/bx/n/10 Ball De-tec-tion: \T1/cmr/m/n/10 A generic ob-ject de-tec-tion model (ver-sion ball-detection-
  []
 
+[19] [20]
 
-LaTeX Warning: Citation `bib:yolov8-ultralytics' on page 19 undefined on input line 100.
+LaTeX Warning: Citation `bib:yolov8-ultralytics' on page 21 undefined on input line 100.
 
 
-LaTeX Warning: Citation `bib:unified_dl' on page 19 undefined on input line 101.
+LaTeX Warning: Citation `bib:unified_dl' on page 21 undefined on input line 101.
 
 
 Overfull \hbox (16.77086pt too wide) in paragraph at lines 100--102
 []\T1/cmr/bx/n/10 Cue De-tec-tion: \T1/cmr/m/n/10 A pose es-ti-ma-tion model (ver-sion \T1/cmtt/m/n/10 cue-detection-ciazj/3\T1/cmr/m/n/10 )
  []
 
-[19] [20]
 chapters/05.tex:107: Undefined control sequence.
 l.107 ...texttt{NumPy} library. The function \path
                                                   {find_ghost_ball_position}...
@@ -1626,15 +2145,15 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
+[21]
 
-LaTeX Warning: Citation `bib:patterns' on page 21 undefined on input line 171.
+LaTeX Warning: Citation `bib:patterns' on page 22 undefined on input line 171.
 
 
 Overfull \hbox (35.491pt too wide) in paragraph at lines 171--172
 []\T1/cmr/bx/n/10 Listener Pat-tern (An-droid): \T1/cmr/m/n/10 The im-ple-men-ta-tion if the \T1/cmtt/m/n/10 SensorEventListener
  []
 
-[21]
 
 LaTeX Warning: Citation `bib:patterns' on page 22 undefined on input line 172.
 
@@ -1762,46 +2281,91 @@ Overfull \hbox (75.59216pt too wide) in paragraph at lines 21--29
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+
+LaTeX Warning: Reference `fig:partial_occlusion' on page 22 undefined on input line 31.
+
 [22]
-Overfull \hbox (5.81017pt too wide) in paragraph at lines 42--43
-\T1/cmr/bx/n/10 Problem: \T1/cmr/m/n/10 Oc-ca-sion-ally, the Python server would crash with a \T1/cmtt/m/n/10 JSONDecodeError\T1/cmr/m/n/10 .
- []
 
-
-Overfull \hbox (1.05328pt too wide) in paragraph at lines 42--43
-\T1/cmr/m/n/10 This oc-curred be-cause TCP is a stream-oriented pro-to-col, not a message-oriented
- []
-
-[23]
-
-LaTeX Warning: Citation `bib:hold' on page 24 undefined on input line 52.
-
-
-LaTeX Warning: Reference `fig:pr_curve' on page 24 undefined on input line 70.
-
-
-LaTeX Warning: Reference `fig:ball_training_plots' on page 24 undefined on input line 73.
-
-
-LaTeX Warning: Reference `fig:f1_curve' on page 24 undefined on input line 74.
-
-
-LaTeX Warning: Reference `fig:conf_matrix' on page 24 undefined on input line 75.
-
-[24]
-
-chapters/06.tex:78: LaTeX Error: Unknown float option `H'.
+chapters/06.tex:33: LaTeX Error: Unknown float option `H'.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.78 \begin{figure}[H]
+l.33 \begin{figure}[H]
                       
 Option `H' ignored and `p' used.
 
-chapters/06.tex:80: Undefined control sequence.
-l.80     \includegraphics
+chapters/06.tex:35: Undefined control sequence.
+l.35     \includegraphics
+                         [width=0.85\textwidth]{./graf/partial.png}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/06.tex:35: Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.35     \includegraphics[width=0.85\textwidth]
+                                               {./graf/partial.png}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+chapters/06.tex:35: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.35     \includegraphics[width=0.85\textwidth]
+                                               {./graf/partial.png}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (5.81017pt too wide) in paragraph at lines 49--50
+\T1/cmr/bx/n/10 Problem: \T1/cmr/m/n/10 Oc-ca-sion-ally, the Python server would crash with a \T1/cmtt/m/n/10 JSONDecodeError\T1/cmr/m/n/10 .
+ []
+
+
+Overfull \hbox (1.05328pt too wide) in paragraph at lines 49--50
+\T1/cmr/m/n/10 This oc-curred be-cause TCP is a stream-oriented pro-to-col, not a message-oriented
+ []
+
+[23]
+
+LaTeX Warning: Citation `bib:hold' on page 24 undefined on input line 59.
+
+
+LaTeX Warning: Reference `fig:pr_curve' on page 24 undefined on input line 77.
+
+
+LaTeX Warning: Reference `fig:ball_training_plots' on page 24 undefined on input line 80.
+
+[24]
+
+LaTeX Warning: Reference `fig:f1_curve' on page 25 undefined on input line 81.
+
+
+LaTeX Warning: Reference `fig:conf_matrix' on page 25 undefined on input line 82.
+
+
+chapters/06.tex:85: LaTeX Error: Unknown float option `H'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 \begin{figure}[H]
+                      
+Option `H' ignored and `p' used.
+
+chapters/06.tex:87: Undefined control sequence.
+l.87     \includegraphics
                          [width=1.0\textwidth]{./graf/ball-detection/results...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1809,19 +2373,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-chapters/06.tex:80: Missing number, treated as zero.
+chapters/06.tex:87: Missing number, treated as zero.
 <to be read again> 
                    ]
-l.80     \includegraphics[width=1.0\textwidth]
+l.87     \includegraphics[width=1.0\textwidth]
                                               {./graf/ball-detection/results...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-chapters/06.tex:80: Illegal unit of measure (pt inserted).
+chapters/06.tex:87: Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
-l.80     \includegraphics[width=1.0\textwidth]
+l.87     \includegraphics[width=1.0\textwidth]
                                               {./graf/ball-detection/results...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1829,83 +2393,6 @@ I'll assume that you meant to say pt, for printer's points.
 To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
-
-
-chapters/06.tex:86: LaTeX Error: Unknown float option `H'.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.86 \begin{figure}[H]
-                      
-Option `H' ignored and `p' used.
-
-chapters/06.tex:88: Undefined control sequence.
-l.88     \includegraphics
-                         [width=0.8\textwidth]{./graf/ball-detection/PR_curv...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-chapters/06.tex:88: Missing number, treated as zero.
-<to be read again> 
-                   ]
-l.88     \includegraphics[width=0.8\textwidth]
-                                              {./graf/ball-detection/PR_curv...
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-chapters/06.tex:88: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   ]
-l.88     \includegraphics[width=0.8\textwidth]
-                                              {./graf/ball-detection/PR_curv...
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-chapters/06.tex:88: Missing $ inserted.
-<inserted text> 
-                $
-l.88 ...h=0.8\textwidth]{./graf/ball-detection/PR_
-                                                  curve.pdf}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-chapters/06.tex:88: Extra }, or forgotten $.
-l.88 ...width]{./graf/ball-detection/PR_curve.pdf}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-chapters/06.tex:89: Missing $ inserted.
-<inserted text> 
-                $
-l.89 ....5 of 0.985 for the Ball Detection model.}
-                                                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-chapters/06.tex:91: Missing } inserted.
-<inserted text> 
-                }
-l.91 \end{figure}
-                 
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
 
 
 chapters/06.tex:93: LaTeX Error: Unknown float option `H'.
@@ -1920,7 +2407,7 @@ Option `H' ignored and `p' used.
 
 chapters/06.tex:95: Undefined control sequence.
 l.95     \includegraphics
-                         [width=0.8\textwidth]{./graf/ball-detection/F1_curv...
+                         [width=0.8\textwidth]{./graf/ball-detection/PR_curv...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1931,7 +2418,7 @@ chapters/06.tex:95: Missing number, treated as zero.
 <to be read again> 
                    ]
 l.95     \includegraphics[width=0.8\textwidth]
-                                              {./graf/ball-detection/F1_curv...
+                                              {./graf/ball-detection/PR_curv...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -1940,7 +2427,7 @@ chapters/06.tex:95: Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
 l.95     \includegraphics[width=0.8\textwidth]
-                                              {./graf/ball-detection/F1_curv...
+                                              {./graf/ball-detection/PR_curv...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1951,13 +2438,13 @@ two letters. (See Chapter 27 of The TeXbook.)
 chapters/06.tex:95: Missing $ inserted.
 <inserted text> 
                 $
-l.95 ...h=0.8\textwidth]{./graf/ball-detection/F1_
+l.95 ...h=0.8\textwidth]{./graf/ball-detection/PR_
                                                   curve.pdf}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 chapters/06.tex:95: Extra }, or forgotten $.
-l.95 ...width]{./graf/ball-detection/F1_curve.pdf}
+l.95 ...width]{./graf/ball-detection/PR_curve.pdf}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1968,7 +2455,7 @@ deleted material, e.g., by typing `I$}'.
 chapters/06.tex:96: Missing $ inserted.
 <inserted text> 
                 $
-l.96 ...the optimal confidence threshold of 0.59.}
+l.96 ....5 of 0.985 for the Ball Detection model.}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1995,29 +2482,29 @@ l.100 \begin{figure}[H]
                        
 Option `H' ignored and `p' used.
 
-chapters/06.tex:103: Undefined control sequence.
-l.103     \includegraphics
-                          [width=0.8\textwidth]{./graf/ball-detection/confus...
+chapters/06.tex:102: Undefined control sequence.
+l.102     \includegraphics
+                          [width=0.8\textwidth]{./graf/ball-detection/F1_cur...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-chapters/06.tex:103: Missing number, treated as zero.
+chapters/06.tex:102: Missing number, treated as zero.
 <to be read again> 
                    ]
-l.103     \includegraphics[width=0.8\textwidth]
-                                               {./graf/ball-detection/confus...
+l.102     \includegraphics[width=0.8\textwidth]
+                                               {./graf/ball-detection/F1_cur...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-chapters/06.tex:103: Illegal unit of measure (pt inserted).
+chapters/06.tex:102: Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
-l.103     \includegraphics[width=0.8\textwidth]
-                                               {./graf/ball-detection/confus...
+l.102     \includegraphics[width=0.8\textwidth]
+                                               {./graf/ball-detection/F1_cur...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -2025,16 +2512,16 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-chapters/06.tex:103: Missing $ inserted.
+chapters/06.tex:102: Missing $ inserted.
 <inserted text> 
                 $
-l.103 ...xtwidth]{./graf/ball-detection/confusion_
-                                                  matrix.pdf}
+l.102 ...=0.8\textwidth]{./graf/ball-detection/F1_
+                                                  curve.pdf}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-chapters/06.tex:103: Extra }, or forgotten $.
-l.103 ...graf/ball-detection/confusion_matrix.pdf}
+chapters/06.tex:102: Extra }, or forgotten $.
+l.102 ...idth]{./graf/ball-detection/F1_curve.pdf}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -2042,18 +2529,18 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-chapters/06.tex:104: Missing $ inserted.
+chapters/06.tex:103: Missing $ inserted.
 <inserted text> 
                 $
-l.104 ...Cue Ball, Other, and Background classes.}
+l.103 ...he optimal confidence threshold of 0.59.}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-chapters/06.tex:106: Missing } inserted.
+chapters/06.tex:105: Missing } inserted.
 <inserted text> 
                 }
-l.106 \end{figure}
+l.105 \end{figure}
                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2062,57 +2549,93 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-LaTeX Warning: Reference `fig:cue_training_plots' on page 25 undefined on input line 112.
-
-
-LaTeX Warning: Reference `fig:pose_pr_curve' on page 25 undefined on input line 114.
-
-
-LaTeX Warning: Reference `fig:pose_f1_curve' on page 25 undefined on input line 116.
-
-
-LaTeX Warning: Reference `fig:cue_conf_matrix' on page 25 undefined on input line 118.
-
-
-chapters/06.tex:121: LaTeX Error: Unknown float option `H'.
+chapters/06.tex:107: LaTeX Error: Unknown float option `H'.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.121 \begin{figure}[H]
+l.107 \begin{figure}[H]
                        
 Option `H' ignored and `p' used.
 
-chapters/06.tex:123: Undefined control sequence.
-l.123     \includegraphics
-                          [width=1.0\textwidth]{./graf/cue-detection/results...
+chapters/06.tex:110: Undefined control sequence.
+l.110     \includegraphics
+                          [width=0.8\textwidth]{./graf/ball-detection/confus...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-chapters/06.tex:123: Missing number, treated as zero.
+chapters/06.tex:110: Missing number, treated as zero.
 <to be read again> 
                    ]
-l.123     \includegraphics[width=1.0\textwidth]
-                                               {./graf/cue-detection/results...
+l.110     \includegraphics[width=0.8\textwidth]
+                                               {./graf/ball-detection/confus...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-chapters/06.tex:123: Illegal unit of measure (pt inserted).
+chapters/06.tex:110: Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
-l.123     \includegraphics[width=1.0\textwidth]
-                                               {./graf/cue-detection/results...
+l.110     \includegraphics[width=0.8\textwidth]
+                                               {./graf/ball-detection/confus...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
 To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
+
+chapters/06.tex:110: Missing $ inserted.
+<inserted text> 
+                $
+l.110 ...xtwidth]{./graf/ball-detection/confusion_
+                                                  matrix.pdf}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+chapters/06.tex:110: Extra }, or forgotten $.
+l.110 ...graf/ball-detection/confusion_matrix.pdf}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+chapters/06.tex:111: Missing $ inserted.
+<inserted text> 
+                $
+l.111 ...Cue Ball, Other, and Background classes.}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+chapters/06.tex:113: Missing } inserted.
+<inserted text> 
+                }
+l.113 \end{figure}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Reference `fig:cue_training_plots' on page 25 undefined on input line 119.
+
+
+LaTeX Warning: Reference `fig:pose_pr_curve' on page 25 undefined on input line 121.
+
+
+LaTeX Warning: Reference `fig:pose_f1_curve' on page 25 undefined on input line 123.
+
+
+LaTeX Warning: Reference `fig:cue_conf_matrix' on page 25 undefined on input line 125.
 
 
 chapters/06.tex:128: LaTeX Error: Unknown float option `H'.
@@ -2127,7 +2650,7 @@ Option `H' ignored and `p' used.
 
 chapters/06.tex:130: Undefined control sequence.
 l.130     \includegraphics
-                          [width=0.8\textwidth]{./graf/cue-detection/PR_curv...
+                          [width=1.0\textwidth]{./graf/cue-detection/results...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2137,8 +2660,8 @@ and I'll forget about whatever was undefined.
 chapters/06.tex:130: Missing number, treated as zero.
 <to be read again> 
                    ]
-l.130     \includegraphics[width=0.8\textwidth]
-                                               {./graf/cue-detection/PR_curv...
+l.130     \includegraphics[width=1.0\textwidth]
+                                               {./graf/cue-detection/results...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -2146,50 +2669,14 @@ look up `weird error' in the index to The TeXbook.)
 chapters/06.tex:130: Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
-l.130     \includegraphics[width=0.8\textwidth]
-                                               {./graf/cue-detection/PR_curv...
+l.130     \includegraphics[width=1.0\textwidth]
+                                               {./graf/cue-detection/results...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
 To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
-
-chapters/06.tex:130: Missing $ inserted.
-<inserted text> 
-                $
-l.130 ...h=0.8\textwidth]{./graf/cue-detection/PR_
-                                                  curve.pdf}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-chapters/06.tex:130: Extra }, or forgotten $.
-l.130 ...width]{./graf/cue-detection/PR_curve.pdf}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-chapters/06.tex:131: Missing $ inserted.
-<inserted text> 
-                $
-l.131 ...imation showing a high mAP@0.5 of 0.954.}
-                                                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-chapters/06.tex:133: Missing } inserted.
-<inserted text> 
-                }
-l.133 \end{figure}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
 
 
 chapters/06.tex:135: LaTeX Error: Unknown float option `H'.
@@ -2204,7 +2691,7 @@ Option `H' ignored and `p' used.
 
 chapters/06.tex:137: Undefined control sequence.
 l.137     \includegraphics
-                          [width=0.8\textwidth]{./graf/cue-detection/F1_curv...
+                          [width=0.8\textwidth]{./graf/cue-detection/PR_curv...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2215,7 +2702,7 @@ chapters/06.tex:137: Missing number, treated as zero.
 <to be read again> 
                    ]
 l.137     \includegraphics[width=0.8\textwidth]
-                                               {./graf/cue-detection/F1_curv...
+                                               {./graf/cue-detection/PR_curv...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -2224,7 +2711,7 @@ chapters/06.tex:137: Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
 l.137     \includegraphics[width=0.8\textwidth]
-                                               {./graf/cue-detection/F1_curv...
+                                               {./graf/cue-detection/PR_curv...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -2235,13 +2722,13 @@ two letters. (See Chapter 27 of The TeXbook.)
 chapters/06.tex:137: Missing $ inserted.
 <inserted text> 
                 $
-l.137 ...h=0.8\textwidth]{./graf/cue-detection/F1_
+l.137 ...h=0.8\textwidth]{./graf/cue-detection/PR_
                                                   curve.pdf}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 chapters/06.tex:137: Extra }, or forgotten $.
-l.137 ...width]{./graf/cue-detection/F1_curve.pdf}
+l.137 ...width]{./graf/cue-detection/PR_curve.pdf}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -2252,7 +2739,7 @@ deleted material, e.g., by typing `I$}'.
 chapters/06.tex:138: Missing $ inserted.
 <inserted text> 
                 $
-l.138 ...he cue stick keypoints, peaking at 0.93.}
+l.138 ...imation showing a high mAP@0.5 of 0.954.}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2281,7 +2768,7 @@ Option `H' ignored and `p' used.
 
 chapters/06.tex:144: Undefined control sequence.
 l.144     \includegraphics
-                          [width=0.8\textwidth]{./graf/cue-detection/confusi...
+                          [width=0.8\textwidth]{./graf/cue-detection/F1_curv...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2292,7 +2779,7 @@ chapters/06.tex:144: Missing number, treated as zero.
 <to be read again> 
                    ]
 l.144     \includegraphics[width=0.8\textwidth]
-                                               {./graf/cue-detection/confusi...
+                                               {./graf/cue-detection/F1_curv...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -2301,7 +2788,7 @@ chapters/06.tex:144: Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
 l.144     \includegraphics[width=0.8\textwidth]
-                                               {./graf/cue-detection/confusi...
+                                               {./graf/cue-detection/F1_curv...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -2312,13 +2799,13 @@ two letters. (See Chapter 27 of The TeXbook.)
 chapters/06.tex:144: Missing $ inserted.
 <inserted text> 
                 $
-l.144 ...extwidth]{./graf/cue-detection/confusion_
-                                                  matrix.pdf}
+l.144 ...h=0.8\textwidth]{./graf/cue-detection/F1_
+                                                  curve.pdf}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 chapters/06.tex:144: Extra }, or forgotten $.
-l.144 .../graf/cue-detection/confusion_matrix.pdf}
+l.144 ...width]{./graf/cue-detection/F1_curve.pdf}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -2329,7 +2816,7 @@ deleted material, e.g., by typing `I$}'.
 chapters/06.tex:145: Missing $ inserted.
 <inserted text> 
                 $
-l.145 ... against 6 false negatives (background).}
+l.145 ...he cue stick keypoints, peaking at 0.93.}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2345,8 +2832,86 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
+
+chapters/06.tex:149: LaTeX Error: Unknown float option `H'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.149 \begin{figure}[H]
+                       
+Option `H' ignored and `p' used.
+
 chapters/06.tex:151: Undefined control sequence.
-l.151 $$ m_{arm} = 54 \text
+l.151     \includegraphics
+                          [width=0.8\textwidth]{./graf/cue-detection/confusi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/06.tex:151: Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.151     \includegraphics[width=0.8\textwidth]
+                                               {./graf/cue-detection/confusi...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+chapters/06.tex:151: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.151     \includegraphics[width=0.8\textwidth]
+                                               {./graf/cue-detection/confusi...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+chapters/06.tex:151: Missing $ inserted.
+<inserted text> 
+                $
+l.151 ...extwidth]{./graf/cue-detection/confusion_
+                                                  matrix.pdf}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+chapters/06.tex:151: Extra }, or forgotten $.
+l.151 .../graf/cue-detection/confusion_matrix.pdf}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+chapters/06.tex:152: Missing $ inserted.
+<inserted text> 
+                $
+l.152 ... against 6 false negatives (background).}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+chapters/06.tex:154: Missing } inserted.
+<inserted text> 
+                }
+l.154 \end{figure}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[25] [26]
+chapters/06.tex:158: Undefined control sequence.
+l.158 $$ m_{arm} = 54 \text
                            { kg} \times 4.97\% \approx 2.68 \text{ kg} $$.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2354,8 +2919,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-chapters/06.tex:151: Undefined control sequence.
-l.151 ...ext{ kg} \times 4.97\% \approx 2.68 \text
+chapters/06.tex:158: Undefined control sequence.
+l.158 ...ext{ kg} \times 4.97\% \approx 2.68 \text
                                                   { kg} $$.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2364,14 +2929,112 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `bib:noise' on page 25 undefined on input line 156.
+LaTeX Warning: Reference `fig:shot_soft' on page 27 undefined on input line 165.
 
-[25] [26]
+chapters/06.tex:169: Undefined control sequence.
+l.169     \includegraphics
+                          [width=0.85\textwidth]{./graf/soft.png}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-LaTeX Warning: Reference `tab:raw_data' on page 27 undefined on input line 164.
+chapters/06.tex:169: Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.169     \includegraphics[width=0.85\textwidth]
+                                                {./graf/soft.png}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
 
-chapters/06.tex:171: Undefined control sequence.
-l.171 \toprule
+chapters/06.tex:169: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.169     \includegraphics[width=0.85\textwidth]
+                                                {./graf/soft.png}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+LaTeX Warning: Reference `fig:shot_medium' on page 27 undefined on input line 174.
+
+
+LaTeX Warning: Reference `fig:shot_hard' on page 27 undefined on input line 174.
+
+chapters/06.tex:178: Undefined control sequence.
+l.178     \includegraphics
+                          [width=0.85\textwidth]{./graf/medium.png}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/06.tex:178: Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.178     \includegraphics[width=0.85\textwidth]
+                                                {./graf/medium.png}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+chapters/06.tex:178: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.178     \includegraphics[width=0.85\textwidth]
+                                                {./graf/medium.png}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+chapters/06.tex:185: Undefined control sequence.
+l.185     \includegraphics
+                          [width=0.85\textwidth]{./graf/hard.png}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/06.tex:185: Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.185     \includegraphics[width=0.85\textwidth]
+                                                {./graf/hard.png}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+chapters/06.tex:185: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.185     \includegraphics[width=0.85\textwidth]
+                                                {./graf/hard.png}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+LaTeX Warning: Citation `bib:noise' on page 27 undefined on input line 190.
+
+
+LaTeX Warning: Reference `tab:raw_data' on page 27 undefined on input line 198.
+
+chapters/06.tex:205: Undefined control sequence.
+l.205 \toprule
               
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2379,10 +3042,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-chapters/06.tex:173: Undefined control sequence.
+chapters/06.tex:207: Undefined control sequence.
 <recently read> \midrule 
                          
-l.173 \midrule
+l.207 \midrule
               
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2390,10 +3053,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-chapters/06.tex:184: Undefined control sequence.
+chapters/06.tex:218: Undefined control sequence.
 <recently read> \bottomrule 
                             
-l.184 \bottomrule
+l.218 \bottomrule
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2402,13 +3065,16 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `bib:stapor' on page 27 undefined on input line 188.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Reference `tab:force_results' on page 27 undefined on input line 188.
+LaTeX Warning: Citation `bib:stapor' on page 27 undefined on input line 222.
 
-chapters/06.tex:195: Undefined control sequence.
-l.195 \toprule
+
+LaTeX Warning: Reference `tab:force_results' on page 27 undefined on input line 222.
+
+chapters/06.tex:229: Undefined control sequence.
+l.229 \toprule
               
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2416,10 +3082,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-chapters/06.tex:197: Undefined control sequence.
+chapters/06.tex:231: Undefined control sequence.
 <recently read> \midrule 
                          
-l.197 \midrule
+l.231 \midrule
               
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2427,10 +3093,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-chapters/06.tex:200: Undefined control sequence.
+chapters/06.tex:234: Undefined control sequence.
 <recently read> \bottomrule 
                             
-l.200 \bottomrule
+l.234 \bottomrule
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2438,11 +3104,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[27]
 
-LaTeX Warning: Citation `bib:arm' on page 28 undefined on input line 207.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (chapters/07.tex
+[27]) (chapters/07.tex
 chapters/07.tex:1: Undefined control sequence.
 l.1 \chapter
             {Conclusions}
@@ -2618,6 +3283,7 @@ I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
+[31]
 chapters/09.tex:32: Missing $ inserted.
 <inserted text> 
                 $
@@ -2787,7 +3453,6 @@ l.67
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-[31]
 chapters/09.tex:74: Missing $ inserted.
 <inserted text> 
                 $
@@ -3414,6 +4079,7 @@ Overfull \hbox (8.4567pt too wide) in paragraph at lines 176--179
 []\T1/cmtt/m/n/7 cv2.imshow("Billiards AI - Full Path", annotated$[]\OML/cmm/m/it/7 rame\OT1/cmr/m/n/7 )\OML/cmm/m/it/7 ifcv\OT1/cmr/m/n/7 2\OML/cmm/m/it/7 :waitKey\OT1/cmr/m/n/7 (1)0\OML/cmm/m/it/7 xFF \OT1/cmr/m/n/7 == \OML/cmm/m/it/7 ord\OT1/cmr/m/n/7 ([]\OML/cmm/m/it/7 q[]\OT1/cmr/m/n/7 ) :
  []
 
+[32]
 chapters/09.tex:183: Missing $ inserted.
 <inserted text> 
                 $
@@ -3814,7 +4480,6 @@ I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-[32]
 chapters/09.tex:242: Missing $ inserted.
 <inserted text> 
                 $
@@ -4523,6 +5188,7 @@ Overfull \hbox (86.1418pt too wide) in paragraph at lines 349--356
 \T1/cmtt/m/n/7 js = json.loads(line) ax, ay, az = float(js.get("acc$[]\OT1/cmr/m/n/7 "\OML/cmm/m/it/7 ; \OT1/cmr/m/n/7 0))\OML/cmm/m/it/7 ; float\OT1/cmr/m/n/7 (\OML/cmm/m/it/7 js:get\OT1/cmr/m/n/7 ("\OML/cmm/m/it/7 acc[]\OT1/cmr/m/n/7 "\OML/cmm/m/it/7 ; \OT1/cmr/m/n/7 0))\OML/cmm/m/it/7 ; float\OT1/cmr/m/n/7 (\OML/cmm/m/it/7 js:get\OT1/cmr/m/n/7 ("\OML/cmm/m/it/7 acc[]\OT1/cmr/m/n/7 "\OML/cmm/m/it/7 ; \OT1/cmr/m/n/7 0))\OML/cmm/m/it/7 gx; gy; gz \OT1/cmr/m/n/7 =
  []
 
+[33]
 chapters/09.tex:360: Missing $ inserted.
 <inserted text> 
                 $
@@ -4843,7 +5509,6 @@ Overfull \hbox (47.31097pt too wide) in paragraph at lines 424--428
 []\T1/cmtt/m/n/7 while True: window = np.zeros((600, 800, 3), dtype=np.uint8) current$[]\OML/cmm/m/it/7 ime \OT1/cmr/m/n/7 = \OML/cmm/m/it/7 time:time\OT1/cmr/m/n/7 ()\OML/cmm/m/it/7 is[]onnected \OT1/cmr/m/n/7 =
  []
 
-[33]
 chapters/09.tex:429: Missing $ inserted.
 <inserted text> 
                 $
@@ -5518,6 +6183,7 @@ Overfull \hbox (140.4165pt too wide) in paragraph at lines 546--548
 []\T1/cmtt/m/n/7 if waiting$[]\OML/cmm/m/it/7 or[]napshot[] \OT1/cmr/m/n/7 : \OML/cmm/m/it/7 cv\OT1/cmr/m/n/7 2\OML/cmm/m/it/7 :putText\OT1/cmr/m/n/7 (\OML/cmm/m/it/7 window; \OT1/cmr/m/n/7 "\OML/cmm/m/it/7 ANALYZING:::\OT1/cmr/m/n/7 "\OML/cmm/m/it/7 ; \OT1/cmr/m/n/7 (30\OML/cmm/m/it/7 ; \OT1/cmr/m/n/7 550)\OML/cmm/m/it/7 ; cv\OT1/cmr/m/n/7 2\OML/cmm/m/it/7 :FONT[]ERSHEY[]IMPLEX; \OT1/cmr/m/n/7 0\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 8\OML/cmm/m/it/7 ; \OT1/cmr/m/n/7 (0\OML/cmm/m/it/7 ; \OT1/cmr/m/n/7 255\OML/cmm/m/it/7 ; \OT1/cmr/m/n/7 255)\OML/cmm/m/it/7 ; \OT1/cmr/m/n/7 2)$ 
  []
 
+[34]
 chapters/09.tex:550: Missing $ inserted.
 <inserted text> 
                 $
@@ -5708,7 +6374,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[34]) [35] [36] (grammarly.aux)
+) [35] [36] (grammarly.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -5726,15 +6392,15 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 ### simple group (level 1) entered at line 107 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 879 strings out of 474485
- 15669 string characters out of 5743733
- 1951542 words of memory out of 5000000
- 23179 multiletter control sequences out of 15000+600000
+ 891 strings out of 474485
+ 15876 string characters out of 5743733
+ 1954542 words of memory out of 5000000
+ 23191 multiletter control sequences out of 15000+600000
  568782 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  35i,11n,50p,1061b,349s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\saras\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi525\ectt0800.pk> <C:\Users\saras\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0800.pk> <C:\Users\saras\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0900.pk> <C:\Users\saras\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecit1000.pk> <C:\Users\saras\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\saras\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\saras\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\saras\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\saras\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\saras\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\saras\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk><C:/Users/saras/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/saras/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/saras/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/saras/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/saras/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/saras/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/saras/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/saras/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/saras/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/saras/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/saras/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/saras/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/saras/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/saras/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/saras/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/saras/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/saras/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on grammarly.pdf (36 pages, 502335 bytes).
+Output written on grammarly.pdf (36 pages, 501723 bytes).
 PDF statistics:
  800 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
