@@ -9,8 +9,8 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Use case diagram.}}{13}{figure.caption.12}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Analysis of the ball detection dataset: (a) Class distribution showing the massive disproportion between ``other" balls and the single ``cue ball"; (b) Bounding box density map; (c) Spatial distribution of object centers; (d) Correlation of bounding box width and height.}}{16}{figure.caption.13}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Analysis of the cue detection dataset: (a) Single-class distribution; (b) Bounding box density map; (c) Spatial distribution of cue centers; (d) Correlation of bounding box width and height.}}{17}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Analysis of the ball detection dataset: (a) Class distribution showing the massive disproportion between ``other" balls and the single ``cue ball"; (b) Bounding box density map; (c) Spatial distribution of object centers; (d) Correlation of bounding box width and height.}}{17}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Analysis of the cue detection dataset: (a) Single-class distribution; (b) Bounding box density map; (c) Spatial distribution of cue centers; (d) Correlation of bounding box width and height.}}{18}{figure.caption.14}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Initialization phase.}}{24}{figure.caption.15}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Aiming assistance phase: Real-time correction.}}{24}{figure.caption.16}%

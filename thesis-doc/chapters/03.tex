@@ -95,11 +95,16 @@ To strictly follow machine learning best practices, the final aggregated dataset
     \item \textbf{20\% Validation Set:} Used for hyperparameter tuning and threshold selection (as described in Chapter 6).
     \item \textbf{10\% Test Set:} Held out completely to evaluate the final performance metrics.
 \end{itemize}
-As shown in the dataset analysis (see Figure~\ref{fig:labels_ball}), the data reflects the natural logic of the game. Specifically, chart (a) highlights the significant class imbalance: the ``other" class (object balls 1--15) is approximately 15 times more frequent than the ``cue ball" class. The bounding box analysis (b) and spatial distribution (c) confirm that balls are clustered within the table area, while the size correlation (d) indicates consistent object dimensions across the dataset.
+
+As shown in the dataset analysis (Figure~\ref{fig:labels_ball}), the data reflects the natural logic of the game. Specifically, chart (a) highlights the significant class imbalance: the ``other" class (object balls 1-15) is approximately 15 times more frequent than the ``cue ball" class.
+
+Chart (b) visualizes all bounding boxes in the dataset centered at one central point. Since the camera is mounted in a fixed top-down position and all billiard balls have the same physical size, every detected object occupies roughly the same number of pixels. Therefore, all bounding boxes have nearly identical width and height, forming a single, square shape on the plot.
+
+The spatial distribution (c) confirms that balls are clustered within the table area, while the size correlation (d) indicates consistent object dimensions across the dataset.
 
 To reduce possible overfitting as well as improve model dependability under different lighting conditions, image augmentation procedures (including rotation, brightness adjustment, and noise augmentation) were applied during the preprocessing stage.
 
-A similar process was followed for the \textbf{Cue Detection model}, where the dataset was annotated with keypoints (skeleton) to define the tip and handle positions for the pose estimation task. The class distribution for this dataset (see Figure~\ref{fig:labels_cue}) is uniform as it focuses on a single class, ``cue".
+A similar process was followed for the \textbf{Cue Detection model}, where the dataset was annotated with keypoints (skeleton) to define the tip and handle positions for the pose estimation task. The class distribution for this dataset (Figure~\ref{fig:labels_cue}) is uniform as it focuses on a single class, ``cue".
 
 \subsection{Phase 2: Vision Logic Implementation}
 Once the models were trained, the Python logic was developed to translate raw detections into the game state information. This involved implementing the vector algebra for the ``Ghost Ball''~\cite{bib:ghost-ball} algorithm and using OpenCV~\cite{bib:opencv-library} to render the visual overlays.
