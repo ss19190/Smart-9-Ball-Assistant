@@ -14,7 +14,6 @@ API_KEY = os.getenv("API_KEY")
 DETECTION_MODEL = "ball-detection-bzirz/3"
 KEYPOINTS_MODEL = "cue-detection-ciazj/3"
 
-# --- IMPORTANT: Adjust this to the ball size on screen ---
 BALL_DIAMETER_PX = 45 
 
 def normalize_vector(v):
@@ -47,7 +46,6 @@ def main():
     # cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280) # Enable if you have an HD camera
 
     box_annotator = sv.BoxAnnotator(thickness=2)
-    # label_annotator = sv.LabelAnnotator() # I disabled labels so they don't obscure the lines
 
     print("Start! Press 'q' to exit.")
 

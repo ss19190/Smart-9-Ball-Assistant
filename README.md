@@ -4,17 +4,16 @@ A comprehensive billiards training system combining **Computer Vision** (table s
 
 This project consists of two main modules:
 1.  **AI Vision Assistant:** Real-time tracking of balls and cue stick, calculating the "Ghost Ball" position, and visualizing shot trajectories.
-2.  **Sensor Stroke Analysis:** Analysis of G-force, impact force ($F=ma$), and hand stability using an Android smartphone attached to the player's arm.
+2.  **Sensor Stroke Analysis:** Analysis of G-force, impact force ($F=ma$), and hand stability using an Android smartphone attached to the player's cue.
 
 ## 🚀 Key Features
 
 ### 👁️ Vision Module (Python + OpenCV + Roboflow)
-* **Object Detection:** Identifies the Cue Ball and Object Balls using the `8-pool-anrdr` model.
+* **Object Detection:** Identifies the Cue Ball and Object Balls using Object Detection Model.
 * **Cue Tracking:** Detects Cue Tip & Handle keypoints to determine the aiming vector in real-time.
 * **Physics Prediction:**
     * Calculates the **Ghost Ball** position (the point of impact).
     * Visualizes the **Tangent Line** (Cue Ball path) and **Normal Line** (Object Ball path) based on the 90-degree rule.
-    * Distinguishes between valid collisions and misses.
 
 ### 📉 Sensor Module (Python + Android)
 * **Telemetry Transmission:** Android app sends high-frequency **Linear Acceleration** (gravity removed) and **Gyroscope** data via TCP/IP.
@@ -22,7 +21,7 @@ This project consists of two main modules:
     * **Peak Detection:** Automatically detects the moment of impact.
     * **Force Calculation:** Estimates impact force in Newtons ($F = m \times a$) based on arm mass.
     * **Stability Check:** Monitors wrist rotation (Gyro) to detect unwanted twists during the stroke.
-* **Visualization:** Custom real-time graphing engine built purely in OpenCV for high performance.
+* **Visualization:** Custom real-time graphing engine built in OpenCV.
 * **Data Logging:** Saves hit history to CSV and captures snapshots of the impact metrics.
 
 ## 🛠️ Tech Stack
@@ -73,15 +72,32 @@ python sensors.py
 4. Open the Android app and tap CONNECT.
 
 ## 📂 Project Structure
-- bilard.py - Main AR script (Detection, Tracking, Trajectory Prediction).
 
-- sensors.py - TCP Server, Real-time Graphing, Hit Analysis logic.
+### Root Directory Files
+* **`SensorApp.apk`**
+  The compiled installation package for the Android mobile device.
 
-- model1.py - Unit test: Ball detection only.
+* **`config.json`**
+  Default configuration file containing calibration parameters and anthropometric data structure.
 
-- model2.py - Unit test: Cue stick keypoint detection only.
+### Source Code Directories
 
-- sensorApp.apk - Android app
+* **`android_app/`**
+  Contains the Android Studio project files for the mobile sensor application.
+
+* **`ball_detection/`**
+  Resources related to the ball detection model.
+
+* **`cue_detection/`**
+  Resources related to the cue stick keypoint detection model.
+
+* **`pc_server/`**
+  Python scripts for the Vision and Telemetry modules.
+  * `bilard.py` - Main AR script (Detection, Tracking, Trajectory Prediction).
+  * `sensors.py` - TCP Server, Real-time Graphing, Hit Analysis logic.
+  * `model1.py` - Unit test: Ball detection only.
+  * `model2.py` - Unit test: Cue stick keypoint detection only.
+  * `requirements.txt` - List of Python dependencies required to run the project.
 
 ## 🧠 How it works (Technical Details)
 **Ghost Ball Prediction**: The system projects the cue stick vector onto the vector connecting the cue ball and the target ball. If the perpendicular distance is less than the ball radius, it calculates the "Ghost Ball" center. It then uses vector algebra to draw the predicted paths (tangent/normal vectors).

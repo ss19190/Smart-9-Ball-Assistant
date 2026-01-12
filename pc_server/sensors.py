@@ -14,11 +14,11 @@ import itertools
 # --- CONFIGURATION ---
 PORT = 5555
 HISTORY_SIZE = 200
-CONFIG_FILE = "config.json"
+CONFIG_FILE = "../config.json"
 
 # Files and Folders
-CSV_FILE = "hit_history.csv"
-IMAGE_FOLDER = "saved_graphs"
+CSV_FILE = "../hit_history.csv"
+IMAGE_FOLDER = "../saved_graphs"
 
 # Delays
 DELAY_SNAPSHOT_1 = 0.8  
