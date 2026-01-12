@@ -175,8 +175,8 @@
 \@writefile{toc}{\contentsline {section}{\numberline {4.6}System Administration}{23}{section.4.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4.7}Security Issues}{23}{section.4.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4.8}Example of Usage}{23}{section.4.8}\protected@file@percent }
-\newlabel{fig:usage_setup}{{4.1a}{24}{Step 1: Initial arrangement of the balls}{figure.caption.15}{}}
-\newlabel{sub@fig:usage_setup}{{a}{24}{Step 1: Initial arrangement of the balls}{figure.caption.15}{}}
+\newlabel{fig:usage_setup}{{4.1a}{24}{Step 1: Initial arrangement of the balls. Final shoot target is the corner pocket}{figure.caption.15}{}}
+\newlabel{sub@fig:usage_setup}{{a}{24}{Step 1: Initial arrangement of the balls. Final shoot target is the corner pocket}{figure.caption.15}{}}
 \newlabel{fig:usage_detection}{{4.1b}{24}{Step 2: System detects the object ball (red box) and cue ball (purple box)}{figure.caption.15}{}}
 \newlabel{sub@fig:usage_detection}{{b}{24}{Step 2: System detects the object ball (red box) and cue ball (purple box)}{figure.caption.15}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Initialization phase.}}{24}{figure.caption.15}\protected@file@percent }
@@ -273,40 +273,36 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.4.1}Ball Detection Model Results}{38}{subsection.6.4.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Training performance metrics over 150 epochs. The graphs display the convergence of Box and Classification losses (left) and the improvement of Precision, Recall, and mAP metrics (right).}}{39}{figure.caption.31}\protected@file@percent }
 \newlabel{fig:ball_training_plots}{{6.2}{39}{Training performance metrics over 150 epochs. The graphs display the convergence of Box and Classification losses (left) and the improvement of Precision, Recall, and mAP metrics (right)}{figure.caption.31}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Precision-Recall Curve showing mAP@0.5 of 0.985 for the Ball Detection model.}}{39}{figure.caption.32}\protected@file@percent }
-\newlabel{fig:pr_curve}{{6.3}{39}{Precision-Recall Curve showing mAP@0.5 of 0.985 for the Ball Detection model}{figure.caption.32}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces F1-Confidence Curve indicating the optimal confidence threshold of 0.59.}}{40}{figure.caption.33}\protected@file@percent }
-\newlabel{fig:f1_curve}{{6.4}{40}{F1-Confidence Curve indicating the optimal confidence threshold of 0.59}{figure.caption.33}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Confusion Matrix demonstrating raw detection counts for Cue Ball, Other, and Background classes.}}{40}{figure.caption.34}\protected@file@percent }
-\newlabel{fig:conf_matrix}{{6.5}{40}{Confusion Matrix demonstrating raw detection counts for Cue Ball, Other, and Background classes}{figure.caption.34}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.2}Cue Detection Model Results}{41}{subsection.6.4.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Training performance metrics for the Cue Detection model. The graphs illustrate the convergence of Box and Pose losses, confirming stable learning.}}{41}{figure.caption.35}\protected@file@percent }
-\newlabel{fig:cue_training_plots}{{6.6}{41}{Training performance metrics for the Cue Detection model. The graphs illustrate the convergence of Box and Pose losses, confirming stable learning}{figure.caption.35}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Precision-Recall Curve for Pose Estimation showing a high mAP@0.5 of 0.954.}}{42}{figure.caption.36}\protected@file@percent }
-\newlabel{fig:pose_pr_curve}{{6.7}{42}{Precision-Recall Curve for Pose Estimation showing a high mAP@0.5 of 0.954}{figure.caption.36}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces F1-Confidence Curve for the cue stick keypoints, peaking at 0.93.}}{42}{figure.caption.37}\protected@file@percent }
-\newlabel{fig:pose_f1_curve}{{6.8}{42}{F1-Confidence Curve for the cue stick keypoints, peaking at 0.93}{figure.caption.37}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces Confusion Matrix for Cue Detection, showing 70 correct detections against 6 false negatives (background).}}{43}{figure.caption.38}\protected@file@percent }
-\newlabel{fig:cue_conf_matrix}{{6.9}{43}{Confusion Matrix for Cue Detection, showing 70 correct detections against 6 false negatives (background)}{figure.caption.38}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.5}System Validation}{43}{section.6.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.1}Force Estimation Consistency}{43}{subsection.6.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Performance metrics for the Ball Detection model: a) Precision-Recall Curve showing mAP@0.5 of 0.985; b) F1-Confidence Curve indicating the optimal confidence threshold of 0.59.}}{39}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:ball_combined}{{6.3}{39}{Performance metrics for the Ball Detection model: a) Precision-Recall Curve showing mAP@0.5 of 0.985; b) F1-Confidence Curve indicating the optimal confidence threshold of 0.59}{figure.caption.32}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Confusion Matrix demonstrating raw detection counts for Cue Ball, Other, and Background classes.}}{40}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:conf_matrix}{{6.4}{40}{Confusion Matrix demonstrating raw detection counts for Cue Ball, Other, and Background classes}{figure.caption.33}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.2}Cue Detection Model Results}{40}{subsection.6.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Training performance metrics for the Cue Detection model. The graphs illustrate the convergence of Box and Pose losses, confirming stable learning.}}{41}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:cue_training_plots}{{6.5}{41}{Training performance metrics for the Cue Detection model. The graphs illustrate the convergence of Box and Pose losses, confirming stable learning}{figure.caption.34}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Performance metrics for the Cue Detection model: a) Precision-Recall Curve for Pose Estimation (mAP@0.5 of 0.954); b) F1-Confidence Curve for the cue stick keypoints (peak at 0.93).}}{41}{figure.caption.35}\protected@file@percent }
+\newlabel{fig:cue_combined}{{6.6}{41}{Performance metrics for the Cue Detection model: a) Precision-Recall Curve for Pose Estimation (mAP@0.5 of 0.954); b) F1-Confidence Curve for the cue stick keypoints (peak at 0.93)}{figure.caption.35}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Confusion Matrix for Cue Detection, showing 70 correct detections against 6 false negatives (background).}}{42}{figure.caption.36}\protected@file@percent }
+\newlabel{fig:cue_conf_matrix}{{6.7}{42}{Confusion Matrix for Cue Detection, showing 70 correct detections against 6 false negatives (background)}{figure.caption.36}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.5}System Validation}{42}{section.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.1}Force Estimation Consistency}{42}{subsection.6.5.1}\protected@file@percent }
 \citation{bib:noise}
 \abx@aux@cite{0}{bib:noise}
 \abx@aux@segm{0}{0}{bib:noise}
 \citation{bib:stapor}
 \abx@aux@cite{0}{bib:stapor}
 \abx@aux@segm{0}{0}{bib:stapor}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.10}{\ignorespaces Soft Shot analysis: Acceleration $< 20~m/s^2$. The system treats this as noise/preparation and does not register a shot.}}{44}{figure.caption.39}\protected@file@percent }
-\newlabel{fig:shot_soft}{{6.10}{44}{Soft Shot analysis: Acceleration $< 20~m/s^2$. The system treats this as noise/preparation and does not register a shot}{figure.caption.39}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.11}{\ignorespaces Medium Shot analysis: Distinct peak detected. Calculated Force = 54 N.}}{45}{figure.caption.40}\protected@file@percent }
-\newlabel{fig:shot_medium}{{6.11}{45}{Medium Shot analysis: Distinct peak detected. Calculated Force = 54 N}{figure.caption.40}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.12}{\ignorespaces Hard Shot analysis: High-intensity peak. Calculated Force = 97 N.}}{45}{figure.caption.41}\protected@file@percent }
-\newlabel{fig:shot_hard}{{6.12}{45}{Hard Shot analysis: High-intensity peak. Calculated Force = 97 N}{figure.caption.41}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Raw recorded force values (in Newtons) for the experimental session ($m_{arm} = 2.68$ kg).}}{46}{table.caption.42}\protected@file@percent }
-\newlabel{tab:raw_data}{{6.2}{46}{Raw recorded force values (in Newtons) for the experimental session ($m_{arm} = 2.68$ kg)}{table.caption.42}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces Statistical analysis of impact force measurements ($N=20$).}}{46}{table.caption.43}\protected@file@percent }
-\newlabel{tab:force_results}{{6.3}{46}{Statistical analysis of impact force measurements ($N=20$)}{table.caption.43}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.2}System Latency and Performance}{46}{subsection.6.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces Soft Shot analysis: Acceleration $< 20~m/s^2$. The system treats this as noise/preparation and does not register a shot.}}{43}{figure.caption.37}\protected@file@percent }
+\newlabel{fig:shot_soft}{{6.8}{43}{Soft Shot analysis: Acceleration $< 20~m/s^2$. The system treats this as noise/preparation and does not register a shot}{figure.caption.37}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces Medium Shot analysis: Distinct peak detected. Calculated Force = 54 N.}}{44}{figure.caption.38}\protected@file@percent }
+\newlabel{fig:shot_medium}{{6.9}{44}{Medium Shot analysis: Distinct peak detected. Calculated Force = 54 N}{figure.caption.38}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.10}{\ignorespaces Hard Shot analysis: High-intensity peak. Calculated Force = 97 N.}}{44}{figure.caption.39}\protected@file@percent }
+\newlabel{fig:shot_hard}{{6.10}{44}{Hard Shot analysis: High-intensity peak. Calculated Force = 97 N}{figure.caption.39}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Raw recorded force values (in Newtons) for the experimental session ($m_{arm} = 2.68$ kg).}}{45}{table.caption.40}\protected@file@percent }
+\newlabel{tab:raw_data}{{6.2}{45}{Raw recorded force values (in Newtons) for the experimental session ($m_{arm} = 2.68$ kg)}{table.caption.40}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces Statistical analysis of impact force measurements ($N=20$).}}{45}{table.caption.41}\protected@file@percent }
+\newlabel{tab:force_results}{{6.3}{45}{Statistical analysis of impact force measurements ($N=20$)}{table.caption.41}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.2}System Latency and Performance}{45}{subsection.6.5.2}\protected@file@percent }
 \citation{bib:anatomical}
 \abx@aux@cite{0}{bib:anatomical}
 \abx@aux@segm{0}{0}{bib:anatomical}
@@ -316,11 +312,11 @@
 \@writefile{toc}{\contentsline {section}{\numberline {7.1}Achievement of Objectives}{47}{section.7.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {7.2}Difficulties Experienced}{48}{section.7.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {7.3}Future Development}{48}{section.7.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{51}{section*.44}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Index of abbreviations and symbols}{57}{appendix*.46}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{51}{section*.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Index of abbreviations and symbols}{57}{appendix*.44}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{Listings}{59}{appendix*.49}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Listings}{59}{appendix*.47}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {1.}Configuration File (config.json)}{59}{section.1..1}\protected@file@percent }
@@ -332,11 +328,11 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.}Telemetry Module (sensors.py)}{62}{section.1..3}\protected@file@percent }
 \newlabel{lst:sensors_py}{{3}{62}{Telemetry Module implementation}{lstlisting.1..3}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {3}{\ignorespaces Telemetry Module implementation}}{62}{lstlisting.1..3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{List of additional files in~electronic submission}{71}{appendix*.50}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{List of additional files in~electronic submission}{71}{appendix*.48}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{List of figures}{74}{appendix*.51}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{List of tables}{75}{appendix*.52}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{List of figures}{74}{appendix*.49}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{List of tables}{75}{appendix*.50}\protected@file@percent }
 \abx@aux@read@bbl@mdfivesum{1A110A8CD4CB458ADD171904C60C3FED}
 \abx@aux@defaultrefcontext{0}{bib:ghost-ball}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{bib:english}{nty/global//global/global}

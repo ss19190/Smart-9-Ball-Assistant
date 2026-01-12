@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.12.25)  11 JAN 2026 09:26
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.12.25)  12 JAN 2026 18:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1837,8 +1837,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [22]
-File: ./graf/setup_ball.jpg Graphic file (type bmp)
-<./graf/setup_ball.jpg>
+File: ./graf/setup_ball.png Graphic file (type bmp)
+<./graf/setup_ball.png>
 File: ./graf/ball_detection.png Graphic file (type bmp)
 <./graf/ball_detection.png>
 
@@ -2021,6 +2021,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [37]
 File: ./graf/ball-detection/results.pdf Graphic file (type pdf)
 <use ./graf/ball-detection/results.pdf>
+File: ./graf/ball-detection/charts-ball.pdf Graphic file (type pdf)
+<use ./graf/ball-detection/charts-ball.pdf>
+File: ./graf/ball-detection/confusion_matrix.pdf Graphic file (type pdf)
+<use ./graf/ball-detection/confusion_matrix.pdf>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2030,14 +2034,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [38]
-File: ./graf/ball-detection/PR_curve.pdf Graphic file (type pdf)
-<use ./graf/ball-detection/PR_curve.pdf>
-File: ./graf/ball-detection/F1_curve.pdf Graphic file (type pdf)
-<use ./graf/ball-detection/F1_curve.pdf>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2046,11 +2042,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [39]
-File: ./graf/ball-detection/confusion_matrix.pdf Graphic file (type pdf)
-<use ./graf/ball-detection/confusion_matrix.pdf>
-
-Underfull \vbox (badness 5091) has occurred while \output is active []
-
+Overfull \hbox (10.30783pt too wide) in paragraph at lines 118--119
+[]\TU/lmr/bx/n/12 Classification Performance: \TU/lmr/m/n/12 The confusion matr
+ix (Figure []6.7[]) displays the model’s
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2060,25 +2055,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [40]
-Overfull \hbox (10.30783pt too wide) in paragraph at lines 125--126
-[]\TU/lmr/bx/n/12 Classification Performance: \TU/lmr/m/n/12 The confusion matr
-ix (Figure []6.9[]) displays the model’s
- []
-
 File: ./graf/cue-detection/results.pdf Graphic file (type pdf)
 <use ./graf/cue-detection/results.pdf>
-File: ./graf/cue-detection/PR_curve.pdf Graphic file (type pdf)
-<use ./graf/cue-detection/PR_curve.pdf>
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[41]
-File: ./graf/cue-detection/F1_curve.pdf Graphic file (type pdf)
-<use ./graf/cue-detection/F1_curve.pdf>
+File: ./graf/cue-detection/charts-cue.pdf Graphic file (type pdf)
+<use ./graf/cue-detection/charts-cue.pdf>
 File: ./graf/cue-detection/confusion_matrix.pdf Graphic file (type pdf)
 <use ./graf/cue-detection/confusion_matrix.pdf>
 
@@ -2092,7 +2072,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[42]
+[41]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2100,7 +2080,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[43]
+[42]
 File: ./graf/soft.png Graphic file (type bmp)
 <./graf/soft.png>
 File: ./graf/medium.png Graphic file (type bmp)
@@ -2121,7 +2101,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[44]
+[43]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -2132,7 +2112,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[45]) (chapters/07.tex
+[44]) (chapters/07.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2140,11 +2120,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[46]
-Chapter 7.
-[47
+[45]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[46
 
 ]
+Chapter 7.
+[47]
 Overfull \hbox (3.05315pt too wide) in paragraph at lines 30--31
 []\TU/lmr/bx/n/12 Perspective Correction (Homography): \TU/lmr/m/n/12 Currently
 , the system requires a strictly
@@ -2398,16 +2386,16 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C9195B5740C2A6BA70BF5E2113FDDBAA;15941.
+(rerunfilecheck)             Checksum: 1A4C638120479E6ADCDAA8E7A8509415;15941.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51668 strings out of 409616
- 1138886 string characters out of 5773991
- 2355760 words of memory out of 5000000
- 72978 multiletter control sequences out of 15000+600000
+ 51649 strings out of 409616
+ 1138226 string characters out of 5773991
+ 2355841 words of memory out of 5000000
+ 72960 multiletter control sequences out of 15000+600000
  566785 words of font info for 105 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,12n,96p,1925b,5665s stack positions out of 10000i,1000n,20000p,200000b,200000s

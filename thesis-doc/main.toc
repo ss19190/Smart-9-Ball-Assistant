@@ -81,20 +81,20 @@
 \contentsline {subsection}{\numberline {6.3.3}Ghost Ball Jitter}{37}{subsection.6.3.3}%
 \contentsline {section}{\numberline {6.4}Computer Vision Model Evaluation}{38}{section.6.4}%
 \contentsline {subsection}{\numberline {6.4.1}Ball Detection Model Results}{38}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Cue Detection Model Results}{41}{subsection.6.4.2}%
-\contentsline {section}{\numberline {6.5}System Validation}{43}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}Force Estimation Consistency}{43}{subsection.6.5.1}%
-\contentsline {subsection}{\numberline {6.5.2}System Latency and Performance}{46}{subsection.6.5.2}%
+\contentsline {subsection}{\numberline {6.4.2}Cue Detection Model Results}{40}{subsection.6.4.2}%
+\contentsline {section}{\numberline {6.5}System Validation}{42}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Force Estimation Consistency}{42}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}System Latency and Performance}{45}{subsection.6.5.2}%
 \contentsline {chapter}{\numberline {7}Conclusions}{47}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Achievement of Objectives}{47}{section.7.1}%
 \contentsline {section}{\numberline {7.2}Difficulties Experienced}{48}{section.7.2}%
 \contentsline {section}{\numberline {7.3}Future Development}{48}{section.7.3}%
-\contentsline {chapter}{Bibliography}{51}{section*.44}%
-\contentsline {chapter}{Index of abbreviations and symbols}{57}{appendix*.46}%
-\contentsline {chapter}{Listings}{59}{appendix*.49}%
+\contentsline {chapter}{Bibliography}{51}{section*.42}%
+\contentsline {chapter}{Index of abbreviations and symbols}{57}{appendix*.44}%
+\contentsline {chapter}{Listings}{59}{appendix*.47}%
 \contentsline {section}{\numberline {1.}Configuration File (config.json)}{59}{section.1..1}%
 \contentsline {section}{\numberline {2.}Vision Module (bilard.py)}{59}{section.1..2}%
 \contentsline {section}{\numberline {3.}Telemetry Module (sensors.py)}{62}{section.1..3}%
-\contentsline {chapter}{List of additional files in~electronic submission}{71}{appendix*.50}%
-\contentsline {chapter}{List of figures}{74}{appendix*.51}%
-\contentsline {chapter}{List of tables}{75}{appendix*.52}%
+\contentsline {chapter}{List of additional files in~electronic submission}{71}{appendix*.48}%
+\contentsline {chapter}{List of figures}{74}{appendix*.49}%
+\contentsline {chapter}{List of tables}{75}{appendix*.50}%

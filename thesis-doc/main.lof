@@ -28,16 +28,14 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Visualization of the occlusion limitation (Test Case TC-04). The system successfully detects visible balls, but fails to identify the orange ball (top right) which is partially covered by the player's hand.}}{36}{figure.caption.30}%
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Training performance metrics over 150 epochs. The graphs display the convergence of Box and Classification losses (left) and the improvement of Precision, Recall, and mAP metrics (right).}}{39}{figure.caption.31}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Precision-Recall Curve showing mAP@0.5 of 0.985 for the Ball Detection model.}}{39}{figure.caption.32}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces F1-Confidence Curve indicating the optimal confidence threshold of 0.59.}}{40}{figure.caption.33}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Confusion Matrix demonstrating raw detection counts for Cue Ball, Other, and Background classes.}}{40}{figure.caption.34}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Training performance metrics for the Cue Detection model. The graphs illustrate the convergence of Box and Pose losses, confirming stable learning.}}{41}{figure.caption.35}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Precision-Recall Curve for Pose Estimation showing a high mAP@0.5 of 0.954.}}{42}{figure.caption.36}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces F1-Confidence Curve for the cue stick keypoints, peaking at 0.93.}}{42}{figure.caption.37}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Confusion Matrix for Cue Detection, showing 70 correct detections against 6 false negatives (background).}}{43}{figure.caption.38}%
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Soft Shot analysis: Acceleration $< 20~m/s^2$. The system treats this as noise/preparation and does not register a shot.}}{44}{figure.caption.39}%
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Medium Shot analysis: Distinct peak detected. Calculated Force = 54 N.}}{45}{figure.caption.40}%
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Hard Shot analysis: High-intensity peak. Calculated Force = 97 N.}}{45}{figure.caption.41}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Performance metrics for the Ball Detection model: a) Precision-Recall Curve showing mAP@0.5 of 0.985; b) F1-Confidence Curve indicating the optimal confidence threshold of 0.59.}}{39}{figure.caption.32}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Confusion Matrix demonstrating raw detection counts for Cue Ball, Other, and Background classes.}}{40}{figure.caption.33}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Training performance metrics for the Cue Detection model. The graphs illustrate the convergence of Box and Pose losses, confirming stable learning.}}{41}{figure.caption.34}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Performance metrics for the Cue Detection model: a) Precision-Recall Curve for Pose Estimation (mAP@0.5 of 0.954); b) F1-Confidence Curve for the cue stick keypoints (peak at 0.93).}}{41}{figure.caption.35}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Confusion Matrix for Cue Detection, showing 70 correct detections against 6 false negatives (background).}}{42}{figure.caption.36}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Soft Shot analysis: Acceleration $< 20~m/s^2$. The system treats this as noise/preparation and does not register a shot.}}{43}{figure.caption.37}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Medium Shot analysis: Distinct peak detected. Calculated Force = 54 N.}}{44}{figure.caption.38}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Hard Shot analysis: High-intensity peak. Calculated Force = 97 N.}}{44}{figure.caption.39}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

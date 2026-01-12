@@ -74,37 +74,30 @@ where Precision ($P$) and Recall ($R$) are derived from True Positives ($TP$), F
     P = \frac{TP}{TP + FP}, \quad R = \frac{TP}{TP + FN}
 \end{equation}
 
-This result indicates nearly perfect detection abilities at the standard threshold (Figure~\ref{fig:pr_curve}).
+This result indicates nearly perfect detection abilities at the standard threshold (Figure~\ref{fig:ball_combined}a).
 
 \begin{itemize}
     \item \textbf{Training Performance:} As illustrated in the training plots (see Figure~\ref{fig:ball_training_plots}), the box loss and classification loss converged rapidly within the first 50 epochs, stabilizing with no signs of overfitting. The precision and recall metrics consistently improved, plateauing near 1.0.
-    \item \textbf{F1-Score and Threshold Selection:} The optimal confidence threshold was determined based on the F1-Confidence curve generated from the validation set (Figure~\ref{fig:f1_curve}). To follow the hold-out methodology and avoid data leakage, the threshold was determined using only the validation data. Once selected, it was fixed and then used unchanged in the production code.
+    \item \textbf{F1-Score and Threshold Selection:} The optimal confidence threshold was determined based on the F1-Confidence curve generated from the validation set (Figure~\ref{fig:ball_combined}b). To follow the hold-out methodology and avoid data leakage, the threshold was determined using only the validation data. Once selected, it was fixed and then used unchanged in the production code.
     \item \textbf{Classification Performance:} The confusion matrix (Figure~\ref{fig:conf_matrix}) confirms the model's accuracy on the test set. The model correctly identified \textbf{110} Cue Ball instances and \textbf{1043} Object Balls ("other"). Misclassifications were negligible, with only minimal instances of background falsely detected as balls (False Positives).
 \end{itemize}
 
-\begin{figure}[H]
+\begin{figure}[hbpt]
     \centering
     \includegraphics[width=1.0\textwidth]{./graf/ball-detection/results.pdf}
     \caption{Training performance metrics over 150 epochs. The graphs display the convergence of Box and Classification losses (left) and the improvement of Precision, Recall, and mAP metrics (right).}
     \label{fig:ball_training_plots}
 \end{figure}
 
-
-\begin{figure}[H]
+% Zastąpiono osobne figury jedną połączoną (charts-ball.pdf)
+\begin{figure}[hbpt]
     \centering
-    \includegraphics[width=0.8\textwidth]{./graf/ball-detection/PR_curve.pdf}
-    \caption{Precision-Recall Curve showing mAP@0.5 of 0.985 for the Ball Detection model.}
-    \label{fig:pr_curve}
+    \includegraphics[width=1.0\textwidth]{./graf/ball-detection/charts-ball.pdf}
+    \caption{Performance metrics for the Ball Detection model: a) Precision-Recall Curve showing mAP@0.5 of 0.985; b) F1-Confidence Curve indicating the optimal confidence threshold of 0.59.}
+    \label{fig:ball_combined}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{./graf/ball-detection/F1_curve.pdf}
-    \caption{F1-Confidence Curve indicating the optimal confidence threshold of 0.59.}
-    \label{fig:f1_curve}
-\end{figure}
-
-\begin{figure}[H]
+\begin{figure}[hbpt]
     \centering
     % Pamiętaj, aby zapisać swój nowy plik jako confusion_matrix.png w folderze graf/ball-detection/
     \includegraphics[width=0.8\textwidth]{./graf/ball-detection/confusion_matrix.pdf}
@@ -118,32 +111,26 @@ The Cue Detection model, utilizing pose estimation (YOLOv8-pose), was evaluated 
 \begin{itemize}
     \item \textbf{Training Performance:} Similar to the ball detection model, the training metrics (Figure~\ref{fig:cue_training_plots}) demonstrated stable convergence. The box loss and pose loss decreased steadily over the epochs, while precision and recall metrics improved consistently, indicating that the model effectively learned the spatial features of the cue stick without significant overfitting.
     
-    \item \textbf{Pose Estimation Accuracy:} The model reached a \textbf{Pose mAP@0.5} of \textbf{0.954} (Figure~\ref{fig:pose_pr_curve}), indicating high precision in locating the cue tip and handle keypoints. 
+    \item \textbf{Pose Estimation Accuracy:} The model reached a \textbf{Pose mAP@0.5} of \textbf{0.954} (Figure~\ref{fig:cue_combined}a), indicating high precision in locating the cue tip and handle keypoints. 
     
-    \item \textbf{F1-Score Analysis:} The F1-Confidence curve for pose estimation (Figure~\ref{fig:pose_f1_curve}) identifies an optimal confidence threshold of \textbf{0.48}, where the model obtains a peak F1 score of \textbf{0.93}.
+    \item \textbf{F1-Score Analysis:} The F1-Confidence curve for pose estimation (Figure~\ref{fig:cue_combined}b) identifies an optimal confidence threshold of \textbf{0.48}, where the model obtains a peak F1 score of \textbf{0.93}.
     
     \item \textbf{Classification Performance:} The confusion matrix (Figure~\ref{fig:cue_conf_matrix}) displays the model's ability to distinguish the cue from the table background. Out of 76 actual cue instances in the validation set, the model correctly identified 70, with only a minor number of background false positives.
 \end{itemize}
 
-\begin{figure}[H]
+\begin{figure}[hbpt]
     \centering
     \includegraphics[width=1.0\textwidth]{./graf/cue-detection/results.pdf}
     \caption{Training performance metrics for the Cue Detection model. The graphs illustrate the convergence of Box and Pose losses, confirming stable learning.}
     \label{fig:cue_training_plots}
 \end{figure}
 
-\begin{figure}[H]
+% Zastąpiono osobne figury jedną połączoną (charts-cue.pdf)
+\begin{figure}[hbpt]
     \centering
-    \includegraphics[width=0.8\textwidth]{./graf/cue-detection/PR_curve.pdf}
-    \caption{Precision-Recall Curve for Pose Estimation showing a high mAP@0.5 of 0.954.}
-    \label{fig:pose_pr_curve}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{./graf/cue-detection/F1_curve.pdf}
-    \caption{F1-Confidence Curve for the cue stick keypoints, peaking at 0.93.}
-    \label{fig:pose_f1_curve}
+    \includegraphics[width=1.0\textwidth]{./graf/cue-detection/charts-cue.pdf}
+    \caption{Performance metrics for the Cue Detection model: a) Precision-Recall Curve for Pose Estimation (mAP@0.5 of 0.954); b) F1-Confidence Curve for the cue stick keypoints (peak at 0.93).}
+    \label{fig:cue_combined}
 \end{figure}
 
 \begin{figure}[H]
